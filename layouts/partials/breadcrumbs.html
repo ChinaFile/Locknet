@@ -1,0 +1,7 @@
+<nav class="mb-2 flex flex-wrap items-center justify-start text-sm font-semibold gap-2 w-full min-w-0" aria-label="Breadcrumb">
+  {{ $parent := .Parent }}
+  {{ $section := .CurrentSection }}
+  {{ if and $parent (ne $parent.Title .Title) (ne $parent.Title .Site.Title) }}
+    <a href="{{ $parent.RelPermalink }}" class="font-medium uppercase no-underline hover:underline text-blue-5 whitespace-nowrap">{{ $parent.Title }}</a>
+  {{ end }}
+</nav> 

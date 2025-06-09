@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="relative flex min-h-full flex-col justify-center lg:py-12 py-24 sm:px-6 lg:px-8 xl:flex-row xl:items-start xl:justify-center">
+    <section class="prose mx-auto w-full {{ if .Params.toc }}max-w-6xl{{ else }}max-w-3xl{{ end }} flex-col px-8 prose-hr:w-full lg:flex lg:px-8" aria-labelledby="main-content-heading">
+
+      {{ if .Params.landing }}
+      <img class="w-full" src="/media/images/hero.webp" alt="Cover image for report" role="img">
+      {{ end }}
+
+      {{ partial "breadcrumbs.html" . }}
+
+        <article class="flex {{ if .Params.toc }}max-w-2xl{{ else }}w-full{{ end }} flex-col items-start justify-between border-b border-gray-300">
+            <h1 class="mb-6 mt-2 text-4xl text-gray-900 leading-[1.15]">
+                {{ .Page.Params.title }}
+            </h1>
+
+            {{ if .Params.author }}
+            <div class="my-6 w-full border-l-2 border-blue-5 pl-4">
+                <div class="font-semibold text-lg text-gray-900 mb-2">{{ .Params.author }}</div>
+                {{ with .Params.author_summary }}
+                  <div class="text-gray-500 text-base leading-[1.15]">{{ . }}</div>
+                {{ end }}
+                {{ with .Params.author_bio }}
+                  <div class="text-gray-400 text-base leading-[1.15]">{{ . }}</div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </article>
+
+        {{ if .Params.toc }}
+
+        <div class="w-full flex flex-row gap-10 mt-6">
+          <article class="flex w-full max-w-2xl flex-col items-start justify-between prose-a:text-blue-5 prose-a:visited:text-purple-800 prose-a:hover:text-blue-900">
+              {{ .Content }}
+          </article>
+          {{ partial "toc-sidebar.html" . }}
+        </div>
+
+        {{ else }}
+        <div class="w-full flex flex-row">
+          <article class="flex w-full flex-col items-start justify-between prose-a:text-blue-5 prose-a:visited:text-purple-800 prose-a:hover:text-blue-900">
+              {{ .Content }}
+          </article>
+        </div>
+        {{ end }}
+
+        {{ partial "pagination.html" . }}
+
+    </section>
+</div>
+{{ end }}

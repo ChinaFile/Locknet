@@ -1,0 +1,18 @@
+{{/* Check if the link is external by looking for http(s):// at the start */}}
+{{ $isExternal := hasPrefix .Destination "http" }}
+
+{{/* All links open in new tabs, with different styling for external vs internal */}}
+{{ if $isExternal }}
+<a href="{{ .Destination | safeURL }}"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-orange-600 hover:text-orange-700 hover:underline">
+   {{ .Text }}</a>
+{{ else }}
+<a href="{{ .Destination | safeURL }}"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-blue-5 hover:text-blue-6 hover:underline">
+   {{ .Text }}
+</a>
+{{ end }}

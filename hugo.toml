@@ -1,0 +1,91 @@
+title = "ChinaFile"
+subtitle = "Description"
+baseURL = "https://chinafile.netlify.app/"
+
+rssLimit  = 300
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpored = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = true
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = true
+
+pluralizeListTitles = false
+
+[permalinks]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+    [markup.tableOfContents]
+      startLevel = 2
+      endLevel = 4
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  # Metadata mostly used in document's head
+  description = ""
+  keywords = ""
+  images = ["media/images/thumbnail.png"]
+  article = "The Locknet"
+
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  gitUrl = "https://github.com/XX/YY/commit/"
+
+  githubRepo = "https://github.com/XX/YY"
+  githubBranch = "main"
+
+  # Colors for favicons
+  [params.favicon.color]
+    mask = "#EFFAFE"
+    msapplication = "#EFFAFE"
+
+  # Social icons
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/"
+
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/"
+  
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/products/x/"
+
+[privacy]
+  [privacy.instagram]
+    disable = false
+    simple = true
+  [privacy.X]
+    disable = false
+    enableDNT = true
+    simple = false
+  [privacy.vimeo]
+    disable = false
+    enableDNT = true
+    simple = false
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true

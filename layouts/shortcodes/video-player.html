@@ -1,0 +1,113 @@
+<div class="video-player-container border-none my-6">
+  <video
+    id="{{ .Get "id" | default (now.UnixNano) }}"
+    class="w-full border-none"
+    src="{{ .Get "src" }}"
+    {{ with .Get "poster" }}poster="{{ . }}"{{ end }}
+    preload="metadata"
+    tabindex="0"
+    aria-label="Video player"
+  ></video>
+  <div class="flex gap-3 mt-4 justify-center" role="group" aria-label="Video controls">
+    <button type="button" class="video-play video-btn flex items-center justify-center w-11 h-11 rounded-full bg-blue-1 text-blue-5 shadow hover:bg-blue-2 hover:text-blue-5 focus-visible:ring-4 focus-visible:ring-blue-400 focus:outline-none transition-all duration-150 border-2 border-transparent cursor-pointer" aria-label="Play" aria-pressed="false" aria-controls="{{ .Get "id" | default (now.UnixNano) }}">
+      {{ partial "fontawesome.html" (dict "icon" "solid/play" "class" "h-5 w-5") }}
+    </button>
+    <button type="button" class="video-pause video-btn flex items-center justify-center w-11 h-11 rounded-full bg-blue-1 text-blue-5 shadow hover:bg-blue-2 hover:text-blue-5 focus-visible:ring-4 focus-visible:ring-blue-400 focus:outline-none transition-all duration-150 border-2 border-transparent cursor-pointer" aria-label="Pause" aria-pressed="false" aria-controls="{{ .Get "id" | default (now.UnixNano) }}">
+      {{ partial "fontawesome.html" (dict "icon" "solid/pause" "class" "h-5 w-5") }}
+    </button>
+    <button type="button" class="video-stop video-btn flex items-center justify-center w-11 h-11 rounded-full bg-blue-1 text-blue-5 shadow hover:bg-blue-2 hover:text-blue-5 focus-visible:ring-4 focus-visible:ring-blue-400 focus:outline-none transition-all duration-150 border-2 border-transparent cursor-pointer" aria-label="Stop" aria-pressed="false" aria-controls="{{ .Get "id" | default (now.UnixNano) }}">
+      {{ partial "fontawesome.html" (dict "icon" "solid/stop" "class" "h-5 w-5") }}
+    </button>
+    <button type="button" class="video-loop video-btn flex items-center justify-center w-11 h-11 rounded-full bg-blue-1 text-blue-5 shadow hover:bg-orange-100 hover:text-orange-600 focus-visible:ring-4 focus-visible:ring-orange-400 focus:outline-none transition-all duration-150 border-2 border-transparent cursor-pointer" aria-label="Toggle Loop" aria-pressed="false" aria-controls="{{ .Get "id" | default (now.UnixNano) }}">
+      {{ partial "fontawesome.html" (dict "icon" "solid/repeat" "class" "h-5 w-5") }}
+    </button>
+  </div>
+</div>
+<script>
+(function() {
+  const container = document.currentScript.previousElementSibling;
+  const video = container.querySelector('video');
+  const playBtn = container.querySelector('.video-play');
+  const pauseBtn = container.querySelector('.video-pause');
+  const stopBtn = container.querySelector('.video-stop');
+  const loopBtn = container.querySelector('.video-loop');
+  const btns = container.querySelectorAll('.video-btn');
+
+  // Helper to set button states
+  function setButtonStates() {
+    playBtn.setAttribute('aria-pressed', !video.paused && !video.ended);
+    pauseBtn.setAttribute('aria-pressed', video.paused && !video.ended && video.currentTime > 0);
+    stopBtn.setAttribute('aria-pressed', video.ended || video.currentTime === 0);
+    loopBtn.setAttribute('aria-pressed', video.loop);
+
+    // Reset all to default
+    btns.forEach(btn => {
+      btn.classList.remove('ring-2','ring-blue-5','bg-blue-5','text-white','border-blue-5','bg-orange-600','text-orange-600','border-orange-600','bg-blue-2','bg-orange-100','text-blue-5','text-orange-600');
+      btn.classList.add('bg-blue-1','text-blue-5','border-transparent');
+    });
+    // Play active
+    if (!video.paused && !video.ended) {
+      playBtn.classList.add('bg-blue-5','text-white','border-blue-5');
+    }
+    // Pause active
+    if (video.paused && !video.ended && video.currentTime > 0) {
+      pauseBtn.classList.add('bg-blue-5','text-white','border-blue-5');
+    }
+    // Stop active
+    if (video.ended || video.currentTime === 0) {
+      stopBtn.classList.add('bg-blue-5','text-white','border-blue-5');
+    }
+    // Loop active
+    if (video.loop) {
+      loopBtn.classList.add('bg-orange-100','text-orange-600','border-orange-600');
+    }
+  }
+
+  playBtn.addEventListener('click', () => {
+    video.play();
+    setButtonStates();
+  });
+  pauseBtn.addEventListener('click', () => {
+    video.pause();
+    setButtonStates();
+  });
+  stopBtn.addEventListener('click', () => {
+    video.pause();
+    video.currentTime = 0;
+    setButtonStates();
+  });
+  loopBtn.addEventListener('click', () => {
+    video.loop = !video.loop;
+    setButtonStates();
+  });
+
+  video.addEventListener('play', setButtonStates);
+  video.addEventListener('pause', setButtonStates);
+  video.addEventListener('ended', setButtonStates);
+  video.addEventListener('timeupdate', setButtonStates);
+  video.addEventListener('loadedmetadata', setButtonStates);
+
+  // Keyboard navigation: left/right arrows for seek, space/enter for play/pause
+  container.addEventListener('keydown', function(e) {
+    if (document.activeElement.tagName === 'BUTTON') {
+      if (e.key === ' ' || e.key === 'Enter') {
+        document.activeElement.click();
+        e.preventDefault();
+      }
+      if (e.key === 'ArrowLeft') {
+        video.currentTime = Math.max(0, video.currentTime - 5);
+        setButtonStates();
+        e.preventDefault();
+      }
+      if (e.key === 'ArrowRight') {
+        video.currentTime = Math.min(video.duration, video.currentTime + 5);
+        setButtonStates();
+        e.preventDefault();
+      }
+    }
+  });
+
+  // Initial state
+  setButtonStates();
+})();
+</script> 

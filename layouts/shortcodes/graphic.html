@@ -1,0 +1,540 @@
+<div class="my-4" id="chokepointPotentialChart"></div>
+
+<style>
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-sans/IBMPlexSans.ttf") format("truetype");
+}
+
+.cpc {
+  --max-width: 640px;
+  --color-background: #fff;
+  --color-text: #000;
+  --font-family: "IBM Plex Sans";
+  --font-size-title: 1.25rem;
+  --font-size-body: 1rem;
+  --line-height: 1.2;
+  --letter-spacing-title: 0.03em;
+  --letter-spacing-swatch: 0.05em;
+  --tooltip-line-height: calc(var(--line-height) * var(--font-size-body));
+
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-family: var(--font-family), sans-serif;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+.cpc[data-size="small"] {
+  --font-size-title: 1rem;
+  --font-size-body: 0.75rem;
+}
+
+.cpc .title {
+  font-size: var(--font-size-title);
+  letter-spacing: var(--letter-spacing-title);
+  text-wrap: balance;
+  margin-block-end: 1em;
+  text-align: center;
+}
+
+.cpc .swatches {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em 1.5em;
+  margin-block-end: 1em;
+}
+
+.cpc .swatch {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.cpc .swatch__line {
+  display: block;
+}
+
+.cpc .swatch__label {
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-swatch);
+}
+
+.cpc .chart__svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.cpc .axis {
+  font: inherit;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script>
+function chokepointPotentialChart({ el, xkcdify = false }) {
+  const DATA = [
+    {
+      Date: "Jan 2009",
+      China: 0.09090909091,
+      Egypt: 0.125,
+      India: 0.25,
+      "U.S.": 0.01388888889,
+    },
+    {
+      Date: "Jun 2009",
+      China: 0.1,
+      Egypt: 0.1428571429,
+      India: 0.1111111111,
+      "U.S.": 0.01333333333,
+    },
+    {
+      Date: "Jan 2010",
+      China: 0.125,
+      Egypt: 0.1666666667,
+      India: 0.125,
+      "U.S.": 0.015625,
+    },
+    {
+      Date: "Jun 2010",
+      China: 0.1428571429,
+      Egypt: 0.2,
+      India: 0.3333333333,
+      "U.S.": 0.01724137931,
+    },
+    {
+      Date: "Jan 2011",
+      China: 0.06666666667,
+      Egypt: 0.2,
+      India: 0.1111111111,
+      "U.S.": 0.01666666667,
+    },
+    {
+      Date: "Jun 2011",
+      China: 0.06666666667,
+      Egypt: 0.2,
+      India: 0.2,
+      "U.S.": 0.01818181818,
+    },
+    {
+      Date: "Jan 2012",
+      China: 0.08333333333,
+      Egypt: 0.1666666667,
+      India: 0.25,
+      "U.S.": 0.01694915254,
+    },
+    {
+      Date: "Jun 2012",
+      China: 0.07142857143,
+      Egypt: 0.2,
+      India: 0.2,
+      "U.S.": 0.01960784314,
+    },
+    {
+      Date: "Jan 2013",
+      China: 0.0625,
+      Egypt: 0.2,
+      India: 0.2,
+      "U.S.": 0.01388888889,
+    },
+    {
+      Date: "Jun 2013",
+      China: 0.05555555556,
+      Egypt: 0.2,
+      India: 0.25,
+      "U.S.": 0.01369863014,
+    },
+    {
+      Date: "Apr 2014",
+      China: 0.07692307692,
+      Egypt: 0.2,
+      India: 0.2,
+      "U.S.": 0.01754385965,
+    },
+    {
+      Date: "Jun 2014",
+      China: 0.06666666667,
+      Egypt: 0.2,
+      India: 0.1428571429,
+      "U.S.": 0.01282051282,
+    },
+    {
+      Date: "Jan 2015",
+      China: 0.07142857143,
+      Egypt: 0.2,
+      India: 0.2,
+      "U.S.": 0.01234567901,
+    },
+    {
+      Date: "Jun 2015",
+      China: 0.1428571429,
+      Egypt: 0.2,
+      India: 0.2,
+      "U.S.": 0.01298701299,
+    },
+    {
+      Date: "Jan 2016",
+      China: 0.25,
+      Egypt: 0.2,
+      India: 0.3333333333,
+      "U.S.": 0.0101010101,
+    },
+    {
+      Date: "Jun 2016",
+      China: 0.5,
+      Egypt: 0.2,
+      India: 0.125,
+      "U.S.": 0.01234567901,
+    },
+    {
+      Date: "Jan 2017",
+      China: 0.3333333333,
+      Egypt: 0.25,
+      India: 0.1428571429,
+      "U.S.": 0.01282051282,
+    },
+    {
+      Date: "Jan 2018",
+      China: 0.5,
+      Egypt: 0.25,
+      India: 0.1428571429,
+      "U.S.": 0.01098901099,
+    },
+  ];
+
+  const TITLE =
+    "China's “National Chokepoint Potential” over time, compared to Egypt, India, and the United States";
+
+  const KEYS = ["China", "Egypt", "India", "U.S."];
+
+  const COLORS = [
+    "rgb(215, 41, 41)",
+    "rgb(237, 137, 54)",
+    "rgb(22, 101, 52)",
+    "rgb(0, 173, 239)",
+  ];
+
+  const FILTER_ID = "xkcdify";
+  const FILTER_URL = xkcdify ? `url(#${FILTER_ID})` : null;
+
+  let width, tooltipLineHeight, tooltipPaddingX, tooltipPaddingY, xs, iActive;
+  const smallSizeThreshold = 480;
+  const height = 320;
+  const marginTop = 12;
+  const marginRight = 2;
+  const marginBottom = 60;
+  const marginLeft = 36;
+  const swatchWidth = 32;
+  const swatchHeight = 4;
+  const tickPadding = 8;
+  const pathStrokeWidth = 3;
+  const activeLineStrokeWidth = 2;
+  const activeCircleRadius = 5;
+  const tooltipRectStrokeWidth = 2;
+  const tooltipSwatchRadius = 5;
+
+  const dates = DATA.map((d) => d.Date);
+  const series = KEYS.map((key) => ({
+    key,
+    values: DATA.map((d) => d[key]),
+  }));
+
+  const x = d3.scalePoint().domain(dates).padding(0.5);
+
+  const y = d3
+    .scaleLinear()
+    .domain([0, d3.max(series, (d) => d3.max(d.values))])
+    .range([height - marginBottom, marginTop])
+    .nice();
+
+  const color = d3.scaleOrdinal().domain(KEYS).range(COLORS);
+
+  const line = d3
+    .line()
+    .x((_, i) => x(dates[i]))
+    .y((d) => y(d))
+    .curve(d3.curveMonotoneX);
+
+  const container = d3
+    .select(el)
+    .append("figure")
+    .attr("class", "cpc")
+    .attr("data-xkcdify", xkcdify ? "" : null);
+
+  container.append("figcaption").attr("class", "title").text(TITLE);
+
+  container
+    .append("ul")
+    .attr("class", "swatches")
+    .selectChildren()
+    .data(KEYS)
+    .join("li")
+    .attr("class", "swatch")
+    .call((li) =>
+      li
+        .append("svg")
+        .attr("class", "swatch__line")
+        .attr("width", swatchWidth)
+        .attr("height", swatchHeight)
+        .attr("viewBox", [0, 0, swatchWidth, swatchHeight])
+        .append("rect")
+        .attr("rx", swatchHeight / 2)
+        .attr("width", swatchWidth)
+        .attr("height", swatchHeight)
+        .attr("fill", (key) => color(key))
+        .attr("filter", FILTER_URL)
+    )
+    .call((li) =>
+      li
+        .append("span")
+        .attr("class", "swatch__label")
+        .text((key) => key)
+    );
+
+  const chart = container.append("div").attr("class", "chart");
+
+  const svg = chart.append("svg").attr("class", "chart__svg");
+
+  svg
+    .append("defs")
+    .append("filter")
+    .attr("id", FILTER_ID)
+    .attr("filterUnits", "userSpaceOnUse")
+    .call((f) =>
+      f
+        .append("feTurbulence")
+        .attr("type", "fractalNoise")
+        .attr("baseFrequency", 0.05)
+        .attr("result", "noise")
+    )
+    .call((f) =>
+      f
+        .append("feDisplacementMap")
+        .attr("scale", 5)
+        .attr("xChannelSelector", "R")
+        .attr("yChannelSelector", "G")
+        .attr("in", "SourceGraphic")
+        .attr("in2", "noise")
+    );
+
+  const xAxisG = svg
+    .append("g")
+    .attr("class", "axis")
+    .attr("transform", `translate(0,${height - marginBottom})`);
+
+  const yAxisG = svg
+    .append("g")
+    .attr("class", "axis")
+    .attr("transform", `translate(${marginLeft},0)`);
+
+  const path = svg
+    .append("g")
+    .attr("fill", "none")
+    .selectChildren()
+    .data(series)
+    .join("path")
+    .attr("class", "series-path")
+    .attr("stroke", (d) => color(d.key))
+    .attr("stroke-width", pathStrokeWidth)
+    .attr("stroke-linejoin", "round")
+    .attr("stroke-linecap", "round")
+    .attr("filter", FILTER_URL);
+
+  const activeG = svg
+    .append("g")
+    .attr("class", "active")
+    .attr("display", "none");
+
+  activeG
+    .append("line")
+    .attr("class", "active__line")
+    .attr("y1", marginTop)
+    .attr("y2", height - marginBottom)
+    .attr("stroke-dasharray", "6 6")
+    .attr("stroke", "currentColor")
+    .attr("stroke-width", activeLineStrokeWidth)
+    .attr("filter", FILTER_URL);
+
+  const activeCircle = activeG
+    .append("g")
+    .selectChildren()
+    .data(series)
+    .join("circle")
+    .attr("fill", (d) => color(d.key))
+    .attr("r", activeCircleRadius)
+    .attr("filter", FILTER_URL);
+
+  const tooltipG = svg.append("g").attr("class", "tip").attr("display", "none");
+
+  const tooltipRect = tooltipG
+    .append("rect")
+    .attr("fill", "#fff")
+    .attr("fill-opacity", 0.9)
+    .attr("stroke", "currentColor")
+    .attr("stroke-width", tooltipRectStrokeWidth)
+    .attr("filter", FILTER_URL);
+
+  const tooltipContentG = tooltipG.append("g").attr("fill", "currentColor");
+
+  const tooltipDate = tooltipContentG.append("text").attr("dy", "0.32em");
+
+  const tooltipSwatchG = tooltipContentG
+    .append("g")
+    .selectChildren()
+    .data(series)
+    .join("g");
+
+  tooltipSwatchG
+    .append("circle")
+    .attr("r", tooltipSwatchRadius)
+    .attr("fill", (d) => color(d.key))
+    .attr("cx", tooltipSwatchRadius)
+    .attr("filter", FILTER_URL);
+
+  const tooltipText = tooltipSwatchG
+    .append("text")
+    .attr("dy", "0.32em")
+    .attr("x", tooltipSwatchRadius * 2 + 4);
+
+  const captureRect = svg
+    .append("rect")
+    .attr("x", marginLeft)
+    .attr("y", marginTop)
+    .attr("height", height - marginTop - marginBottom)
+    .attr("fill", "none")
+    .attr("pointer-events", "all")
+    .on("pointerenter", entered)
+    .on("pointermove", moved)
+    .on("pointerleave", left)
+    .on("touchstart", (event) => event.preventDefault());
+
+  new ResizeObserver((entries) =>
+    entries.forEach((entry) => {
+      resized(entry.contentRect);
+    })
+  ).observe(svg.node());
+
+  function resized(contentRect) {
+    if (width === contentRect.width) return;
+    width = contentRect.width;
+
+    x.range([marginLeft, width - marginRight]);
+
+    xs = x.domain().map((d) => x(d));
+
+    container.attr("data-size", width < smallSizeThreshold ? "small" : null);
+
+    const styles = getComputedStyle(container.node());
+    tooltipLineHeight = parseFloat(styles.lineHeight);
+    tooltipPaddingX = Math.round(tooltipLineHeight * 0.5);
+    tooltipPaddingY = Math.round(tooltipLineHeight * 0.25);
+
+    svg.attr("viewBox", [0, 0, width, height]);
+
+    xAxisG.call(d3.axisBottom(x).tickSize(0).tickPadding(tickPadding));
+    xAxisG
+      .select(".domain")
+      .attr("stroke-width", pathStrokeWidth)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("filter", FILTER_URL);
+    xAxisG
+      .selectAll(".tick text")
+      .attr("text-anchor", "end")
+      .attr("dy", "0.32em")
+      .attr("transform", `rotate(-45,0,${tickPadding})`);
+
+    yAxisG.call(d3.axisLeft(y).ticks(5).tickSize(0).tickPadding(tickPadding));
+    yAxisG
+      .select(".domain")
+      .attr("stroke-width", pathStrokeWidth)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("filter", FILTER_URL);
+
+    path.attr("d", (d) => line(d.values));
+
+    tooltipContentG.attr(
+      "transform",
+      `translate(${tooltipPaddingX},${tooltipPaddingY})`
+    );
+    tooltipDate.attr("transform", `translate(0,${tooltipLineHeight * 0.5})`);
+    tooltipSwatchG.attr(
+      "transform",
+      (_, i) => `translate(0,${tooltipLineHeight * (i + 1.5)})`
+    );
+
+    captureRect.attr("width", width - marginLeft - marginRight);
+  }
+
+  function entered(event) {
+    activeG.attr("display", null);
+    tooltipG.attr("display", null);
+    moved(event);
+  }
+
+  function moved(event) {
+    const [px, py] = d3.pointer(event, svg.node());
+    const i = d3.bisectCenter(xs, px);
+
+    if (iActive !== i) {
+      iActive = i;
+      activeG.attr("transform", `translate(${xs[iActive]},0)`);
+      activeCircle.attr("cy", (d) => y(d.values[iActive]));
+
+      tooltipDate.text(dates[iActive]);
+      tooltipText.text(
+        (d) => `${d.key.toUpperCase()}: ${d.values[iActive].toFixed(2)}`
+      );
+      const { width, height } = tooltipContentG.node().getBBox();
+      tooltipRect
+        .attr("width", width + tooltipPaddingX * 2)
+        .attr("height", height + tooltipPaddingY * 2);
+    }
+
+    positionTooltip(px, py);
+  }
+
+  function left() {
+    iActive = null;
+    activeG.attr("display", "none");
+    tooltipG.attr("display", "none");
+  }
+
+  function positionTooltip(px, py) {
+    const offset = 8;
+    const padding = 4;
+    const { width: tw, height: th } = tooltipG.node().getBBox();
+    let x = px + offset;
+    if (x + tw > width - padding) {
+      x = px - offset - tw;
+      if (x < padding) {
+        x = padding;
+      }
+    }
+    let y = py - offset - th;
+    if (y < padding) {
+      y = py + offset;
+      if (y + th > height - padding) {
+        y = height - padding - th;
+      }
+    }
+    tooltipG.attr("transform", `translate(${x},${y})`);
+  }
+}
+
+chokepointPotentialChart({
+  el: document.querySelector("#chokepointPotentialChart"),
+  xkcdify: false,
+});
+</script>

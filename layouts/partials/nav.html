@@ -1,0 +1,296 @@
+<header>
+    <!-- White strip with hamburger button only (mobile) -->
+    <div id="mobile-top-strip" class="lg:hidden fixed top-0 left-0 w-full h-16 bg-white z-40 flex items-center px-4 gap-2 transition-shadow duration-200">
+      <button type="button" class="lg:hidden z-50 p-2 rounded-md bg-white focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-2" aria-label="Open sidebar" @click="open = true">
+        {{ partial "fontawesome.html" (dict "icon" "solid/bars" "class" "h-6 w-6 text-gray-900" ) }}
+      </button>
+      <div class="flex-1 truncate">
+        <p class="text-sm font-medium text-gray-900 truncate font-sans">{{ .Site.Params.article }}</p>
+      </div>
+    </div>
+    
+    <div class="relative z-50 lg:hidden" role="dialog" aria-modal="true" x-show="open" x-cloak>
+        <div class="fixed inset-0 bg-gray-900/80" aria-hidden="true" @click="open = false" x-transition:enter="transition-opacity ease-linear duration-300"
+        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition-opacity ease-linear duration-300"
+        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+        </div>
+    
+      <div class="fixed inset-0 flex">
+        <div class="relative mr-16 flex w-full max-w-xs flex-1 transform transition-transform duration-300 ease-in-out"
+            x-show="open"
+            x-transition:enter="transform transition-transform ease-in-out duration-300"
+            x-transition:enter-start="-translate-x-full"
+            x-transition:enter-end="translate-x-0"
+            x-transition:leave="transform transition-transform ease-in-out duration-300"
+            x-transition:leave-start="translate-x-0"
+            x-transition:leave-end="-translate-x-full">
+          <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
+            <button type="button" class="-m-2.5 p-2.5" @click="open = false" aria-label="Close sidebar">
+              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+    
+          <div class="flex grow flex-col gap-y-6 bg-white px-4 pt-6 pb-4">
+            <div class="flex items-center gap-3 mb-2 h-10">
+              <a href="https://www.chinafile.com" target="_blank" rel="noopener noreferrer">
+                <img src="/media/images/chinafile-logo.png" alt="ChinaFile logo" class="h-8 w-auto" />
+              </a>
+            </div>
+            
+            <div class="w-full my-2 relative">
+              <div id="search-mobile" class="w-full" aria-label="Site search"></div>
+            </div>
+            <nav aria-label="Main navigation (mobile)" class="flex-1">
+            {{ $singles := where .Site.RegularPages "Section" "" }}
+            {{ $sections := .Site.Sections }}
+            {{ $all := slice }}
+            {{ range $singles }}
+              {{ $all = $all | append (dict "type" "single" "page" . "weight" (or .Weight 1000)) }}
+            {{ end }}
+            {{ range $sections }}
+              {{ $all = $all | append (dict "type" "section" "section" . "weight" (or .Weight 1000)) }}
+            {{ end }}
+            {{ $all = sort $all "weight" }}
+            <ul class="flex flex-col gap-2" role="menu">
+              {{ range $i, $item := $all }}
+                {{ if eq $item.type "single" }}
+                  {{ $page := $item.page }}
+                  {{ $isActive := eq $page.RelPermalink $.Page.RelPermalink }}
+                  {{ $isThemed := $page.Params.themed }}
+                  <li role="none">
+                    <a href="{{ $page.RelPermalink }}" role="menuitem" class="w-full flex items-center font-bold text-lg px-4 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 {{ if $isActive }}{{ if $isThemed }}text-orange-900 rounded-md{{ else }}bg-blue-1 text-blue-5 rounded-md{{ end }}{{ else }}{{ if $isThemed }}bg-white text-orange-900 rounded-md{{ else }}bg-white text-gray-900 rounded-md{{ end }}{{ end }}"{{ if $isActive }} aria-current="page"{{ end }}>
+                      <span>{{ $page.Title }}</span>
+                    </a>
+                  </li>
+                {{ else if eq $item.type "section" }}
+                  {{ $section := $item.section }}
+                  {{ $isActiveSection := false }}
+                  {{ $isActiveAny := false }}
+                  {{ range $section.Pages }}
+                    {{ if eq .RelPermalink $.Page.RelPermalink }}
+                      {{ $isActiveSection = true }}
+                      {{ $isActiveAny = true }}
+                    {{ end }}
+                  {{ end }}
+                  {{ if not $isActiveAny }}
+                    {{ range $section.Sections }}
+                      {{ range .Pages }}
+                        {{ if eq .RelPermalink $.Page.RelPermalink }}
+                          {{ $isActiveAny = true }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                  <li role="none">
+                    <details class="relative group" {{ if $isActiveAny }}open{{ end }}>
+                      <summary class="w-full flex items-center font-semibold text-lg px-4 py-3 transition-colors focus:outline-none {{ if $isActiveAny }}bg-blue-1 text-blue-5{{ end }} rounded-md cursor-pointer" role="button" aria-expanded="{{ if $isActiveAny }}true{{ else }}false{{ end }}" tabindex="0" aria-controls="section-{{ $i }}-submenu">
+                        <span>{{ $section.Title | humanize | title }}</span>
+                        <span class="ml-auto flex items-center">
+                          <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.585l3.71-3.355a.75.75 0 111.02 1.1l-4.25 3.85a.75.75 0 01-1.02 0l-4.25-3.85a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                        </span>
+                      </summary>
+                      <ul id="section-{{ $i }}-submenu" class="px-4 mt-3 flex flex-col gap-1.5" role="menu">
+                        <!-- Direct pages of the section -->
+                        {{ range sort (where $section.Pages "Kind" "page") "Weight" }}
+                          {{ $isThemed := .Params.themed }}
+                          <li role="none">
+                            <a href="{{ .RelPermalink }}" role="menuitem" class="block text-base px-0 py-1 rounded-none transition-colors {{ if eq .RelPermalink $.Page.RelPermalink }}{{ if $isThemed }}font-semibold no-underline hover:underline text-orange-900{{ else }}font-semibold no-underline hover:underline text-blue-5{{ end }}{{ else }}{{ if $isThemed }}text-orange-800 hover:text-orange-900 hover:underline{{ else }}text-gray-900 hover:text-blue-5 hover:underline{{ end }}{{ end }}"{{ if eq .RelPermalink $.Page.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>
+                          </li>
+                        {{ end }}
+                        
+                        <!-- Subsections within the section -->
+                        {{ range $subsection := sort $section.Sections "Weight" }}
+                          {{ $isActiveSubsection := false }}
+                          {{ range $subsection.Pages }}
+                            {{ if eq .RelPermalink $.Page.RelPermalink }}
+                              {{ $isActiveSubsection = true }}
+                            {{ end }}
+                          {{ end }}
+                          <li role="none">
+                            <details class="relative subsection-group" {{ if $isActiveSubsection }}open{{ end }}>
+                              <summary class="w-full flex items-center font-medium px-0 py-1 transition-colors focus:outline-none {{ if $isActiveSubsection }}text-blue-5{{ else }}text-gray-700 hover:text-blue-5{{ end }} cursor-pointer" role="button" aria-expanded="{{ if $isActiveSubsection }}true{{ else }}false{{ end }}" tabindex="0">
+                                <span>{{ $subsection.Title }}</span>
+                                <span class="ml-auto flex items-center">
+                                  <svg class="subsection-chevron h-4 w-4 transition-transform duration-200 text-gray-400 {{ if $isActiveSubsection }}text-blue-5{{ end }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.585l3.71-3.355a.75.75 0 111.02 1.1l-4.25 3.85a.75.75 0 01-1.02 0l-4.25-3.85a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                                </span>
+                              </summary>
+                              <ul class="px-3 mt-2 flex flex-col gap-1" role="menu">
+                                {{ range sort $subsection.Pages "Weight" }}
+                                  {{ $isThemed := .Params.themed }}
+                                  <li role="none">
+                                    <a href="{{ .RelPermalink }}" role="menuitem" class="block px-0 py-1 rounded-none transition-colors {{ if eq .RelPermalink $.Page.RelPermalink }}{{ if $isThemed }}font-semibold no-underline hover:underline text-orange-900{{ else }}font-semibold no-underline hover:underline text-blue-5{{ end }}{{ else }}{{ if $isThemed }}text-orange-700 hover:text-orange-900 hover:underline{{ else }}text-gray-600 hover:text-blue-5 hover:underline{{ end }}{{ end }}"{{ if eq .RelPermalink $.Page.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>
+                                  </li>
+                                {{ end }}
+                              </ul>
+                            </details>
+                          </li>
+                        {{ end }}
+                      </ul>
+                    </details>
+                  </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+            </nav>
+            <div class="border-t border-gray-200 bg-white pt-6">
+              <p class="text-sm text-gray-600">
+                <a href="https://www.chinafile.com" target="_blank" rel="noopener noreferrer">ChinaFile</a> is a project of the <a href="https://asiasociety.org/" target="_blank" rel="noopener noreferrer">Asia Society</a>. This website is licensed under CC BY 4.0.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Static sidebar for desktop -->
+    <nav class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-96 lg:flex-col bg-white border-r border-gray-200" aria-label="Main navigation (desktop)">
+      <div class="flex flex-col gap-y-4 px-6 py-6">
+        <div class="flex items-center gap-3 mb-2 h-10">
+          <a href="https://www.chinafile.com" target="_blank" rel="noopener noreferrer">
+            <img src="/media/images/chinafile-logo.png" alt="ChinaFile logo" class="h-10 w-auto" />
+          </a>
+        </div>
+        <div class="w-full my-2 relative">
+          <div id="search-desktop" class="w-full" aria-label="Site search"></div>
+        </div>
+      </div>
+      {{ $singles := where .Site.RegularPages "Section" "" }}
+      {{ $sections := .Site.Sections }}
+      {{ $all := slice }}
+      {{ range $singles }}
+        {{ $all = $all | append (dict "type" "single" "page" . "weight" (or .Weight 1000)) }}
+      {{ end }}
+      {{ range $sections }}
+        {{ $all = $all | append (dict "type" "section" "section" . "weight" (or .Weight 1000)) }}
+      {{ end }}
+      {{ $all = sort $all "weight" }}
+      <ul class="flex flex-col gap-2" role="menu">
+        {{ range $i, $item := $all }}
+          {{ if eq $item.type "single" }}
+            {{ $page := $item.page }}
+            {{ $isActive := eq $page.RelPermalink $.Page.RelPermalink }}
+            {{ $isThemed := $page.Params.themed }}
+            <li role="none">
+              <a href="{{ $page.RelPermalink }}" role="menuitem" class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 {{ if $isActive }}{{ if $isThemed }}text-orange-900 rounded-md{{ else }}bg-blue-1 text-blue-5 rounded-md{{ end }}{{ else }}{{ if $isThemed }}bg-white text-orange-900 hover:text-orange-900 rounded-md{{ else }}bg-white text-gray-900 hover:bg-gray-100 hover:text-blue-5 rounded-md{{ end }}{{ end }}"{{ if $isActive }} aria-current="page"{{ end }}>
+                <span>{{ $page.Title }}</span>
+              </a>
+            </li>
+          {{ else if eq $item.type "section" }}
+            {{ $section := $item.section }}
+            {{ $isActiveSection := eq $.Page.Section $section.Section }}
+            {{ $isActiveAny := false }}
+            {{ range $section.Pages }}
+              {{ if eq .RelPermalink $.Page.RelPermalink }}
+                {{ $isActiveAny = true }}
+              {{ end }}
+            {{ end }}
+            {{ if not $isActiveAny }}
+              {{ range $section.Sections }}
+                {{ range .Pages }}
+                  {{ if eq .RelPermalink $.Page.RelPermalink }}
+                    {{ $isActiveAny = true }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            <li role="none">
+              <details class="relative group" {{ if $isActiveAny }}open{{ end }}>
+                <summary role="button" class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none {{ if $isActiveAny }}bg-blue-1 text-blue-5{{ else }}hover:bg-gray-100 hover:text-blue-5{{ end }} rounded-md cursor-pointer" aria-expanded="{{ if $isActiveAny }}true{{ else }}false{{ end }}" tabindex="0" aria-controls="section-desktop-{{ $i }}-submenu">
+                  <span>{{ $section.Title | humanize | title }}</span>
+                  <span class="ml-auto flex items-center">
+                    <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.585l3.71-3.355a.75.75 0 111.02 1.1l-4.25 3.85a.75.75 0 01-1.02 0l-4.25-3.85a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                  </span>
+                </summary>
+                <ul id="section-desktop-{{ $i }}-submenu" class="px-8 mt-3 flex flex-col gap-1.5" role="menu">
+                  <!-- Direct pages of the section -->
+                  {{ range sort (where $section.Pages "Kind" "page") "Weight" }}
+                    {{ $isThemed := .Params.themed }}
+                    <li role="none">
+                      <a href="{{ .RelPermalink }}" role="menuitem" class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors {{ if eq .RelPermalink $.Page.RelPermalink }}{{ if $isThemed }}font-bold no-underline hover:underline text-orange-900{{ else }}font-bold no-underline hover:underline text-blue-5{{ end }}{{ else }}{{ if $isThemed }}text-orange-800 hover:text-orange-900{{ else }}text-gray-900 hover:text-blue-5{{ end }}{{ end }}"{{ if eq .RelPermalink $.Page.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>
+                    </li>
+                  {{ end }}
+                  
+                  <!-- Subsections within the section -->
+                  {{ range $subsection := sort $section.Sections "Weight" }}
+                    {{ $isActiveSubsection := false }}
+                    {{ range $subsection.Pages }}
+                      {{ if eq .RelPermalink $.Page.RelPermalink }}
+                        {{ $isActiveSubsection = true }}
+                      {{ end }}
+                    {{ end }}
+                    <li role="none">
+                      <details class="relative subsection-group" {{ if $isActiveSubsection }}open{{ end }}>
+                        <summary role="button" class="w-full flex items-center font-medium px-0 py-1 transition-colors focus:outline-none {{ if $isActiveSubsection }}text-blue-5{{ else }}text-gray-700 hover:text-blue-5{{ end }} cursor-pointer" aria-expanded="{{ if $isActiveSubsection }}true{{ else }}false{{ end }}" tabindex="0">
+                          <span>{{ $subsection.Title }}</span>
+                          <span class="ml-auto flex items-center">
+                            <svg class="subsection-chevron h-4 w-4 transition-transform duration-200 text-gray-400 {{ if $isActiveSubsection }}text-blue-5{{ end }}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.585l3.71-3.355a.75.75 0 111.02 1.1l-4.25 3.85a.75.75 0 01-1.02 0l-4.25-3.85a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                          </span>
+                        </summary>
+                        <ul class="px-4 mt-2 flex flex-col gap-1" role="menu">
+                          {{ range sort $subsection.Pages "Weight" }}
+                            {{ $isThemed := .Params.themed }}
+                            <li role="none">
+                              <a href="{{ .RelPermalink }}" role="menuitem" class="cursor-pointer block px-0 py-1 rounded-none transition-colors {{ if eq .RelPermalink $.Page.RelPermalink }}{{ if $isThemed }}font-bold no-underline hover:underline text-orange-900{{ else }}font-bold no-underline hover:underline text-blue-5{{ end }}{{ else }}{{ if $isThemed }}text-orange-700 hover:text-orange-900{{ else }}text-gray-600 hover:text-blue-5{{ end }}{{ end }}"{{ if eq .RelPermalink $.Page.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>
+                            </li>
+                          {{ end }}
+                        </ul>
+                      </details>
+                    </li>
+                  {{ end }}
+                </ul>
+              </details>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      <div class="sticky bottom-0 mt-auto border-t border-gray-200 bg-white p-6">
+        <p class="text-sm text-gray-600">
+          <a href="https://www.chinafile.com" target="_blank" rel="noopener noreferrer">ChinaFile</a> is a project of the <a href="https://asiasociety.org/" target="_blank" rel="noopener noreferrer">Asia Society</a>. This website is licensed under CC BY 4.0.
+        </p>
+      </div>
+    </nav>
+</header>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+  new PagefindUI({ element: window.innerWidth < 1024 ? "#search-mobile" : "#search-desktop", showSubResults: true });
+
+  // Handle mobile top strip shadow
+  const mobileTopStrip = document.getElementById('mobile-top-strip');
+  if (mobileTopStrip) {
+    function updateShadow() {
+      if (window.scrollY > 0) {
+        mobileTopStrip.classList.add('shadow-md');
+      } else {
+        mobileTopStrip.classList.remove('shadow-md');
+      }
+    }
+    window.addEventListener('scroll', updateShadow, { passive: true });
+    updateShadow();
+  }
+
+  // Handle subsection chevron rotation
+  document.querySelectorAll('.subsection-group').forEach(details => {
+    const chevron = details.querySelector('.subsection-chevron');
+    if (chevron) {
+      const observer = new MutationObserver(() => {
+        if (details.open) {
+          chevron.style.transform = 'rotate(180deg)';
+        } else {
+          chevron.style.transform = 'rotate(0deg)';
+        }
+      });
+      observer.observe(details, { attributes: true, attributeFilter: ['open'] });
+      
+      // Set initial state
+      if (details.open) {
+        chevron.style.transform = 'rotate(180deg)';
+      }
+    }
+  });
+});
+</script>

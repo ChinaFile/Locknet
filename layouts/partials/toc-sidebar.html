@@ -1,0 +1,48 @@
+{{ if and (.Params.toc) (.TableOfContents) }}
+<!-- Mobile TOC button -->
+<div class="block xl:hidden fixed bottom-6 right-6 z-50">
+  <button id="toc-toggle" aria-controls="mobile-toc" aria-expanded="false" class="rounded-full bg-white p-3 shadow-lg ring-1 ring-gray-300 focus:outline-solid focus:outline-2 focus:outline-blue-500" aria-label="Show table of contents">
+    {{ partial "fontawesome.html" (dict "icon" "solid/list-ul" "class" "h-6 w-6 text-gray-900") }}
+  </button>
+  <aside id="mobile-toc" class="fixed bottom-20 right-4 z-9999 w-11/12 max-w-xs rounded-lg border border-gray-200 bg-white p-4 shadow-lg" aria-label="On this page" role="complementary" style="display: none;" tabindex="-1">
+    <nav aria-label="Table of contents">
+      <p class="mb-2 mt-0 px-4 text-base font-medium text-gray-600">On This Page</p>
+      <div class="text-sm leading-6 text-gray-700">
+        {{ .TableOfContents }}
+      </div>
+    </nav>
+  </aside>
+</div>
+<!-- Desktop TOC sidebar -->
+<aside class="aside-toc hidden xl:flex xl:flex-col xl:sticky xl:top-10 xl:max-h-[calc(100vh-4rem)]" aria-label="On this page" role="complementary">
+  <nav aria-label="Table of contents">
+    <p class="mb-4 mt-6 text-sm font-medium text-gray-600">ON THIS PAGE</p>
+    <div id="TableOfContents" class="toc-list leading-6 text-gray-700">
+      {{ .TableOfContents }}
+    </div>
+  </nav>
+</aside>
+{{ end }}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile TOC toggle
+  const tocToggle = document.getElementById('toc-toggle');
+  const mobileToc = document.getElementById('mobile-toc');
+
+  if (tocToggle && mobileToc) {
+    tocToggle.addEventListener('click', function() {
+      const isHidden = mobileToc.style.display === 'none';
+      mobileToc.style.display = isHidden ? 'block' : 'none';
+      tocToggle.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!mobileToc.contains(event.target) && !tocToggle.contains(event.target)) {
+        mobileToc.style.display = 'none';
+        tocToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+});
+</script> 

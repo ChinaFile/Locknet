@@ -1,0 +1,16 @@
+{
+    "scripts": {
+        "build-tw": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/style.css --minify",
+        "watch-tw": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/style.css -w --minify",
+        "build": "hugo && npx -y pagefind --site public"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.16",
+        "prettier": "^3.5.3",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "tailwindcss": "^4.1.8"
+    },
+    "dependencies": {
+        "@tailwindcss/forms": "^0.5.10"
+    }
+}

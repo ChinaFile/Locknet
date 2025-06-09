@@ -1,0 +1,79 @@
+{{ define "main" }}
+<div class="relative flex min-h-full flex-col justify-center lg:py-12 py-24 sm:px-6 lg:px-8 xl:flex-row xl:items-start xl:justify-center">
+    <section class="prose mx-auto w-full max-w-4xl flex-col px-8 prose-hr:w-full lg:flex lg:items-center lg:justify-between lg:px-8" aria-labelledby="main-content-heading">
+      {{ partial "breadcrumbs.html" . }}
+
+      <article class="flex w-full flex-col items-start justify-between border-b border-gray-300 mb-6">
+        <h1 class="mb-2 mt-2 text-4xl text-gray-900">{{ .Title }}</h1>
+        {{ with .Description }}
+          <p class="text-lg text-gray-600 mb-4">{{ . }}</p>
+        {{ end }}
+      </article>
+
+      {{ if .Pages }}
+      <ul class="w-full flex flex-col gap-2 list-none ps-0" aria-label="List of pages">
+        {{ range .Pages.ByWeight }}
+          <li class="border-b border-gray-200 pb-4" role="listitem">
+            <article class="flex flex-col">
+              <h2 class="text-2xl font-bold leading-[1.45] mb-1 mt-0">
+                <a href="{{ .RelPermalink }}" class="hover:underline no-underline text-blue-5 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-2" aria-label="Read {{ .Title }}">{{ .Title }}</a>
+              </h2>
+              {{ with .Description }}
+                {{ $text := . | plainify }}
+                {{ $words := split $text " " }}
+                <p class="text-gray-600 text-base">{{ delimit (first 50 $words) " " }}</p>
+              {{ else }}
+                {{ with .Params.summary }}
+                  {{ $text := . | plainify }}
+                  {{ $words := split $text " " }}
+                  <p class="text-gray-600 text-base">{{ delimit (first 50 $words) " " }}</p>
+                {{ else }}
+                  {{ with .Summary }}
+                    {{ $text := . | plainify }}
+                    {{ $words := split $text " " }}
+                    <p class="text-gray-600 text-base">{{ delimit (first 50 $words) " " }}</p>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            </article>
+          </li>
+        {{ end }}
+      </ul>
+      {{ else if .Data.Pages }}
+      <ul class="w-full flex flex-col gap-6" aria-label="List of pages">
+        {{ range .Data.Pages.ByWeight }}
+          <li class="border-b border-gray-200 pb-4" role="listitem">
+            <article class="flex flex-col">
+              <h2 class="text-2xl font-bold leading-tight mb-1">
+                <a href="{{ .RelPermalink }}" class="hover:underline text-blue-5 focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-2" aria-label="Read {{ .Title }}">{{ .Title }}</a>
+              </h2>
+              {{ with .Description }}
+                {{ $text := . | plainify }}
+                {{ $words := split $text " " }}
+                <p class="text-gray-600 text-base">{{ delimit (first 100 $words) " " }}</p>
+              {{ else }}
+                {{ with .Params.summary }}
+                  {{ $text := . | plainify }}
+                  {{ $words := split $text " " }}
+                  <p class="text-gray-600 text-base">{{ delimit (first 100 $words) " " }}</p>
+                {{ else }}
+                  {{ with .Summary }}
+                    {{ $text := . | plainify }}
+                    {{ $words := split $text " " }}
+                    <p class="text-gray-600 text-base">{{ delimit (first 100 $words) " " }}</p>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            </article>
+          </li>
+        {{ end }}
+      </ul>
+      {{ else }}
+        <p class="text-gray-500">No pages found in this section.</p>
+      {{ end }}
+
+      {{ partial "pagination.html" . }}
+    </section>
+    {{ partial "toc-sidebar.html" . }}
+</div>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ $alpine := resources.Get "js/alpine.min.js" }}
+{{ $scrollspy := resources.Get "js/scrollspy-toc.js" }}
+{{ $secureJS := slice $alpine $scrollspy | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha256" }}
+<script src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+
+{{ $instant := resources.Get "js/instantpage.js" }}
+{{ $instantpage := slice $instant | resources.Concat "instant.js" | resources.Minify }}
+<script type="module" defer src="{{ $instantpage.RelPermalink }}"></script>
+
+<script type="module">
+    await import('/pagefind/pagefind-highlight.js');
+    new PagefindHighlight({ highlightParam: "highlight" });
+</script>

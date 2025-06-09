@@ -1,0 +1,18 @@
+{{ define "main" }}
+<img class="max-h-72 w-full object-cover xl:max-h-[512px]" src="/media/images/hero.webp" alt="Cover image for Blocked by Numbers report" role="img">
+
+<div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <section class="prose mx-auto w-full max-w-3xl flex-col px-8 prose-hr:w-full lg:flex lg:items-center lg:justify-between lg:px-8 lg:text-center" aria-labelledby="main-content-heading">
+
+        <article class="flex w-full flex-col items-start justify-between prose-a:visited:text-purple-800" role="main">
+            {{ $intro := site.GetPage "executive-summary" }}
+            {{ if $intro }}
+                {{ $intro.Content }}
+            {{ else }}
+                <p>Executive summary page not found.</p>
+            {{ end }}
+        </article>
+
+    </section>
+</div>
+{{ end }}
