@@ -11,7 +11,7 @@
     />
     {{- if .Get "link" }}</a>{{ end -}}
     {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
-        <figcaption>
+        <figcaption class="text-center">
             {{ with (.Get "title") -}}
                 <h2>{{ . }}</h2>
             {{- end -}}
