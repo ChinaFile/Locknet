@@ -31,6 +31,7 @@ There are two main ways an online censorship system, whether in China or elsewhe
 - A **path-adjacent** system utilizes a middlebox placed _adjacent_ to the cable transferring internet traffic between two endpoints. (In computer science literature, this is called an **on-path system**, but because that terminology is unnecessarily confusing, we won’t be using it here.) A second cable sends copies of the internet traffic to the middlebox. This middlebox can read everything copied to it, but cannot directly disrupt already-flowing traffic.
 
 ![How China Breaks it](/media/images/how-china-breaks-it-1.png)
+{{ figure src="/media/images/how-china-breaks-it-1.png" caption="THIS IS A CAPTION" }}
 
 In-path technologies, while logically simpler, are more expensive than path-adjacent technologies. In-path systems require more computer processing power, and therefore resources, to analyze and block traffic in real time while avoiding a slowdown of all traffic along that cable.
 
@@ -67,6 +68,7 @@ The transport layer segments this query into packets. [Most](https://www.geeksfo
 The packets then move down through the link layer to the physical layer. They flow across the broader network, and eventually back up through the stack to the DNS resolver.
   
 {{< video-player src="/media/images/animation-1.mp4" >}}
+{{ figure src="image path here" caption="caption here" }}
 
 If the user has requested a popular website, the DNS resolver may already have the IP address handy—a DNS resolver will save, or **cache**, the IP addresses of recently-requested websites. If the user has requested a less popular website, however, the DNS resolver will have to do some additional work, sending out queries to nameservers around the world. It may take multiple nameservers to help identify an **authoritative nameserver** that contains the information in question. Once the DNS resolver has an IP address, it sends that information back to the user. The user’s computer can now use the IP address to connect to the Citizen Lab website.
 
