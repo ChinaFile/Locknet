@@ -66,6 +66,8 @@ toc = false
 
 **Proxy server** \- Machines that are set up to accept and forward on traffic that is ultimately meant for another server. Also known simply as “**proxies**,” proxy servers obscure a user’s true destination, with a censor only able to see the proxy server’s IP address and not the IP address of the true destination. In common parlance, the terms “proxy” and “VPN” are used interchangeably to describe a technology that helps evade censorship.
 
+**Quick UDP Internet Connections (QUIC)** \- A standard for delivering data online that applies the security features of **TLS** to the **UDP** packet format. QUIC aims to speed up initial connection times while providing encryption by default.
+
 **Residual censorship** \- The period during which, after censors have forcibly disrupted an internet connection between two endpoints, all further connections between those two endpoints are blocked. Chinese authorities enforce residual censorship to punish users who attempt to view banned content, or simply to make users think that the website in question is unstable and not worth visiting. Residual censorship can last anywhere from a few seconds to multiple hours. 
 
 **Router \-** A router is a computer and networking device that guides and directs data, in small chunks called **data** **packets**, between computer networks. In addition to other functions, routers ensure packets are sent to their correct destination, or IP address, via the best available route. 
