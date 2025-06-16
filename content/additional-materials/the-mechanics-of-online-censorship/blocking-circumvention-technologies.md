@@ -4,6 +4,8 @@ weight = 3
 toc = true
 +++
 
+AUTHORS: Jessica Batke, Laura Edelson
+
 China’s censorship system not only targets “dangerous” content, but also targets users’ attempts to evade the system itself. After all, Beijing spends a lot of money and effort to curate the domestic information environment and keep “dangerous” information outside the country’s digital borders. There would be no point to such an undertaking if it were trivially easy to sidestep the censors. 
 
 Since about 2010, China has put a special premium on hunting down and blocking information about and access to censorship circumvention tools. The censors are engaged in a seemingly endless arms race with circumvention tool developers, who try to create countermeasures after each new block. (It is worth mentioning that Chinese authorities do not block every single possible circumvention tool. Bowing to economic necessity, the government maintains a list of [approved technologies](https://www.wsj.com/articles/chinas-vpn-crackdown-may-aid-government-surveillance-1516189155) that allow foreign businesses and others to circumvent the censorship system in order to send secure emails or visit blocked websites. These approved circumvention tools also likely allow the government to surveil communications sent within them.) 

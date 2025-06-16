@@ -7,6 +7,8 @@ author_summary = "Short summary, e.g. 'Author name is a journalist from Pakistan
 author_bio = "Longer bio or additional info, e.g. 'Among other topics, he writes about China-related topics in the region.'"
 +++
 
+AUTHORS: Jessica Batke, Laura Edelson
+
 Beijing does not need to censor content posted online by its citizens first-hand; it has a retinue of corporate factotums and zealous fan-boys to police domestically-generated internet content. Thus, the censorship technology authorities control more directly targets information seeping in from outside China. These tools perform “network-level censorship,” inspecting data headed across the border, regardless of which app or service generated it.
 
 It’s easy to think of Beijing’s simply toggling a switch: internet on, internet off. Or, more specifically, *this* website on, *that* website off. In fact, the internet itself comprises many different components, each offering censors opportunities to disrupt or co-opt the information exchanged within that component. China’s day-to-day control mechanisms, therefore, function as more than simple on-off switches. Instead, they often hijack the internet’s normal functions and turn them against themselves. 
