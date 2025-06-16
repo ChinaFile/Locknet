@@ -4,6 +4,9 @@ weight = 2
 toc = true
 +++
 
+
+AUTHORS: Jessica Batke, Laura Edelson
+
 ## Network-Level Censorship
 
 Chinese authorities have many political, legal, and bureaucratic methods to avoid unwanted information circulating on the country’s domestic internet. They can deny website registration licenses, or mandate that companies such as Apple [remove](https://www.reuters.com/article/technology/apple-says-it-is-removing-vpn-services-from-china-app-store-idUSKBN1AE0BX/) censorship circumvention tools from local app stores. They can also outsource censorship to the online platforms themselves, holding the platforms responsible for any content that appears on their services—a technique known as **service-level censorship**. (Reports of Weibo or WeChat [removing content](https://www.theguardian.com/world/article/2024/may/17/chinese-social-media-companies-remove-posts-showing-off-wealth-and-worshiping-money) from their platforms are examples of service-level censorship.)

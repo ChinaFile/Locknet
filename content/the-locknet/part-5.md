@@ -4,6 +4,8 @@ weight = 7
 toc = true
 +++ 
 
+AUTHORS: Jessica Batke, Laura Edelson
+
 In general, the Locknet only targets communications taking place within or crossing over the country’s borders, removing “bad” or “dangerous” content from circulation. (This contrasts with Beijing’s propaganda efforts, which aim to *inject* content into both domestic and international discussions.) Even so, the effects of the censorship regime can and do ripple outwards into the broader world, because the Locknet was designed to be compatible with the global internet. Just as information from the outside can flow into China, systems built to control information can, and occasionally do, flow outwards. Often, this occurs when users outside China want to interact with services, users, or infrastructure inside China, forcing them to rely on the Locknet for tasks they would otherwise do on the internet.   
 
 ### Service-Level Censorship, Worldwide

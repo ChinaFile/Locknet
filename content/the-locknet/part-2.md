@@ -4,6 +4,8 @@ weight = 4
 toc = true
 +++
 
+AUTHORS: Jessica Batke, Laura Edelson
+
 Though the much-vaunted “Great Firewall” looms large in the imagination, much of what an average person in China sees or sends online will never come into contact with it. The “Great Firewall” is just that: a digital border flanking the real one, separating domestic and foreign. As long as Chinese internet users are sending group messages in WeChat, opining for the public on Weibo, or livestreaming themselves on Kuaishou, the information they’re transmitting will never leave domestic cyberspace. It will still be subject to surveillance and censorship, of course—but that comes at the hands of private tech companies, who have accepted such tasks as the price of operating in China. 
 
 In effect, China has outsourced its in-country censorship to apps and platforms themselves—“service-level censorship.” But that doesn’t mean everything a company scrubs from its website counts as “censorship.” In addition to government-mandated deletions, companies conduct their own content purges, according to their own content rules, a practice known as “content moderation.” For example, a company might forbid users to post advertisements for rival platforms and remove any content that violated this stricture. 

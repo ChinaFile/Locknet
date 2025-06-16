@@ -4,6 +4,7 @@ weight = 3
 toc = true
 +++
 
+AUTHORS: Jessica Batke, Laura Edelson
 
 Though cyberspace may seem ephemeral and immaterial, it is inherently tied to “meatspace”—the offline, embodied world in which we all live and breathe. The internet, as a product of meatspace, is subject to the dictates of meatspace. Governments and societies around the world seek to mold and constrain the internet in countless ways. In China, this takes several different forms. 
 
