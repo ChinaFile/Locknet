@@ -11,11 +11,9 @@ name = "Laura Edelson"
 summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-</br>
-
 Though cyberspace may seem ephemeral and immaterial, it is inherently tied to “meatspace”—the offline, embodied world in which we all live and breathe. The internet, as a product of meatspace, is subject to the dictates of meatspace. Governments and societies around the world seek to mold and constrain the internet in countless ways. In China, this takes several different forms. 
 
-### Administering the Censorship System
+## Administering the Censorship System
 
 For one, China’s government has produced a raft of laws and regulations pertaining to cyberspace. These include restrictions on what [topics citizens are permitted to discuss online](https://www.chinalawtranslate.com/en/governing-the-e-cosystem-2/), [what data companies must retain and provide to the government](https://carnegieendowment.org/research/2025/01/managing-the-risks-of-chinas-access-to-us-data-and-control-of-software-and-connected-technology?lang=en), and [what news](https://digitalplanet.tufts.edu/wp-content/uploads/2023/02/DD-Report_1-Jufang-Wang-11.30.22.pdf) not produced by state media may be shared, among others. 
 
@@ -29,7 +27,7 @@ Underneath this strong centralized bureaucracy, largely powerless offices scatte
 
 Yes, you read that correctly: local censorship officials must use the public-facing “report” function on social media sites to try to get content removed. Because most “problematic” content gets handled by higher-ups or the social media platforms themselves, the “negative voices” reported by local censorship staff often pertain to low-level, low-stakes issues—such as when, as described in the study, users mocked a new city mayor’s sartorial choices. Issues like these worry no one other than local leaders, who “are the only ones who perceive these voices to be negative. Neither the CAC nor the social media platform cares about the public image of a local official.” (In fact, the central government may see some advantage in letting local grievances remain online, “[allow\[ing\] citizens to believe they have an opportunity to voice their opinions and vent their anger, while steering their efforts so as not to seriously jeopardize the central authority or the regime’s legitimacy](https://global.oup.com/academic/product/directed-digital-dissidence-in-autocracies-9780197680384?cc=de&lang=en&).”)  And thus, low-level officials who incessantly mash the “report” button, and cajole their friends and family into doing the same.
 
-### Outsourcing Censorship
+## Outsourcing Censorship
 
 Aware of its limitations, Beijing outsources its censorship of domestic content to private companies. According to the CAC’s 2020 [Provisions on the Governance of the Online Information Content Ecosystem](https://www.chinalawtranslate.com/en/provisions-on-the-governance-of-the-online-information-content-ecosystem/), “online information content service platforms” must create mechanisms that allow them to conduct “real-time inspections, emergency response, and the handling of online rumors.” Platforms “must not transmit” what the Provisions define as “illegal” information, and “shall prevent and resist the transmission” of “negative” information. The government can [suspend](https://webcitation.org/71y55KoD9) or even shut down platforms if it finds them inadequately compliant. As one Chinese video streaming service noted in its [2020 SEC filing](https://archive.ph/vS4IC), “The Chinese government has wide discretion in regulating online activities and, irrespective of our efforts to control the content on our platform, government campaigns and other actions to reduce illicit content and activities could subject us to negative press or regulatory challenges and sanctions, including fines, suspension or revocation of our licenses to operate in China or a ban on our platform, including closure of one or more parts of or our entire business.”
 
@@ -49,7 +47,7 @@ The [CAC also requires](https://www.chinalawtranslate.com/en/provisions-on-the-g
 
 Recently, authorities have begun to lower thresholds for punishment. For many years, people who merely maintained foreign social media accounts but didn’t actively post could assume the authorities wouldn’t harass them. But in 2024, [police began to question people who had merely followed a particular account on the social media platform X](https://archive.ph/BAPZB). This represented a significant escalation in tactics on the part of the Chinese government. We may see more escalatory measures if national economic concerns continue to worsen.
 
-### Rules Defining Forbidden Content . . .
+## Rules Defining Forbidden Content . . .
 
 But what exactly is “illegal” or “negative” information? The definition of forbidden, or “illegal,” information has changed very little since Beijing issued [seminal internet regulations in 2000](http://www.asianlii.org/cn/legis/cen/laws/mfmiis499/). According to a translation by the website [China Law Translate](https://www.chinalawtranslate.com/en/governing-the-e-cosystem-2/), “illegal” information consists of:
 
@@ -81,7 +79,7 @@ The list of “negative information” [appears](https://www.chinalawtranslate.c
 
 The “negative” label might apply to content such as celebrity gossip accounts or queer online fora, both of which have been [shut down](https://www.tandfonline.com/doi/full/10.1080/23738871.2020.1748079) in recent years. Such priggish [content prohibitions](https://archive.ph/hJ3TX) may seem incidental to the larger censorship project. But they represent a crucial part of how the Party views itself—as a moral arbiter for the masses—as well as a justification for internet monitoring in the first place. An online censorship regime that targets only undesirable political content might strike citizens as too heavy-handed, but a system that also keeps cyberspace less “seedy”? That’s a more credible public good.
 
-### . . . And What They Actually Mean in Practice
+## . . . And What They Actually Mean in Practice
 
 Predictably, the content policies of domestic social media platforms like WeChat and Weibo closely [echo](https://archive.is/6D7ZL) the CAC’s [lists](https://archive.is/XyVHH). But rarely do either Beijing or Chinese tech companies offer clear preemptive guidance on what constitutes, to take one list item, “endangering national security,” nor what specific content has been censored under its auspices. For many years, [leaked government censorship directives](https://chinadigitaltimes.net/china/directives-from-the-ministry-of-truth/) offered one-off insights into online content control. But these leaks have become rare, and they only show what the government has demanded, not what companies actually implement. 
 
@@ -115,7 +113,7 @@ HOW WE DO THIS WILL DEPEND ON HOW WE DISCUSS OUR OWN DATA.
 \[IGNORE THE ABOVE FOR NOW WE ARE WORKING ON DATA STUFF\]
 
 
-### Not Just Censorship, But Also Curation and Content Generation
+## Not Just Censorship, But Also Curation and Content Generation
 
 Censorship, however pervasive, is only a part of China’s program of information control. In addition to removing objectionable content, China’s leaders ensure the promotion of content they would like to see instead. The [CAC Provisions](https://www.chinalawtranslate.com/en/governing-the-e-cosystem-2/) mandate that social media platforms “actively present” content that propagates Party doctrine, “Core Socialist Values,” and “other content that teaches taste, style, and responsibility; that praises truth, goodness, and beauty; and that promotes unity and stability.” Posts that brag about one’s wealth? “[Undesirable value-orientated content](https://www.theguardian.com/world/article/2024/may/17/chinese-social-media-companies-remove-posts-showing-off-wealth-and-worshiping-money).” Posts about the Beijing Winter Olympics’ “charming” facilities? [A great example of “positive energy.”](https://chinamediaproject.org/2023/08/29/positive-energy-gets-positive-reinforcement/)
 
@@ -124,7 +122,7 @@ The Chinese government’s reliance on commercial firms for content curation goe
 Such companies are building upon a rich tradition of government-instigated online commenting that aims to appear spontaneous and grassroots. Chinese internet users have famously dubbed government-aligned commenters and trolls the “[50-Cent Party](https://rconversation.blogs.com/MacKinnon_Libtech.pdf),” for the 50 cents the government supposedly pays them for each online post, though at least some of them are actually salaried [government employees](https://gking.harvard.edu/files/gking/files/50c.pdf?m=1463587807) tasked with “guiding public opinion.” The scorn such posts engendered eventually spawned the even more derisive moniker “[fifty-center who brings their own provisions](https://chinadigitaltimes.net/space/Volunteer_fifty_center)” to describe someone who posts on behalf of the government for free.
 
 
-### Real-Name Registration
+## Real-Name Registration
 
 Perhaps the best illustration of the philosophical underpinnings of China’s internet regulatory regime, as well as its development over time, is real-name registration. China’s government has long mandated that internet services, such as Weibo and WeChat, register each user with their real-life identities, allowing the government to know the identity of any user upon request. As technology changed, so did Beijing’s regulations, chasing users from [internet cafes](https://archive.ph/tmvnv) in the early 2000s to “super-apps” in the 2020s, always ensuring the government would know the identity of anyone online. At points in the 2000s and early 2010s, [users](https://archive.ph/tmvnv), [the media](https://archive.ph/tmvnv), and even [companies](https://archive.ph/FA8mI) sometimes pushed back on government mandates for real-name registration, temporarily scuttling implementation on particular platforms. But over time, as Beijing’s rules were [codified](https://digitalcommons.law.uw.edu/wilj/vol25/iss1/3/) into [laws](https://digichina.stanford.edu/work/translation-cybersecurity-law-of-the-peoples-republic-of-china-effective-june-1-2017/), and as technological advances made registration and identification [harder to avoid](https://archive.ph/FA8mI), real-name registration became the default across China’s online landscape. 
 
@@ -134,7 +132,7 @@ Real-name registration has [always](https://archive.is/1sjYk) increased [self-ce
 
 Real-name registration also has the added benefit of keeping out non-Chinese users, in order to protect “the domestic discourse from outside opinion and commentary that is not aligned with the CCP,” as Sam Ju, a researcher [who studies online information controls](https://www.opentech.fund/fellows/sam-ju/), wrote in a [2024 report](https://blocked-by-numbers.opentech.fund/en/) for the [Open Technology Fund](/about). The report found 75 percent of Chinese social media apps had implemented real-name registration policies for foreign users, preventing many of them from logging on. “It appears as though China is not only reshaping online discourse rooms to its advantage—it is also drawing a new digital border between a sphere it seeks to influence and a sphere of ‘harmful,’ non-aligned political ideas.”
 
-### Real-Life Consequences for Rule-Breakers
+## Real-Life Consequences for Rule-Breakers
 
 Beijing can punish both companies and individuals for violating its internet strictures. Companies may have to [pay fines](https://webcitation.org/71y4v72U0) or shut down [portions of their services](https://webcitation.org/71y4wnS1A); they may also find their services [removed from local app stores](https://doi.org/10.1080/23738871.2020.1748079) or [suspended altogether](https://archive.ph/WhsBh). In one extreme case, the CEO of a video-streaming platform was sentenced to [42 months in prison](https://web.archive.org/web/20240726224413/https://digitalplanet.tufts.edu/wp-content/uploads/2023/02/DD-Report_1-Jufang-Wang-11.30.22.pdf) for allowing too much pornography to circulate on the site.
 

@@ -11,8 +11,6 @@ name = "Laura Edelson"
 summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-</br>
-
 ## What Even Is the Internet?
 
 The internet is not one thing, but rather a “network of networks.” A personal computer in Iowa, for example, does not have a single, dedicated wire physically connecting it to the recipe website Epicurious. Nevertheless, an Iowan (let’s call her Marjorie) can get all the recipes she wants simply by pointing her web browser to epicurious.com.
@@ -111,13 +109,13 @@ A number of basic network design principles underpin the structure of the modern
 
 The Chinese Party-state, however, has an additional requirement for the internet: that a censor be able to monitor and disrupt “dangerous” communication at will. This “control” requirement interacts in interesting ways with the other underlying principles of the internet. Some underlying principles incidentally support the Party-state’s information control aims, while others directly contravene them.
 
-### Robustness Principle
+## Robustness Principle
 
 Often phrased as, “be conservative in what you send, be liberal in what you accept,” the [robustness principle](https://queue.acm.org/detail.cfm?id=1999945) aims to maximize interoperability between different machines and networks. It proposes that computers and services connected to the internet do their best to send out properly formatted information, while simultaneously being willing to accept less-than-perfect information from others.
 
 This principle underpins much of China’s technical censorship capacity. Many of its censorship tools rely on injecting false, or “forged,” information into a connection—and because of the robustness principle, the computers on either end of that connection will likely accept the forged information, even if it is slightly malformed or otherwise nonsensical.
 
-### End-to-End Principle
+## End-to-End Principle
 
 The end-to-end principle asserts data should only be _transmitted_ from one endpoint to another—like from a {{< drawer title="server" >}}A computer that “serves up” requested content. Most online information is stored (or hosted) on a server. When a user visits a website, it is a server that actually sends back the website content to the user. Servers exist for many different purposes. Major social media companies have many of them in order to provide content to users quickly.{{< /drawer >}} to your computer—without modifying that data at all. In other words, the network “[should act like a big, fat, dumb, digital pipe](https://archive.ph/4cxAW).” This means that any more complex functions, such as encryption or error-checking, must be done at the endpoints (by the server or by your computer).
 

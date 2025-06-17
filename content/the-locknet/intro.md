@@ -14,8 +14,6 @@ name = "Laura Edelson"
 summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-</br>
-
 The man gazes earnestly into the camera, the glow from his computer monitor reflecting off his black-rimmed glasses. “This is more than just a cultural moment,” he says with a smile. “It’s something truly meaningful. This is about mutual respect, kindness, and efforts to understand each other. This feels so good\!” he exclaims in a [video](http://xhslink.com/a/MtezFxXAEMTbb) he posted to RedNote, a China-based social media platform similar to Instagram.
 
 It was January 14, 2025, and Zheng Yubin was speaking in English to American users who had recently surged onto the platform—more than [half a million](https://archive.ph/bpyII) in just two days. Noting that the U.S. and China were sometimes viewed as rivals, he enthused that “today, through this connection, we are seeing something different, a more personal and human side. It’s not just about nations, it’s about individuals . . . people who share the same hope for more freedom and a bigger world. So once again, welcome\!”
@@ -50,7 +48,7 @@ Of course, China’s online censorship system hasn’t withered away. Nor has it
 
 And as the internet insinuates itself ever deeper into our lives, so does the chance it brings China’s censorship along with it.
 
-### More Than a Wall
+## More Than a Wall
 
 Many countries [censor the internet](https://www.comparitech.com/blog/vpn-privacy/internet-censorship-map/) [to some degree](https://freedomhouse.org/countries/freedom-net/scores?sort=asc&order=Total%20Score%20and%20Status). By blocking specific content, or by limiting access to certain sites or services, states from Venezuela to Uzbekistan circumscribe what their citizens can see online. Some countries, such as Russia and Iran, have extensive filtering systems that allow their governments to monitor both content and the users who post it. North Korea simply [doesn’t allow most people to get online at all](https://archive.ph/8Ez8S). 
 
@@ -78,7 +76,7 @@ In practice, online censorship in China functions more like a massive water mana
 
 Just as a system of locks and sluices surrounding a man-made lake can regulate the lake’s water level while tides or rivers flow in and out, so China’s online censorship system can ensure the information circulating through the country’s digital spillways mostly conforms to Beijing’s changing whims. The result is a national intranet that links up with the global internet but manages internal information flows according to its own rules. The result is what we have dubbed “the Locknet.”
 
-### Good Enough, Enough of the Time
+## Good Enough, Enough of the Time
 
 The Locknet may be multifaceted and adaptable, but that doesn’t mean it’s always at the cutting edge of technology. Nor is it foolproof; a system contending with a population as large and as online as China’s will inevitably allow some unwelcome content to seep though. Still, the Locknet only needs to be good enough, enough of the time, for enough of the population, in order to be effective.
 
@@ -126,7 +124,7 @@ By focusing on the system’s current failings, we miss the longer-term trajecto
 
 Just as in the casino, so it goes on China’s internet: eventually, the house always wins.
 
-### Making Thoughts Unthinkable
+## Making Thoughts Unthinkable
 
    
 Beijing does not merely censor undesirable content. It also works to fill the void left behind by injecting or promoting favored content. Sometimes, the addition and subtraction of internet content takes place in the open. The government may announce it has suspended several platforms for lax censorship, or given out [“positive energy” awards](https://archive.ph/92oY8) to the most “heart-warming or ideologically sound stories, photos, and people” appearing online. 
@@ -156,7 +154,7 @@ This awkward tension between erasure and execution recurs throughout the system,
 
 And this gets at the heart of the broader information control system: The goal is not just to limit what people see and say, but ultimately to limit what they know and believe. What many people think of as the system’s objectives—forestalling collective action, minimizing criticism of the government—are indeed present, but they only represent the system’s more tactical aims. The longer-term strategy is far more ambitious. To quell more distant threats, the Party hopes to cultivate an information landscape that won't allow unwanted thoughts to grow.   
 
-### Sloshing over the Edge
+## Sloshing over the Edge
 
 A censorship system as powerful and pervasive as China’s can’t be contained by a line on a map. {{< drawer title="Network-level censorship" >}}Censorship conducted by equipment placed within an internet network, aimed at all traffic that transits that network. This may include machines positioned throughout an ISP’s network, or machines positioned at international gateways that are designed to handle all internet traffic passing through those gateways.{{< /drawer >}}, {{< drawer title="service-level censorship" >}}Censorship conducted by a company or entity monitoring the censorship on its own platform or service. This can be accomplished through both manual and automated means, but it only targets the content available on the platform or service in question.{{< /drawer >}}, and even self-censorship all sometimes spill out over the border.
 
