@@ -1,18 +1,26 @@
 {{ define "main" }}
-<img class="max-h-72 w-full object-cover xl:max-h-[512px]" src="/media/images/hero.webp" alt="Cover image for Blocked by Numbers report" role="img">
-
-<div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
-    <section class="prose mx-auto w-full max-w-3xl flex-col px-8 prose-hr:w-full lg:flex lg:items-center lg:justify-between lg:px-8 lg:text-center" aria-labelledby="main-content-heading">
-
-        <article class="flex w-full flex-col items-start justify-between prose-a:visited:text-purple-800" role="main">
-            {{ $intro := site.GetPage "executive-summary" }}
-            {{ if $intro }}
-                {{ $intro.Content }}
-            {{ else }}
-                <p>Executive summary page not found.</p>
-            {{ end }}
-        </article>
-
-    </section>
-</div>
+{{ $intro := site.GetPage "/the-locknet/intro" }}
+{{ if $intro }}
+    <!-- Redirect to intro page -->
+    <script>
+        window.location.href = "{{ $intro.RelPermalink }}";
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url={{ $intro.RelPermalink }}">
+    </noscript>
+    
+    <!-- Fallback content for users with JS disabled -->
+    <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <section class="prose mx-auto w-full max-w-3xl flex-col px-8 text-center">
+            <p>Redirecting to <a href="{{ $intro.RelPermalink }}">{{ $intro.Title }}</a>...</p>
+            <p>If you are not redirected automatically, <a href="{{ $intro.RelPermalink }}">click here</a>.</p>
+        </section>
+    </div>
+{{ else }}
+    <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <section class="prose mx-auto w-full max-w-3xl flex-col px-8 text-center">
+            <p>Intro page not found.</p>
+        </section>
+    </div>
+{{ end }}
 {{ end }}
