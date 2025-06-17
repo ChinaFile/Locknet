@@ -29,9 +29,8 @@ China-based services do more than simply censor; they gather data about their us
 
 Apps such as WeChat also function to keep Chinese citizens within the censorship bubble even when physically abroad, a “[Chinese-language information silo](https://www.nytimes.com/2020/10/05/nyregion/us-wechat-ban.html)” that many Chinese expats [rely on for news](https://www.hrw.org/news/2020/08/14/wechat-trap-chinas-diaspora) even when other information is available to them. Essentially, they carry the censorship system with them in their pockets. The Party’s propaganda department did not create WeChat, but its widespread use among Chinese citizens living abroad must count among the department’s luckiest breaks.
 
-![][image6]  
-\[CAPTION: Adapted from the [testimony of Nat Kretchun](https://www.dropbox.com/scl/fi/alid4oso9q686ooigope4/Nat-Kretchun-Written-Testimony-to-Select-Committee-CCP-July-2024.pdf?rlkey=gqdsu1fcuvignxm9q2ufxvujl&e=2&st=stufbnt5&dl=0), of the Open Technology Fund\[LINK TO ABOUT PAGE\], in his testimony to the U.S. Congress Select Committee on the Strategic Competition between the United States and the Chinese Communist Party, July 23, 2024.\]
-
+{{< figure src="/media/images/main-5.png" caption="Adapted from the [testimony of Nat Kretchun](https://www.dropbox.com/scl/fi/alid4oso9q686ooigope4/Nat-Kretchun-Written-Testimony-to-Select-Committee-CCP-July-2024.pdf?rlkey=gqdsu1fcuvignxm9q2ufxvujl&e=2&st=stufbnt5&dl=0), of the Open Technology Fund LINK TO ABOUT PAGE, in his testimony to the U.S. Congress Select Committee on the Strategic Competition between the United States and the Chinese Communist Party, July 23, 2024." >}}
+ 
 Just as they help keep Chinese citizens digitally inside China, Chinese apps can also help keep non-citizens out. As [described](https://merics.org/en/report/increasing-challenge-obtaining-information-xis-china) by researchers at the Berlin-based think tank MERICS, real-name registration requirements for social media platforms—ranging from account verification from a Chinese phone number, government ID verification, to face-scans, to verification by other platform users—”have led to effective access barriers for foreign users” on some apps. Some Chinese apps are not even available for download abroad.
 
 ### Network-Level Censorship, Outside China’s Networks

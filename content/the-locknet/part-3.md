@@ -35,9 +35,7 @@ China’s control over this process begins before any {{< drawer title="packets"
 
 The physical infrastructure also includes built-in chokepoints for international internet traffic. The PRC has [relatively few](http://www.caict.ac.cn/english/yjcg/bps/201808/P020180829385778461678.pdf) international gateways—especially as compared to other technologically developed states such as Singapore, the United States, or Japan—with just a few companies running them. [One study](https://dl.acm.org/doi/10.1145/3314344.3332502), estimating the “national chokepoint potential” of various countries in 2018, found that China sat at one extreme of the spectrum: only two {{< drawer title="ISPs" >}}Organizations that provide users access to the internet, in addition to other related services, such as maintaining <b>DNS resolvers</b>. An ISP may be privately or publicly owned. In many countries, including China and the U.S., ISPs are required to share certain information with law enforcement agencies.{{< /drawer >}} controlled more than 90 percent of the paths internet traffic could use to enter or exit the country.   
 
-![][image3]
-
-\[TITLE IN GRAPHIC: China’s “National Chokepoint Potential,” Compared to Egypt, India, and the United States\]
+{{< graphic >}}
 
 \[CAPTION: Data courtesy of Kirtus G. Leyba, Benjamin Edwards, Cynthia Freeman, Jedidiah R. Crandall, and Stephanie Forrest, drawn from their article “[Borders and Gateways: Measuring and Analyzing National AS Chokepoints.](https://dl.acm.org/doi/10.1145/3314344.3332502)”\]  
 \[CAPTION HERE TO EXPLAIN WHAT THIS GRAPHIC IS SHOWING AND CREDITING ORIGINAL AUTHORS. graphic data here: https://docs.google.com/spreadsheets/d/1ABQXK\_kbW2gxmhtyMt9bn9pywbnV\_J4qj\_Fsa27oEaI/edit?gid=1989514208\#gid=1989514208\] 
@@ -100,8 +98,7 @@ In the IKEA analogy, a computer creating packets is like IKEA shipping a table b
 
 This is also how packets work over the internet, with the actual substantive content (say, a few lines of an email) [nested in the innermost part of a packet](/additional-materials/the-mechanics-of-online-censorship/censorship-how-china-disrupts-the-network/#deep-packet-inspection), invisible to the network until it reaches the intended recipient. The outer layers of a packet contain information to aid in routing and other tasks, but generally give no clue as to the actual content of the packet. A {{< drawer title="middlebox" >}}A machine that is positioned between two endpoints of online communications, often in order to read the contents of those communications as they pass back and forth.{{< /drawer >}} conducting {{< drawer title="deep packet inspection" >}}The process of unpacking an internet packet and reading the content contained at the deepest (application) layer.{{< /drawer >}} violates the norms of the internet by opening up those three outer boxes to see what’s written on the innermost box: usually, the domain name of a website someone is trying to connect to. In the graphic below, the innermost box appears as the green “application layer”\[SARA DO WE WANT A GLOSSARY BOX HERE??\] portion of the packet, surrounded by other layers serving as the outer boxes China’s censors have to unwrap in order to see the destination (in this case, “example.com”):
 
-\[SIMPLIFIED ILLO HERE OF A PACKET DRAWN FROM EXPLAINERS\]  
-![][image4]
+{{< figure src="/media/images/how-china-breaks-it-9.png" caption="Simplified illo of a packet" >}}
 
 Neither IP nor DNS blocking require {{< drawer title="deep packet inspection" >}}The process of unpacking an internet packet and reading the content contained at the deepest (application) layer.{{< /drawer >}}; both of these mechanisms rely on the normal functioning of the internet to intercept easily readable information. This makes IP and DNS blocking relatively cheap and simple, especially as compared to {{< drawer title="deep packet inspection" >}}The process of unpacking an internet packet and reading the content contained at the deepest (application) layer.{{< /drawer >}}, which requires additional computing power to carry out. (Imagine a secret police officer having to open up three boxes just to find out the name of a parcel’s recipient.)
 
@@ -141,6 +138,7 @@ Blocking an entire technology wholesale represents a significant shift in censor
 
 Network-level censorship can therefore block both specific websites and specific technologies, helping the Party-state keep out “dangerous” information they already know about as well as potentially “dangerous” information they can’t read. In this way, it also assists with the larger project of meta-censorship. The Google Play Store, for example, is [unavailable](https://archive.ph/5Xo6R) in China due to both DNS blocking and keyword filtering; anything a Chinese user might download from the Play Store is also unavailable. This saves Beijing from having to individually evaluate all the apps posted to Google Play (which doesn’t have the same sort of top-down approval process that Apple’s App Store does). Instead, simply blocking “google.com” ensures that the chaotic, unvetted mass of conceivably subversive software stays safely out of China’s cyberspace.
 
-![][image5]
 
-\[CAPTION: Data packets leaving China must run a gauntlet of middleboxes (including middleboxes targeting the QUIC protocol). \[LINK TO EXPLAINER\]\]
+{{< figure src="/media/images/main-4.png" caption="Data packets leaving China must run a gauntlet of middleboxes (including middleboxes targeting the QUIC protocol)." >}}
+
+[\[LINK TO EXPLAINER\]\]
