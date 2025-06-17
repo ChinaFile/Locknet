@@ -2,9 +2,16 @@
 title = "II. Service-Level Censorship: The Corporate Locknet"
 weight = 4
 toc = true
+[[authors]]
+name = "Jessica Batke"
+summary = "Senior Editor for Investigations at ChinaFile"
+
+[[authors]]
+name = "Laura Edelson"
+summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-AUTHORS: Jessica Batke, Laura Edelson
+</br>
 
 Though the much-vaunted “Great Firewall” looms large in the imagination, much of what an average person in China sees or sends online will never come into contact with it. The “Great Firewall” is just that: a digital border flanking the real one, separating domestic and foreign. As long as Chinese internet users are sending group messages in WeChat, opining for the public on Weibo, or livestreaming themselves on Kuaishou, the information they’re transmitting will never leave domestic cyberspace. It will still be subject to surveillance and censorship, of course—but that comes at the hands of private tech companies, who have accepted such tasks as the price of operating in China. 
 

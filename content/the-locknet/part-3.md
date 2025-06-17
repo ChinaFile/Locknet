@@ -2,12 +2,16 @@
 title = "III. Network-Level Censorship: Locknet in the Wires"
 weight = 5
 toc = true
-author = "Author Name"
-author_summary = "Short summary, e.g. 'Author name is a journalist from Pakistan.'"
-author_bio = "Longer bio or additional info, e.g. 'Among other topics, he writes about China-related topics in the region.'"
+[[authors]]
+name = "Jessica Batke"
+summary = "Senior Editor for Investigations at ChinaFile"
+
+[[authors]]
+name = "Laura Edelson"
+summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-AUTHORS: Jessica Batke, Laura Edelson
+</br>
 
 Beijing does not need to censor content posted online by its citizens first-hand; it has a retinue of corporate factotums and zealous fan-boys to police domestically-generated internet content. Thus, the censorship technology authorities control more directly targets information seeping in from outside China. These tools perform “[network-level censorship](/additional-materials/the-mechanics-of-online-censorship/censorship-how-china-disrupts-the-network/#network-level-censorship),” inspecting data headed across the border, regardless of which app or service generated it.
 

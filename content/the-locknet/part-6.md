@@ -2,9 +2,16 @@
 title = "VI. The Future of the Locknet"
 weight = 8
 toc = true
+[[authors]]
+name = "Jessica Batke"
+summary = "Senior Editor for Investigations at ChinaFile"
+
+[[authors]]
+name = "Laura Edelson"
+summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-AUTHORS: Jessica Batke, Laura Edelson
+</br>
 
 The continued functioning of the Locknet remains existential for the Chinese Communist Party—it’s a must-have, not a nice-to-have. Control over information, and thus influence over what citizens know and believe, forms part of the bedrock on which the Party edifice stands. In the modern world, this necessarily involves internet censorship. As General Secretary Xi Jinping [said in a 2018 speech](https://archive.ph/KyXyQ), “Without internet security there is no national security, economic and social stability do not function, and it becomes difficult to safeguard the interests of the majority of the people.” Of course, in China, “internet security” doesn’t just mean keeping one’s data safe. It means content control.
 

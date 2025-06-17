@@ -2,9 +2,16 @@
 title = "Blocking Circumvention Technologies"
 weight = 3
 toc = true
+[[authors]]
+name = "Jessica Batke"
+summary = "Senior Editor for Investigations at ChinaFile"
+
+[[authors]]
+name = "Laura Edelson"
+summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-AUTHORS: Jessica Batke, Laura Edelson
+</br>
 
 China’s censorship system not only targets “dangerous” content, but also targets users’ attempts to evade the system itself. After all, Beijing spends a lot of money and effort to curate the domestic information environment and keep “dangerous” information outside the country’s digital borders. There would be no point to such an undertaking if it were trivially easy to sidestep the censors. 
 

@@ -2,10 +2,16 @@
 title = "Censorship: How China Disrupts the Network"
 weight = 2
 toc = true
+[[authors]]
+name = "Jessica Batke"
+summary = "Senior Editor for Investigations at ChinaFile"
+
+[[authors]]
+name = "Laura Edelson"
+summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-
-AUTHORS: Jessica Batke, Laura Edelson
+</br>
 
 ## Network-Level Censorship
 
