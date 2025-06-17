@@ -64,9 +64,7 @@ Companies like RedNote don’t censor their users because they necessarily want 
 
 These three filters—network-level censorship, service-level censorship, and regulation and enforcement—aim to purify what is circulating on China’s domestic internet. The latter two filters manage content produced within the physical confines of China’s borders, or within the digital confines of a China-based app, while the first filter, network-level censorship, handles content that authorities can’t stifle at the source. Together, they form a socio-technological apparatus that can reach into both the digital and real-world lives of Chinese citizens, if and when it so chooses.
 
-\[GRAPHIC OF HOW ALL THE PIECES OF THE SYSTEM WORK TOGETHER\]
-
-![][image1]
+{{< figure src="/media/images/main-1.png" caption="How all the pieces of the system work together" >}}
 
 A censorship system this large undoubtedly costs the Party-state a pretty penny in research and development, new hardware, and day-to-day upkeep—but no one knows exactly how much. In 2021, researcher Ryan Fedasiuk used available government budgets to [estimate](https://archive.ph/kGGOb) that “Chinese government and CCP offices engaged in internet censorship likely spent more than $6.6 billion (nominal USD) annually on related activities. Accounting for purchasing power parity, the number is likely closer to $13 billion.” This calculation is missing a large chunk of central government spending, which isn’t made public. It also doesn’t include the costs borne by private industry, meaning it’s likely a significant underestimate. The expense of this system stems from the assumptions baked into its design: any citizen could be up to no good, therefore the system’s substantial cost is proportional to the total population and not to the number of actual offenders. 
 
@@ -125,7 +123,6 @@ By focusing on the system’s current failings, we miss the longer-term trajecto
 Just as in the casino, so it goes on China’s internet: eventually, the house always wins.
 
 ## Making Thoughts Unthinkable
-
    
 Beijing does not merely censor undesirable content. It also works to fill the void left behind by injecting or promoting favored content. Sometimes, the addition and subtraction of internet content takes place in the open. The government may announce it has suspended several platforms for lax censorship, or given out [“positive energy” awards](https://archive.ph/92oY8) to the most “heart-warming or ideologically sound stories, photos, and people” appearing online. 
 

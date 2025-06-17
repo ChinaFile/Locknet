@@ -38,13 +38,7 @@ There are two main ways an online censorship system, whether in China or elsewhe
 
 - A **path-adjacent** system utilizes a middlebox placed _adjacent_ to the cable transferring internet traffic between two endpoints. (In computer science literature, this is called an **on-path system**, but because that terminology is unnecessarily confusing, we won’t be using it here.) A second cable sends copies of the internet traffic to the middlebox. This middlebox can read everything copied to it, but cannot directly disrupt already-flowing traffic.
 
-![How China Breaks it](/media/images/how-china-breaks-it-1.png)
-
-THE ABOVE CODE IS HOW TO INSERT AN IMAGE
-
-THE BELOW CODE IS HOW TO INSERT AN IMAGE WITH A CAPTION
-
-{{< figure src="/media/images/how-china-breaks-it-1.png" caption="THIS IS A CAPTION" >}}
+{{< figure src="/media/images/how-china-breaks-it-1.png" caption="How China breaks it" >}}
 
 In-path technologies, while logically simpler, are more expensive than path-adjacent technologies. In-path systems require more computer processing power, and therefore resources, to analyze and block traffic in real time while avoiding a slowdown of all traffic along that cable.
 
@@ -81,7 +75,6 @@ The transport layer segments this query into {{< drawer title="packets" >}}What 
 The packets then move down through the {{< drawer title="link layer" >}}The part of the network stack that transmits data between two nodes connected by a physical layer. For example, the link layer transmits data between two routers, or between a home computer and a home modem.{{< /drawer >}} to the {{< drawer title="physical layer" >}}The part of the network stack that converts digital data into electrical, radio, or optical signals, which it then transmits and receives over a physical medium such as a cable.{{< /drawer >}}. They flow across the broader network, and eventually back up through the {{< drawer title="stack" >}}An abstraction that characterizes the relationship between various elements of the online communication process, with one element stacked on top of another in <b>layers</b>. Though there are several different ways of envisioning the stack, all versions describe each layer as having a specific set of dedicated tasks it performs, while having no insight into what happens at the other layers of the stack.{{< /drawer >}} to the {{< drawer title="DNS resolver" >}}A server that is the first stop in the DNS lookup process. It receives a domain name from a user and then queries a nameserver to find the corresponding IP address, which it then sends back to the user. DNS resolvers are often run by <b>internet service providers (ISPs)</b>.{{< /drawer >}}.
   
 {{< video-player src="/media/images/animation-1.mp4" >}}
-{{ figure src="image path here" caption="caption here" }}
 
 If the user has requested a popular website, the {{< drawer title="DNS resolver" >}}A server that is the first stop in the DNS lookup process. It receives a domain name from a user and then queries a nameserver to find the corresponding IP address, which it then sends back to the user. DNS resolvers are often run by <b>internet service providers (ISPs)</b>.{{< /drawer >}} may already have the {{< drawer title="IP address" >}}A series of characters that identifies a computer or server using the IP system to communicate over the internet. Internet Protocol Version 4 (IPv4) addresses are composed of a set of four numbers, each with one to three digits, separated by periods (for example, <b>104.18.204.43</b>). Internet Protocol Version 6 (IPv6) addresses are longer and can also include letters (such as <b>1050:0:0:0:5:600:300c:326b</b>).{{< /drawer >}} handy—a DNS resolver will save, or **cache**, the IP addresses of recently-requested websites. If the user has requested a less popular website, however, the DNS resolver will have to do some additional work, sending out queries to {{< drawer title="nameservers" >}}Servers that store and organize DNS records, including domain names and IP addresses. As part of the <b>DNS lookup</b> process, a <b>DNS resolver</b> will query a nameserver, asking if it contains the record for a particular domain name. If the nameserver does contain that record, it will return the associated IP address to the DNS resolver. A nameserver that contains the record is referred to as the <b>authoritative nameserver.</b> {{< /drawer >}} around the world. It may take multiple nameservers to help identify an **authoritative nameserver** that contains the information in question. Once the DNS resolver has an IP address, it sends that information back to the user. The user’s computer can now use the IP address to connect to the Citizen Lab website.
 
@@ -194,8 +187,7 @@ Once the handshake is complete, the real data (such as text from the website) ca
 
 The sequence number and the packet type (SYN, SYN/ACK, or ACK) are included in the {{< drawer title="TCP" >}}A standard for delivering data online, specifying how to break data up into packets in preparation to be transmitted over the internet. Because TCP ensures that each side of a connection is ready before transmitting data, and because it allows for data reassembly at the destination, TCP is most often used by applications prioritizing reliability and completeness, such as web browsing, email, and file transfers.{{< /drawer >}} packet’s header, along with other information the protocol needs to ensure it is properly transmitting and receiving data.
 
-\[IN CAPTION: "RELEVANT PORTIONS BOLDED"\]  
-![How China Breaks it](/media/images/how-china-breaks-it-7.png)
+{{< figure src="/media/images/how-china-breaks-it-7.png" caption="Relevant portions bolded" >}}
 
 ### TCP Reset
 

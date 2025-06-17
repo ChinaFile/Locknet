@@ -59,7 +59,7 @@ Let’s say you want to read an article on _The Sydney Morning Herald_ website. 
 
 Each of these packets also has a **header**, which contains information such as the source of the packet and its destination. You can think of packets as letters or parcels sent in the mail—the header functions as the address written on the front of the envelope, while the **data payload** is what’s inside. Once multiple packets reach their destination—that is, _The Sydney Morning Herald_ article packets arrive at your computer—the receiving machine reassembles them in the correct order according to their sequence numbers, which are contained in the packet headers.
 
-![][image6]
+![Internet 101](/media/images/internet-101-6.png)
 
 ## IP Addresses and the Domain Name System: How Do Routers Know Where to Send Data?
 

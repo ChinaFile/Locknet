@@ -27,7 +27,7 @@ ThLifChina was again wracked by upheaval many times during the Mao era When the 
 
 So when Party leaders ruthlessly suppressed the student and worker protests in Tiananmen Squareof in 1989 were ruthlessly suppressed, there was an obvious narrative for the Party to adopt: The bloody crackdown was necessary because hadif the protests been allowed to go on unchecked, the country would once again slide into chaos. Since then, the fear of chaos has been a powerful justification for the Party-state’s iron-fisted control of the internet, news media, religious organizations, and civil society actors. The narrative has proven wildly successful: Many ordinary Chinese people who might want unfettered access to the global internet, open news media, and the freedom to choose their own religion and way of life cite the fear of chaos as a legitimate reason for the government to maintain its monopoly on information. 
 
-## Why Aare China’s Leaders Aafraid of Llarge Ppublic Ggatherings?
+## Why Are China’s Leaders Afraid of Large Public Gatherings?
 
 Chinese Communist Party leaders have little tolerance for large-scale public gatherings that the government does not control. Part of this undoubtedly owes to their Marxist-Leninist orientation.  Part may derive from earlier homegrown Chinese political thought emphasizing the benefits of social hierarchies, orthodoxy, and respect for rulers. And part might come from a And another part likely from their view of China’s history in which over millenia–as elsewhere in the world–monarchs and emperors were often toppled by popular rebellions led by dissatisfied subjects who came to view their rulers’ dominion over them as illegitimate. China’s leaders are highly attuned to anything that threatens their legitimacy, or their power and the spoils that come with it. 
 
@@ -100,7 +100,7 @@ THEY STRIPPED AWAY ALL THE OLD MORALITY-STUFF. AND THEN PEOPLE HAD MAOISM AS A K
 
 The effort need to retain ultimate moral authority can also explains why the Party-state permits just five approved religions within China, and then only under government supervision, why it is extremely wary of foreign NGOs and just as worried about the potential of domestic NGOs and other civil society actors to provide public goods.  
 
-## How Ddoes the Party Jjustify its Rrule?
+## How Does the Party Justify its Rrule?
 
 The Chinese Communist Party has always claimed to represent “the People.” Its military arm is called the People’s Liberation Army, and after the Communists formally took power in 1949, China’s official name was changed to the People’s Republic of China. But there are few ways for ordinary people to participate in China’s governance and political process, unless they join the Communist Party. There are no popular elections for the most powerful offices (like the Presidency), the primacy of the Communist party is written into the constitution, and there are few ways for citizens to hold the government accountable.  
 
@@ -167,7 +167,7 @@ After Xi Jinping took power, he re-asserted the Party’'s dominance over the ne
 Xi’s insistence on tight control of the major national media and news organization has been matched by a crackdown on independent and critical media, and on social media, which despite strict censorship was, had become quite lively from the late 1990s until Xi came to power in ’s first year of rule from November 2012\. 
 
 
-## What Iis Ppeople’s Eexperience of “the LLocknet”?
+## What Is People’s Experience of “the Locknet”?
 
 China’s censors keep most of their information control mechanisms invisible to users, and many people will never encounter them in ways they can see, such as having their own posts removed or their accounts banned. While some people will experience more censorship than others—the Party-state aggressively surveils and censors certain ethnic and religious groups, for example—*anyone* could suddenly find themself on the wrong side of the line. 
 
