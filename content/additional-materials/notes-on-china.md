@@ -1,10 +1,14 @@
 +++
-title = "Several Notes on China"
+title = "Notes on China from a Computer Scientist"
 weight = 3
 toc = true
+
+[[authors]]
+name = "Laura Edelson"
+summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-AUTHOR: Laura Edelson
+</br>
   
 The goal of this project is to explain both *how* China has built such an effective system for controlling the flow of information on the internet and *why* its leaders are willing to go to such lengths to do so. I’m a computer scientist, so while the technical side of this enterprise seemed relatively straightforward, I initially found myself quite puzzled at the rationale behind China’s censorship as a whole. Like a lot of folks with degrees in the sciences, during collegemy bachelor’s degree I was required to take exactly one history class (I chose Modern European HIstory) and I knew little about China before beginning this project. However, as I learned more about the country’s political system and how China’s Communist Party (CCP) China’s government and how it has held onto power, its approach to online censorship felt less perplexing.  its motivations became clearer.
 

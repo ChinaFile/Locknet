@@ -2,9 +2,16 @@
 title = "IV. Evading the Locknet"
 weight = 6
 toc = true
-+++ 
+[[authors]]
+name = "Jessica Batke"
+summary = "Senior Editor for Investigations at ChinaFile"
 
-AUTHORS: Jessica Batke, Laura Edelson
+[[authors]]
+name = "Laura Edelson"
+summary = "Assistant Professor of Computer Science at Northeastern University"
++++
+
+</br>
 
 In February 2022, American-born skier Eileen Gu became an internet sensation in China when she competed at the Beijing Winter Olympics as part of the PRC national team. During her time in China, Gu made multiple posts about her Olympic experiences on Instagram, a platform banned in the mainland. Just before Gu’s freeski big air event, [an irked Instagram user asked Gu](https://archive.is/OmSOD): “Why can you use Instagram and millions of Chinese people from mainland cannot, why you got such special treatment as a Chinese citizen. That’s not fair, can you speak up for those millions of Chinese who don’t have internet freedom”. Gu’s response betrayed how little she understood of the Locknet: “anyone can download a vpn its literally free on the App Store 👍”
 
