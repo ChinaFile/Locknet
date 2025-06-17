@@ -4,12 +4,17 @@ weight = 2
 toc = false
 themed = true
 landing = true
+landing_caption = "CREDIT: *Steven Weinberg*"
+[[authors]]
+name = "Jessica Batke"
+summary = "Senior Editor at ChinaFile"
+bio = "Jessica Batke is a senior editor at ChinaFile and the author of books about China's governance."
+
+[[authors]]
+name = "Laura Edelson"
+summary = "Computer Scientist at Northeastern University"
+bio = "Laura Edelson is a researcher at Northeastern University focusing on online censorship."
 +++
-
-AUTHORS: Jessica Batke, Laura Edelson
-
-
-\[LEAVING A NOTE HERE THAT WE'LL NEED TO CAPTION STEVEN'S FEATURE ILLO IF IT ENDS UP BEING IN THERE. CREDIT: *Steven Weinberg* \]
 
 The man gazes earnestly into the camera, the glow from his computer monitor reflecting off his black-rimmed glasses. “This is more than just a cultural moment,” he says with a smile. “It’s something truly meaningful. This is about mutual respect, kindness, and efforts to understand each other. This feels so good\!” he exclaims in a [video](http://xhslink.com/a/MtezFxXAEMTbb) he posted to RedNote, a China-based social media platform similar to Instagram.
 

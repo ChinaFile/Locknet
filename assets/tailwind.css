@@ -137,18 +137,46 @@
     @apply block font-normal;
   }
 
-  .prose article {
-    * + * {
-      @apply mt-0.5;
-    }
+  /* Content spacing - only apply to main content elements, not UI elements */
+  .prose article > *:not(:first-child):not(hr) {
+    @apply mt-0.5;
   }
 
+  /* Block element spacing - more specific control */
+  .prose article p + p,
+  .prose article h1 + *:not(hr),
+  .prose article h2 + *:not(hr),
+  .prose article h3 + *:not(hr),
+  .prose article h4 + *:not(hr),
+  .prose article h5 + *:not(hr),
+  .prose article h6 + *:not(hr),
+  .prose article blockquote + *:not(hr),
+  .prose article ul + *:not(hr),
+  .prose article ol + *:not(hr),
+  .prose article pre + *:not(hr),
+  .prose article figure + *:not(hr),
+  .prose article table + *:not(hr) {
+    @apply mt-0.5;
+  }
+
+  /* Heading spacing */
   .prose :where(h2):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
     @apply mb-2;
   }
 
-  .prose :where(hr):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
-    @apply mb-6 mt-3;
+  /* HR elements - only apply to content HRs, not UI separators */
+  .prose :where(hr):not(:where([class~='not-prose'], [class~='not-prose'] *)):not([aria-hidden]) {
+    @apply my-1;
+  }
+
+  /* Author section spacing - very specific to override everything */
+  .prose hr[aria-hidden="true"] {
+    margin-block: 1rem !important;
+  }
+
+  /* Blockquote styling - remove bold font weight */
+  .prose :where(blockquote):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+    font-weight: normal;
   }
 
   .prose :where(pre):not(:where([class~='not-prose'], [class~='not-prose'] *)) {

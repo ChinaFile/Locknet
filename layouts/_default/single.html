@@ -3,7 +3,12 @@
     <section class="prose mx-auto w-full {{ if .Params.toc }}max-w-6xl{{ else }}max-w-3xl{{ end }} flex-col px-8 prose-hr:w-full lg:flex lg:px-8" aria-labelledby="main-content-heading">
 
       {{ if .Params.landing }}
-      <img class="w-full" src="/media/images/hero.webp" alt="A collaged image showing blimps, trawlers, and drones catching data and digital devices in the sea and in the air" c role="img">
+      <figure class="w-full">
+        <img class="w-full" src="/media/images/hero.webp" alt="A collaged image showing blimps, trawlers, and drones catching data and digital devices in the sea and in the air" role="img">
+        {{ with .Params.landing_caption }}
+        <figcaption class="mt-3 text-sm text-gray-600 text-right italic">{{ . | markdownify }}</figcaption>
+        {{ end }}
+      </figure>
       {{ end }}
 
       {{ partial "breadcrumbs.html" . }}
@@ -13,14 +18,29 @@
                 {{ .Page.Params.title }}
             </h1>
 
-            {{ if .Params.author }}
+            {{ if or .Params.author .Params.authors }}
             <div class="my-6 w-full border-l-2 border-blue-5 pl-4">
-                <div class="font-semibold text-lg text-gray-900 mb-2">{{ .Params.author }}</div>
-                {{ with .Params.author_summary }}
-                  <div class="text-gray-500 text-base leading-[1.15]">{{ . }}</div>
-                {{ end }}
-                {{ with .Params.author_bio }}
-                  <div class="text-gray-400 text-base leading-[1.15]">{{ . }}</div>
+                {{ if .Params.authors }}
+                  {{ range $index, $author := .Params.authors }}
+                    <div class="font-semibold text-lg text-gray-900 mb-2">{{ $author.name }}</div>
+                    {{ with $author.summary }}
+                      <div class="text-gray-500 text-base leading-[1.15]">{{ . }}</div>
+                    {{ end }}
+                    {{ with $author.bio }}
+                      <div class="text-gray-400 text-base leading-[1.15]">{{ . }}</div>
+                    {{ end }}
+                    {{ if lt $index (sub (len $.Params.authors) 1) }}
+                      <hr class="border-gray-300" aria-hidden="true" />
+                    {{ end }}
+                  {{ end }}
+                {{ else if .Params.author }}
+                  <div class="font-semibold text-lg text-gray-900 mb-2">{{ .Params.author }}</div>
+                  {{ with .Params.author_summary }}
+                    <div class="text-gray-500 text-base leading-[1.15]">{{ . }}</div>
+                  {{ end }}
+                  {{ with .Params.author_bio }}
+                    <div class="text-gray-400 text-base leading-[1.15]">{{ . }}</div>
+                  {{ end }}
                 {{ end }}
             </div>
             {{ end }}
