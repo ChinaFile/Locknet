@@ -179,6 +179,69 @@
     font-weight: normal;
   }
 
+  /* Pull quote styling - now that prose is on the article */
+  .prose .pullquote {
+    width: 18rem !important;
+    max-width: 18rem !important;
+    margin: 1rem 0 !important;
+    display: block !important;
+    position: relative !important;
+    clear: none !important;
+  }
+
+  .prose .pullquote.left {
+    float: left !important;
+    margin: 0.5rem 2rem 1rem 0 !important;
+    shape-outside: margin-box;
+  }
+
+  .prose .pullquote.right {
+    float: right !important;
+    margin: 0.5rem 0 1rem 2rem !important;
+    shape-outside: margin-box;
+  }
+
+  .prose .pullquote-content {
+    background-color: #f3f4f6 !important;
+    border-left: 4px solid #4b5563 !important;
+    padding: 1rem !important;
+    font-size: 1.125rem !important;
+    font-style: italic !important;
+    font-weight: normal !important;
+    line-height: 1.25 !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+    margin: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .prose .pullquote-content p {
+    margin: 0 !important;
+    font-size: 1.125rem !important;
+    line-height: 1.25 !important;
+    font-style: italic !important;
+  }
+
+  .prose .pullquote-content p:first-child {
+    margin-top: 0 !important;
+  }
+
+  .prose .pullquote-content p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Ensure prose doesn't interfere with floats */
+  .prose p,
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    clear: none !important;
+  }
+
   .prose :where(pre):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
     @apply max-w-full overflow-x-auto;
   }
