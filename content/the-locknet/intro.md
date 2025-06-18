@@ -14,7 +14,6 @@ name = "Laura Edelson"
 summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-</br>
 
 The man gazes earnestly into the camera, the glow from his computer monitor reflecting off his black-rimmed glasses. “This is more than just a cultural moment,” he says with a smile. “It’s something truly meaningful. This is about mutual respect, kindness, and efforts to understand each other. This feels so good\!” he exclaims in a [video](http://xhslink.com/a/MtezFxXAEMTbb) he posted to RedNote, a China-based social media platform similar to Instagram.
 

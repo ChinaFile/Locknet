@@ -10,6 +10,7 @@ We’ve tried to make our work accessible to a wide range of readers: those with
 
 - We created a [glossary of technical terms](/additional-materials/glossary/), which you can access by navigating to the full glossary via the left sidebar. You can also simply click on any term in-text that appears inside a {{< drawer title="blue box" >}}When you click on a glossary term, a definition appears here.{{< /drawer >}} and the glossary definition will appear on the right side of your screen. 
 
-- We also created “explainers” that attempt to answer some of the underlying questions you might find yourself asking as you read the main article. Throughout the article, in-text links will take you to the relevant explainer—though of course you’re welcome to read the explainers on their own (you can find them in the sidebar on the left, under “The Mechanics of Online Censorship” and [“A Few Notes on China”](/additional-materials/china-explainers/)). \[CHANGE TITLE IF APPROPRIATE\]
+- We also created “explainers” that attempt to answer some of the underlying questions you might find yourself asking as you read the main article. Throughout the article, in-text links will take you to the relevant explainer—though of course you’re welcome to read the explainers on their own (you can find them in the sidebar on the left, under “The Mechanics of Online Censorship” and [“Notes on China from a Computer Scientist”](/additional-materials/notes-on-china/)).
+
 
 Also under “Additional Materials,” we’ve provided an [Executive Summary](/additional-materials/executive-summary/) that includes the key takeaways of the project.
