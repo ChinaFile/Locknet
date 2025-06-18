@@ -11,8 +11,6 @@ name = "Laura Edelson"
 summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
-</br>
-
 ## What Even Is the Internet?
 
 The internet is not one thing, but rather a “network of networks.” A personal computer in Iowa, for example, does not have a single, dedicated wire physically connecting it to the recipe website Epicurious. Nevertheless, an Iowan (let’s call her Marjorie) can get all the recipes she wants simply by pointing her web browser to epicurious.com.
