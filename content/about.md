@@ -44,8 +44,6 @@ Paul Duke, for their patient and careful work on various datasets, as well as th
 
 Siodhbhra Parkin, Aryn Baker, Neil Thomas, Kevin Bock, and David Choffnes, for reviewing the technical explainers.
 
-Katharin Tai, for offering their thoughts on the future section.
-
 Casey Kolderup, for his thoughtful feedback and comments on multiple parts of this project.
 
 Myf, for reviewing the evasion section.
