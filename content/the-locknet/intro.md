@@ -14,6 +14,8 @@ name = "Laura Edelson"
 summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
+</br>
+
 The man gazes earnestly into the camera, the glow from his computer monitor reflecting off his black-rimmed glasses. “This is more than just a cultural moment,” he says with a smile. “It’s something truly meaningful. This is about mutual respect, kindness, and efforts to understand each other. This feels so good\!” he exclaims in a [video](http://xhslink.com/a/MtezFxXAEMTbb) he posted to RedNote, a China-based social media platform similar to Instagram.
 
 It was January 14, 2025, and Zheng Yubin was speaking in English to American users who had recently surged onto the platform—more than [half a million](https://archive.ph/bpyII) in just two days. Noting that the U.S. and China were sometimes viewed as rivals, he enthused that “today, through this connection, we are seeing something different, a more personal and human side. It’s not just about nations, it’s about individuals . . . people who share the same hope for more freedom and a bigger world. So once again, welcome\!”
@@ -64,7 +66,7 @@ Companies like RedNote don’t censor their users because they necessarily want 
 
 These three filters—network-level censorship, service-level censorship, and regulation and enforcement—aim to purify what is circulating on China’s domestic internet. The latter two filters manage content produced within the physical confines of China’s borders, or within the digital confines of a China-based app, while the first filter, network-level censorship, handles content that authorities can’t stifle at the source. Together, they form a socio-technological apparatus that can reach into both the digital and real-world lives of Chinese citizens, if and when it so chooses.
 
-{{< figure src="/media/images/main-1.png" caption="How all the pieces of the system work together" >}}
+{{< figure src="/media/images/main-1.png" >}}
 
 A censorship system this large undoubtedly costs the Party-state a pretty penny in research and development, new hardware, and day-to-day upkeep—but no one knows exactly how much. In 2021, researcher Ryan Fedasiuk used available government budgets to [estimate](https://archive.ph/kGGOb) that “Chinese government and CCP offices engaged in internet censorship likely spent more than $6.6 billion (nominal USD) annually on related activities. Accounting for purchasing power parity, the number is likely closer to $13 billion.” This calculation is missing a large chunk of central government spending, which isn’t made public. It also doesn’t include the costs borne by private industry, meaning it’s likely a significant underestimate. The expense of this system stems from the assumptions baked into its design: any citizen could be up to no good, therefore the system’s substantial cost is proportional to the total population and not to the number of actual offenders. 
 
@@ -138,7 +140,7 @@ Like social media companies the world over, individual Chinese platforms publish
 
 Paradoxically, this makes corporate content policies an excellent guide to the topics China’s leaders most want to conceal. When a company describes a forbidden topic in generic or hazy language, that is often a sign authorities consider it “dangerous.” WeChat's [content rules](https://archive.is/wSWhE), for example, offer up the following illustration of prohibited, but not “dangerous,” gambling-related content:  
 
-{{< figure src="/media/images/main-wechat-screenshot-scaled.png" caption="A screenshot from WeChat’s “Standards of Weixin Account Usage,” taken March 20, 2024." >}}
+{{< figure class="grid items-center" src="/media/images/main-wechat-screenshot-scaled300.png" caption="A screenshot from WeChat’s “Standards of Weixin Account Usage,” taken March 20, 2024." >}}
 
 By contrast, WeChat provides no explicit examples of what kind of content might “damages national honor and interests” or “subverts state power.”  
 

@@ -11,6 +11,10 @@ name = "Laura Edelson"
 summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
+
+</br>
+
+
 The continued functioning of the Locknet remains existential for the Chinese Communist Party—it’s a must-have, not a nice-to-have. Control over information, and thus influence over what citizens know and believe, forms part of the bedrock on which the Party edifice stands. In the modern world, this necessarily involves internet censorship. As General Secretary Xi Jinping [said in a 2018 speech](https://archive.ph/KyXyQ), “Without internet security there is no national security, economic and social stability do not function, and it becomes difficult to safeguard the interests of the majority of the people.” Of course, in China, “internet security” doesn’t just mean keeping one’s data safe. It means content control.
 
 This precept limits what kinds of changes the Locknet is likely to undergo in the coming years. There’s simply no reason for the Party to allow wide-scale access to uncontrolled online information flows, even if it might have some economic benefits—an improved economy doesn’t mean much to a regime that’s been deposed. A serious recession, or a slightly less autocratic General Secretary, might alter this calculation somewhat, but the vast majority of the Party’s political imperatives point exactly in the direction of the status quo: ever-tightening content controls. The Party won’t become more lax on censorship of political or social issues for almost any reason other than its own collapse. 
@@ -75,7 +79,7 @@ The central government in 2013 also [decreed](https://web.archive.org/web/202503
 
 Similarly to the various IPv6+ projects underway throughout China, CENI does not yet operate as a general-purpose network that the public can connect its devices to. Instead, it supports more industrial or specialized applications, like a doctor in Shandong [operating](https://archive.ph/rkn0K) on a patient more than 120 miles away, or a major state media outlet [creating](https://archive.ph/XuD5w) a super-high-resolution streaming system. However, such “islands” of implementation could allow for broader deployment in the future.
 
-Some local government services already use IPv6+, but it’s very hard to tell from the outside whether or not it is currently abetting government censorship. Beijing wouldn’t “need to do a big push to change the infrastructure,” says Hmaidi. “It’s not replacing anything, it’s just a software update by the {{< drawer title="ISPs" >}}Organizations that provide users access to the internet, in addition to other related services, such as maintaining <b>DNS resolvers</b>. An ISP may be privately or publicly owned. In many countries, including China and the U.S., ISPs are required to share certain information with law enforcement agencies.{{< /drawer >}}
+Some local government services already use IPv6+, but it’s very hard to tell from the outside whether or not it is currently abetting government censorship. Beijing wouldn’t “need to do a big push to change the infrastructure,” says Hmaidi. “It’s not replacing anything, it’s just a software update by the {{< drawer title="ISPs">}}Organizations that provide users access to the internet, in addition to other related services, such as maintaining <b>DNS resolvers</b>. An ISP may be privately or publicly owned. In many countries, including China and the U.S., ISPs are required to share certain information with law enforcement agencies.{{< /drawer >}}
 . This is also what makes it difficult to understand the extent of use.”
 
 ## Continued Crackdown on Circumvention
