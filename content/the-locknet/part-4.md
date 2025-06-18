@@ -11,6 +11,10 @@ name = "Laura Edelson"
 summary = "Assistant Professor of Computer Science at Northeastern University"
 +++
 
+
+</br>
+
+
 In February 2022, American-born skier Eileen Gu became an internet sensation in China when she competed at the Beijing Winter Olympics as part of the PRC national team. During her time in China, Gu made multiple posts about her Olympic experiences on Instagram, a platform banned in the mainland. Just before Gu’s freeski big air event, [an irked Instagram user asked Gu](https://archive.is/OmSOD): “Why can you use Instagram and millions of Chinese people from mainland cannot, why you got such special treatment as a Chinese citizen. That’s not fair, can you speak up for those millions of Chinese who don’t have internet freedom”. Gu’s response betrayed how little she understood of the Locknet: “anyone can download a vpn its literally free on the App Store 👍”
 
 {{< drawer title="VPNs" >}}Computer applications that make use of both encryption and a <b>proxy server</b> to keep censors from seeing the true destination of a user’s internet traffic. In common parlance, the terms “VPN” and “proxy” are used interchangeably to describe a technology that helps evade censorship.{{< /drawer >}}, in fact, were not and are not available in China’s app stores—at least not for average users, who didn’t have access to the [Olympics’ special limited-time, restricted-user internet](https://www.voanews.com/a/china-to-crack-open-great-firewall-for-winter-olympic-athletes-/6356402.html) network. Just as it does with many foreign communication and social media apps, China [forbids](https://archive.ph/fOpi1) companies from offering VPNs and [other circumvention services](https://archive.ph/oXBDw) in the mainland versions of their app stores, or at least forbids them from offering VPNs that aren’t “[government-approved and surveilled](https://censorbib.nymity.ch/pdf/Ververis2019a.pdf).” As one Chinese internet user [wrote on Weibo](https://archive.ph/dxfou) in a retort to Eileen Gu, “Literally free, actually, technically, and practically forbidden.”
