@@ -139,7 +139,7 @@ Like social media companies the world over, individual Chinese platforms publish
 
 Paradoxically, this makes corporate content policies an excellent guide to the topics China’s leaders most want to conceal. When a company describes a forbidden topic in generic or hazy language, that is often a sign authorities consider it “dangerous.” WeChat's [content rules](https://archive.is/wSWhE), for example, offer up the following illustration of prohibited, but not “dangerous,” gambling-related content:  
 
-{{< figure class="grid items-center" src="/media/images/main-wechat-screenshot-scaled300.png" caption="A screenshot from WeChat’s “Standards of Weixin Account Usage,” taken March 20, 2024." >}}
+{{< figure class="grid place-items-center" src="/media/images/main-wechat-screenshot-scaled300.png" caption="A screenshot from WeChat’s “Standards of Weixin Account Usage,” taken March 20, 2024." >}}
 
 By contrast, WeChat provides no explicit examples of what kind of content might “damages national honor and interests” or “subverts state power.”  
 

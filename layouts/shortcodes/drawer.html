@@ -13,7 +13,7 @@
         this.open = false;
         document.body.classList.remove('overflow-hidden');
     }
-}" class="inline-flex items-center ms-0.5" data-drawer-trigger>
+}" class="inline-flex items-center mx-0.5" data-drawer-trigger>
     <span @click="openDrawer" @keydown.enter.space="openDrawer" tabindex="0" role="button" aria-controls="drawer-{{ .Get "title" | urlize }}" :aria-expanded="open.toString()" class="inline-flex px-1 py-0.25 rounded-sm bg-blue-1 text-blue-5 hover:bg-blue-2 cursor-pointer focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2">{{- .Get "title" -}}</span>
     <template x-if="open">
       <div>
