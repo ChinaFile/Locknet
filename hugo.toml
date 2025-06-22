@@ -89,3 +89,14 @@ pluralizeListTitles = false
   [privacy.youtube]
     disable = false
     privacyEnhanced = true
+
+[minify]
+  # Keep HTML/CSS/JS minification enabled, but retain the literal whitespace
+  # between inline elements so that natural spacing typed in Markdown is not
+  # stripped away (fixes missing spaces after the `drawer` shortcode when the
+  # production build runs with --minify).
+  minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      # Preserve a single whitespace character where it originally existed.
+      keepWhitespace = true
