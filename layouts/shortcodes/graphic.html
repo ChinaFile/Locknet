@@ -1,4 +1,11 @@
-<div class="my-4" id="chokepointPotentialChart"></div>
+<figure role="figure" class="my-4">
+  <div id="chokepointPotentialChart"></div>
+
+  {{- /* Optional caption */ -}}
+  {{- with .Get "caption" }}
+    <figcaption class="text-center mt-6 text-sm text-gray-600">{{ . | markdownify }}</figcaption>
+  {{- end }}
+</figure>
 
 <style>
 @font-face {
@@ -212,8 +219,7 @@ function chokepointPotentialChart({ el, xkcdify = false }) {
     },
   ];
 
-  const TITLE =
-    "China's “National Chokepoint Potential” over time, compared to Egypt, India, and the United States";
+  const TITLE = `China's “National Chokepoint Potential” over time, compared to Egypt, India, and the United States`;
 
   const KEYS = ["China", "Egypt", "India", "U.S."];
 
