@@ -41,7 +41,10 @@
             </div>
             
             <div class="w-full my-2 relative">
-              <div id="search-mobile" class="w-full" aria-label="Site search"></div>
+              <button id="search-mobile" type="button" onclick="openSearchModal()" class="w-full flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2" aria-label="Search site (opens dialog)">
+                {{ partial "fontawesome.html" (dict "icon" "solid/magnifying-glass" "class" "h-4 w-4 text-gray-500" ) }}
+                <span class="text-sm text-gray-600">Search</span>
+              </button>
             </div>
             <nav aria-label="Main navigation (mobile)" class="flex-1">
             {{ $singles := where .Site.RegularPages "Section" "" }}
@@ -154,7 +157,10 @@
           </a>
         </div>
         <div class="w-full my-2 relative">
-          <div id="search-desktop" class="w-full" aria-label="Site search"></div>
+          <button id="search-desktop" type="button" onclick="openSearchModal()" class="w-full flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2" aria-label="Search site (opens dialog)">
+            {{ partial "fontawesome.html" (dict "icon" "solid/magnifying-glass" "class" "h-4 w-4 text-gray-500" ) }}
+            <span class="text-sm text-gray-600">Search</span>
+          </button>
         </div>
       </div>
       {{ $singles := where .Site.RegularPages "Section" "" }}
@@ -253,12 +259,74 @@
       </div>
     </nav>
 </header>
+<!-- Search modal overlay -->
+<div id="search-modal-overlay" class="hidden fixed inset-0 z-9999 flex items-start lg:items-center justify-center p-4 bg-black/40">
+  <div class="relative w-full max-w-2xl bg-white rounded-lg shadow-2xl border border-gray-200">
+    <button id="search-modal-close" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2" aria-label="Close search">
+      {{ partial "fontawesome.html" (dict "icon" "solid/xmark" "class" "h-6 w-6") }}
+    </button>
+    <div id="search-modal" class="px-6 pt-14 pb-6" aria-label="Site search">
+      <style>
+        /* Keep the Pagefind search input visible while results scroll */
+        #search-modal .pagefind-ui__form {
+          position: sticky;
+          top: 0;
+          background: white;
+          padding-bottom: 0.5rem; /* visual separation */
+          z-index: 10;
+        }
+        /* Constrain results list height and make it independently scrollable */
+        #search-modal .pagefind-ui__results {
+          max-height: 40vh;
+          overflow-y: auto;
+        }
+      </style>
+    </div>
+  </div>
+</div>
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 <script src="/pagefind/pagefind-ui.js"></script>
 <script>
 window.addEventListener('DOMContentLoaded', (event) => {
-  new PagefindUI({ element: window.innerWidth < 1024 ? "#search-mobile" : "#search-desktop", showSubResults: true });
+  // ---------- Search modal handling ----------
+  const overlay = document.getElementById('search-modal-overlay');
+  const closeBtn = document.getElementById('search-modal-close');
 
+  function openSearchModal() {
+    overlay.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeSearchModal() {
+    overlay.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  // Expose for external triggers (e.g. future buttons)
+  window.openSearchModal = openSearchModal;
+  window.closeSearchModal = closeSearchModal;
+
+  // Keyboard shortcuts:  /   or   ⌘/Ctrl + K
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeSearchModal();
+    }
+    if ((e.key === '/' && e.target === document.body) || (e.key === 'k' && (e.metaKey || e.ctrlKey))) {
+      e.preventDefault();
+      openSearchModal();
+    }
+  });
+
+  // Close interactions
+  if (closeBtn) closeBtn.addEventListener('click', closeSearchModal);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeSearchModal();
+  });
+
+  // Initialise Pagefind inside the modal
+  new PagefindUI({ element: "#search-modal", showSubResults: true, pageSize: 3, autofocus: true, highlightParam: "highlight" });
+
+  // ---------- Existing navbar behaviours ----------
   // Handle mobile top strip shadow
   const mobileTopStrip = document.getElementById('mobile-top-strip');
   if (mobileTopStrip) {
@@ -278,18 +346,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const chevron = details.querySelector('.subsection-chevron');
     if (chevron) {
       const observer = new MutationObserver(() => {
-        if (details.open) {
-          chevron.style.transform = 'rotate(180deg)';
-        } else {
-          chevron.style.transform = 'rotate(0deg)';
-        }
+        chevron.style.transform = details.open ? 'rotate(180deg)' : 'rotate(0deg)';
       });
       observer.observe(details, { attributes: true, attributeFilter: ['open'] });
-      
-      // Set initial state
-      if (details.open) {
-        chevron.style.transform = 'rotate(180deg)';
-      }
+      if (details.open) chevron.style.transform = 'rotate(180deg)';
     }
   });
 });
