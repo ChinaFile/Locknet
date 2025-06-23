@@ -1,6 +1,6 @@
 +++
 title = "Glossary"
-weight = 5
+weight = 3
 toc = false
 +++
 
