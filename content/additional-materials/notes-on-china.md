@@ -1,6 +1,6 @@
 +++
 title = "Notes on China from a Computer Scientist"
-weight = 3
+weight = 4
 toc = true
 
 [[authors]]
