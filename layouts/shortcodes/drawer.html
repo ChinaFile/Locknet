@@ -33,7 +33,7 @@
                 </button>
                 <div class="flex-1 p-6 w-full">
                     <h2 class="text-lg font-semibold mb-4">{{ .Get "title" }}</h2>
-                    <div class="w-full shrink-0 prose">{{ .Inner }}</div>
+                    <div class="w-full shrink-0 prose">{{ .Inner | markdownify }}</div>
                 </div>
             </aside>
         </div>
