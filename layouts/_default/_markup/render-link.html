@@ -5,5 +5,5 @@
 {{- if $isExternal -}}
 <a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">{{- .Text -}}</a>
 {{- else -}}
-<a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener noreferrer" class="text-blue-5 hover:text-blue-6 hover:underline">{{- .Text -}}</a>
+<a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener noreferrer" class="text-blue-5 hover:text-blue-6 hover:underline decoration-dotted decoration-2 underline-offset-2">{{- .Text -}}</a>
 {{- end -}}
