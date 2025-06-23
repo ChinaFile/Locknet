@@ -36,7 +36,7 @@ In decades past, when domestic Chinese platforms were less developed, foreign te
 
 
 {{< pullquote position="right" >}}
-“The Chinese government has wide discretion in regulating online activities and, irrespective of our efforts to control the content on our platform, government campaigns and other actions to reduce illicit content and activities could subject us to negative press or regulatory challenges and sanctions, including fines, suspension or revocation of our licenses to operate in China or a ban on our platform, including closure of one or more parts of or our entire business.”
+<b>“The Chinese government has wide discretion in regulating online activities and, irrespective of our efforts to control the content on our platform, government campaigns and other actions to reduce illicit content and activities could subject us to negative press or regulatory challenges and sanctions, including fines, suspension or revocation of our licenses to operate in China or a ban on our platform, including closure of one or more parts of or our entire business.”</b>
 {{< /pullquote >}}
 
 
