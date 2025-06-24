@@ -3,7 +3,7 @@ title = "Executive Summary"
 weight = 2
 +++
 
-Download a PDF copy of this Executive Summary [here](https://www.chinafile.com/sites/default/files/locknet_executive_summary.pdf).
+<em>[Download a PDF of this Executive Summary](https://www.chinafile.com/sites/default/files/locknet_executive_summary.pdf).</em>
 
 </br>
 
