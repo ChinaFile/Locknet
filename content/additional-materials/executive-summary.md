@@ -3,6 +3,10 @@ title = "Executive Summary"
 weight = 2
 +++
 
+Download a PDF copy of this Executive Summary [here](https://www.chinafile.com/sites/default/files/locknet_executive_summary.pdf).
+
+</br>
+
 China, its companies, and its citizens play a major role in the global internet: producing infrastructure, services, and content upon which people around the world depend. Yet, China’s extensive online censorship system remains poorly understood by most of the internet’s users, and the ways it alters both the physical and digital architecture of the internet are too often overlooked.
 
 For more than a year, ChinaFile Senior Editor for Investigations Jessica Batke and Northeastern University Assistant Professor Laura Edelson explored how China censors its internet, interviewing experts, reviewing decades of computer science research, and tracking policy and regulatory changes over time. Their cross-disciplinary approach afforded them a broad view of the interplay between the technological and social aspects of China’s censorship regime, yielding new insights about the system’s purpose, its capacity, and its likely trajectory in the years to come. It also allowed them to clear up longstanding misconceptions and establish new frameworks for future research.
