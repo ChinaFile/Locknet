@@ -14,11 +14,11 @@ Cover art by Steven Weinberg for ChinaFile. Other graphics found throughout the 
 
 ## A Note on Terminology
 
-China’s government comprises both the Chinese Communist Party (CCP) and the State. The CCP is woven into and directs the functions of the state much more fully than do political parties in many democracies. 
+China’s government comprises both the Chinese Communist Party (CCP) and the state. The CCP is woven into and directs the functions of the state much more fully than do political parties in many democracies. 
 
-To oversimplify somewhat, the Party determines policy and the State implements these decisions. State organs may offer policy recommendations and implement decisions in ways that shape policy substance and outcomes, but ultimately, the Party calls the shots. The Party oversees the selection of State officials, and the vast majority of senior State leaders are also Party members, who lead Party committees in every State organization. 
+To oversimplify somewhat, the Party determines policy and the state implements these decisions. State organs may offer policy recommendations and implement decisions in ways that shape policy substance and outcomes, but ultimately the Party calls the shots. The Party oversees the selection of state officials, and the vast majority of senior state leaders are also Party members, who lead Party committees in every state organization. 
 
-When we refer to “China’s government,” “the Chinese government,” “Beijing,” or sometimes even “China,” we are glossing over the distinction between the Party and the State because, in many cases, that distinction isn’t relevant to the discussion at hand. We employ similar logic when we mention organs of the Party or State, not identifying them as belonging to one or the other.  
+When we refer to “China’s government,” “the Chinese government,” “Beijing,” or sometimes even “China,” we are glossing over the distinction between the Party and the state because, in many cases, that distinction isn’t relevant to the discussion at hand. We employ similar logic when we mention organs of the Party or state, not identifying them as belonging to one or the other.  
 
 ## Acknowledgements
 
