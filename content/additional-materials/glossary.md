@@ -42,7 +42,7 @@ toc = false
 
 **Internet Protocol (IP)** \- The set of rules, developed over time and with the input of many different international organizations and individuals, that guides how packets of data travel across networks and that allows the many different networks that make up the internet to be interoperable. Internet Protocol Version 4 (IPv4) and Internet Protocol Version 6 (IPv6) are both currently in use on the internet.
 
-**Internet service provider (ISP)** \- An organization that provides users access to the internet, in addition to other related services, such as maintaining DNS resolvers \[LINK\]. An ISP may be privately or publicly owned. In many countries, including China and the U.S., ISPs are required to share certain information with law enforcement agencies.
+**Internet service provider (ISP)** \- An organization that provides users access to the internet, in addition to other related services, such as maintaining **DNS resolvers**. An ISP may be privately or publicly owned. In many countries, including China and the U.S., ISPs are required to share certain information with law enforcement agencies.
 
 **IP address** \- A series of characters that identifies a computer or server using the IP system to communicate over the internet. Internet Protocol Version 4 (IPv4) addresses are composed of a set of four numbers, each with one to three digits, separated by periods (for example, *104.18.204.43*). Internet Protocol Version 6 (IPv6) addresses are longer and can also include letters (such as *1050:0:0:0:5:600:300c:326b*).
 
