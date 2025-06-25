@@ -4,7 +4,7 @@ weight = 6
 toc = false
 +++
 
-This project was funded with support from the [Open Technology Fund](https://www.opentech.fund/) (OTF) and [Carnegie Corporation of New York](https://www.carnegie.org/). OTF also introduced us to a number of their other grantees, whose work we have sometimes quoted or cited. However, we have produced this project independently, based on our own research and expertise, and without any editorial guidance or interference from any third party, including OTF.
+This project, produced by [ChinaFile](https://www.chinafile.com/), which is an online magazine published by the [Asia Society](https://asiasociety.org/), was funded with support from the [Open Technology Fund](https://www.opentech.fund/) (OTF) and [Carnegie Corporation of New York](https://www.carnegie.org/). OTF also introduced us to a number of their other grantees, whose work we have sometimes quoted or cited. However, we have produced this project independently, based on our own research and expertise, and without any editorial guidance or interference from any third party, including OTF.
 
 For safety reasons, some researchers in the fields of China studies and computer science author articles or reports anonymously. Though in general we seek to avoid relying on anonymous work if we do not ourselves know the author, we have made several exceptions during the course of this project. Where these anonymous authors appear in peer-reviewed journals, we have trusted the peer review process to vet the work. In one case, we have cited an anonymous work on the censorship of Wikipedia that contains extensive methodological documentation and has been cited by other experts in the field. 
 
@@ -60,4 +60,4 @@ The many, many individuals who were willing to speak with us very early on in th
 
 Those who helped us in ways big and small, but who wish to remain anonymous.
 
-All errors or inaccuracies are solely our own.
+All errors or inaccuracies are solely our own. *--Laura Edelson and Jessica Batke*
