@@ -10,6 +10,82 @@
 <meta name="theme-color" content="{{ if .Params.background }}{{ .Params.background }}{{ else }}#EFFAFE{{ end }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
+<!-- Defensive coding for GTM dependencies -->
+<script>
+// Only load libraries if GTM actually needs them and elements exist
+window.gtmDefensiveLoad = function() {
+  // Stub videojs to prevent errors if GTM tries to use it
+  if (typeof videojs === 'undefined') {
+    window.videojs = function(element, options, callback) {
+      console.warn('videojs called but no video elements found:', element);
+      return {
+        ready: function(fn) { if (typeof fn === 'function') fn(); },
+        on: function() {},
+        play: function() {},
+        pause: function() {},
+        dispose: function() {}
+      };
+    };
+  }
+  
+  // Stub jQuery if needed
+  if (typeof jQuery === 'undefined' && typeof $ === 'undefined') {
+    window.jQuery = window.$ = function(selector) {
+      console.warn('jQuery called by GTM:', selector);
+      return {
+        ready: function(fn) { if (typeof fn === 'function') fn(); },
+        on: function() { return this; },
+        off: function() { return this; },
+        find: function() { return this; },
+        each: function() { return this; },
+        height: function() { 
+          // Return appropriate height based on selector
+          if (selector === window || selector === 'window') {
+            return window.innerHeight;
+          } else if (selector === document || selector === 'document') {
+            return Math.max(
+              document.body.scrollHeight,
+              document.body.offsetHeight,
+              document.documentElement.clientHeight,
+              document.documentElement.scrollHeight,
+              document.documentElement.offsetHeight
+            );
+          }
+          return 0;
+        },
+        length: 0
+      };
+    };
+    
+    // Add jQuery.extend method for scroll depth tracking
+    window.jQuery.extend = window.$.extend = function(target) {
+      console.warn('jQuery.extend called by GTM (likely scroll depth tracking)');
+      var args = Array.prototype.slice.call(arguments, 1);
+      for (var i = 0; i < args.length; i++) {
+        var source = args[i];
+        if (source) {
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+      }
+      return target;
+    };
+  }
+};
+
+// Call defensive loading before GTM
+gtmDefensiveLoad();
+</script>
+
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5V5S2P');
+</script>
+<!-- End Google Tag Manager -->
+
 {{ block "title" . }}
 <title>
   {{ if .IsHome }} {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }} {{ end }} {{ else }} {{ .Title }} :: {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }} {{ end }}
