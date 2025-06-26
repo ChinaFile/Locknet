@@ -1,0 +1,543 @@
+<!doctype html>
+<html data-theme=light class="h-full scroll-pt-20" lang=en itemscope itemtype=http://schema.org/WebPage>
+
+<head>
+    <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta charset=UTF-8>
+    <meta name=author content>
+    <meta name=description content="Application layer - The part of the network stack that conducts high-level data management and …">
+    <meta name=keywords content>
+    <meta name=robots content="noodp">
+    <meta name=theme-color content="#EFFAFE">
+    <link rel=canonical href=https://locknet2.netlify.app/additional-materials/glossary />
+    <script>
+        window.gtmDefensiveLoad = function() {
+            typeof videojs == "undefined" && (window.videojs = function(e) {
+                return console.warn("videojs called but no video elements found:", e), {
+                    ready: function(e) {
+                        typeof e == "function" && e()
+                    },
+                    on: function() {},
+                    play: function() {},
+                    pause: function() {},
+                    dispose: function() {}
+                }
+            }), typeof jQuery == "undefined" && typeof $ == "undefined" && (window.jQuery = window.$ = function(e) {
+                return console.warn("jQuery called by GTM:", e), {
+                    ready: function(e) {
+                        typeof e == "function" && e()
+                    },
+                    on: function() {
+                        return this
+                    },
+                    off: function() {
+                        return this
+                    },
+                    find: function() {
+                        return this
+                    },
+                    each: function() {
+                        return this
+                    },
+                    height: function() {
+                        return e === window || e === "window" ? window.innerHeight : e === document || e === "document" ? Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight) : 0
+                    },
+                    length: 0
+                }
+            }, window.jQuery.extend = window.$.extend = function(e) {
+                console.warn("jQuery.extend called by GTM (likely scroll depth tracking)");
+                for (var t, s, o = Array.prototype.slice.call(arguments, 1), n = 0; n < o.length; n++)
+                    if (t = o[n], t)
+                        for (s in t) t.hasOwnProperty(s) && (e[s] = t[s]);
+                return e
+            })
+        }, gtmDefensiveLoad()
+    </script>
+    <script>
+        (function(e, t, n, s, o) {
+            e[s] = e[s] || [], e[s].push({
+                "gtm.start": (new Date).getTime(),
+                event: "gtm.js"
+            });
+            var a = t.getElementsByTagName(n)[0],
+                i = t.createElement(n),
+                r = s != "dataLayer" ? "&l=" + s : "";
+            i.async = !0, i.src = "https://www.googletagmanager.com/gtm.js?id=" + o + r, a.parentNode.insertBefore(i, a)
+        })(window, document, "script", "dataLayer", "GTM-5V5S2P")
+    </script>
+    <title>
+        Glossary :: ChinaFile
+    </title>
+    <link rel=stylesheet href=https://locknet2.netlify.app/style.c42a2954075dd7930b1b7997be70402f567ec83366563a2a1a8a074329bff334.css>
+    <link rel=apple-touch-icon href=https://locknet2.netlify.app/favicons/apple-touch-icon.png>
+    <link rel=mask-icon href=https://locknet2.netlify.app/favicons/safari-pinned-tab.svg color=#EFFAFE>
+    <link rel=icon href=https://locknet2.netlify.app/favicons/favicon.svg>
+    <meta itemprop=name content="Glossary">
+    <meta itemprop=description content="Application layer - The part of the network stack that conducts high-level data management and translation, such as character encoding, data compression, encryption/decryption, and remote file access. HTTP and HTTPS protocols function at this layer.
+Border Gateway Protocol (BGP) - The set of rules governing how one router at the edge of a network communicates with a router in a neighboring network. This allows the routers to provide and receive information about the status of each others’ networks, such as what paths are available in the neighboring network. This helps them decide what paths they might use to transmit packets.">
+    <meta itemprop=wordCount content="2460">
+    <meta itemprop=image content="https://locknet2.netlify.app/media/images/thumbnail.png">
+    <meta property="og:url" content="https://locknet2.netlify.app/additional-materials/glossary/">
+    <meta property="og:site_name" content="ChinaFile">
+    <meta property="og:title" content="Glossary">
+    <meta property="og:description" content="Application layer - The part of the network stack that conducts high-level data management and translation, such as character encoding, data compression, encryption/decryption, and remote file access. HTTP and HTTPS protocols function at this layer.
+Border Gateway Protocol (BGP) - The set of rules governing how one router at the edge of a network communicates with a router in a neighboring network. This allows the routers to provide and receive information about the status of each others’ networks, such as what paths are available in the neighboring network. This helps them decide what paths they might use to transmit packets.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="additional-materials">
+    <meta property="og:image" content="https://locknet2.netlify.app/media/images/thumbnail.png">
+    <meta name=twitter:card content="summary_large_image">
+    <meta name=twitter:image content="https://locknet2.netlify.app/media/images/thumbnail.png">
+    <meta name=twitter:title content="Glossary">
+    <meta name=twitter:description content="Application layer - The part of the network stack that conducts high-level data management and translation, such as character encoding, data compression, encryption/decryption, and remote file access. HTTP and HTTPS protocols function at this layer.
+Border Gateway Protocol (BGP) - The set of rules governing how one router at the edge of a network communicates with a router in a neighboring network. This allows the routers to provide and receive information about the status of each others’ networks, such as what paths are available in the neighboring network. This helps them decide what paths they might use to transmit packets.">
+</head>
+
+<body class="h-full bg-white">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V5S2P" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript>
+    <a class="sr-only focus:not-sr-only" href=#content role=link>Skip to content</a>
+    <div id=global-progress-bar class="fixed top-0 left-0 z-[9999] w-full h-1.5 bg-gray-200">
+        <div id=global-progress class="h-1.5 bg-blue-5 w-0 transition-all duration-200"></div>
+    </div>
+    <div x-data="{ open: false, dropdownOpen: false }">
+        <header>
+            <div id=mobile-top-strip class="lg:hidden fixed top-0 left-0 w-full h-16 bg-white z-40 flex items-center px-4 gap-2 transition-shadow duration-200">
+                <button type=button class="lg:hidden z-50 p-2 rounded-md bg-white focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-2" aria-label="Open sidebar" @click="open = true">
+                    <svg viewBox="0 0 448 512" class="h-6 w-6 text-gray-900">
+                        <path fill="currentColor" aria-hidden="true" d="M0 96C0 78.3 14.3 64 32 64h384c17.7.0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7.0 96zM0 256c0-17.7 14.3-32 32-32h384c17.7.0 32 14.3 32 32s-14.3 32-32 32H32c-17.7.0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7.0-32-14.3-32-32s14.3-32 32-32h384c17.7.0 32 14.3 32 32z" />
+                    </svg>
+                </button>
+                <div class="flex-1 truncate">
+                    <p class="text-sm font-medium text-gray-900 truncate font-sans">The Locknet</p>
+                </div>
+            </div>
+            <div class="relative z-50 lg:hidden" role=dialog aria-modal=true x-show=open x-cloak>
+                <div class="fixed inset-0 bg-gray-900/80" aria-hidden=true @click="open = false" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start=opacity-0 x-transition:enter-end=opacity-100 x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start=opacity-100 x-transition:leave-end=opacity-0>
+                </div>
+                <div class="fixed inset-0 flex">
+                    <div class="relative mr-16 flex w-full max-w-xs flex-1 transform transition-transform duration-300 ease-in-out" x-show=open x-transition:enter="transform transition-transform ease-in-out duration-300" x-transition:enter-start=-translate-x-full x-transition:enter-end=translate-x-0 x-transition:leave="transform transition-transform ease-in-out duration-300" x-transition:leave-start=translate-x-0 x-transition:leave-end=-translate-x-full>
+                        <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
+                            <button type=button class="-m-2.5 p-2.5" @click="open = false" aria-label="Close sidebar">
+                                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flex grow flex-col gap-y-6 bg-white px-4 pt-6 pb-4">
+                            <div class="flex items-center gap-3 mb-2 h-10">
+                                <a href=https://www.chinafile.com target=_blank rel="noopener noreferrer">
+                                    <img src=https://locknet2.netlify.app/media/images/chinafile-logo.png alt="ChinaFile logo" class="h-8 w-auto">
+                                </a>
+                            </div>
+                            <div class="w-full my-2 relative">
+                                <button id=search-mobile type=button onclick=openSearchModal() class="w-full flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2" aria-label="Search site (opens dialog)">
+                                    <svg viewBox="0 0 512 512" class="h-4 w-4 text-gray-500">
+                                        <path fill="currentColor" aria-hidden="true" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-600">Search</span>
+                                </button>
+                            </div>
+                            <nav aria-label="Main navigation (mobile)" class=flex-1>
+                                <ul class="flex flex-col gap-2" role=menu>
+                                    <li role=none>
+                                        <details class="relative group">
+                                            <summary class="w-full flex items-center font-semibold text-lg px-4 py-3 transition-colors focus:outline-none rounded-md cursor-pointer" role=button aria-expanded=false tabindex=0 aria-controls=section-0-submenu>
+                                                <span>The Locknet</span>
+                                                <span class="ml-auto flex items-center">
+                                                    <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </span>
+                                            </summary>
+                                            <ul id=section-0-submenu class="px-4 mt-3 flex flex-col gap-1.5" role=menu>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/intro/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-orange-800 hover:text-orange-900 hover:underline">The Locknet: How China Controls Its Internet and Why It Matters</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-1/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">I. Meatspace: The Locknet IRL</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-2/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">II. Service-Level Censorship: The Corporate Locknet</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-3/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">III. Network-Level Censorship: Locknet in the Wires</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-4/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">IV. Evading the Locknet</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-5/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">V. The Locknet Leaks Out</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-6/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">VI. The Future of the Locknet</a>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </li>
+                                    <li role=none>
+                                        <details class="relative group" open>
+                                            <summary class="w-full flex items-center font-semibold text-lg px-4 py-3 transition-colors focus:outline-none bg-blue-1 text-blue-5 rounded-md cursor-pointer" role=button aria-expanded=true tabindex=0 aria-controls=section-1-submenu>
+                                                <span>Additional Materials</span>
+                                                <span class="ml-auto flex items-center">
+                                                    <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </span>
+                                            </summary>
+                                            <ul id=section-1-submenu class="px-4 mt-3 flex flex-col gap-1.5" role=menu>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/additional-materials/executive-summary/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">Executive Summary</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/additional-materials/glossary/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors font-semibold no-underline hover:underline text-blue-5" aria-current=page>Glossary</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/additional-materials/notes-on-china/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">Notes on China from a Computer Scientist</a>
+                                                </li>
+                                                <li role=none>
+                                                    <details class="relative subsection-group">
+                                                        <summary class="w-full flex items-center font-medium px-0 py-1 transition-colors focus:outline-none text-gray-700 hover:text-blue-5 cursor-pointer" role=button aria-expanded=false tabindex=0>
+                                                            <span>The Mechanics of Online Censorship</span>
+                                                            <span class="ml-auto flex items-center">
+                                                                <svg class="subsection-chevron h-4 w-4 transition-transform duration-200 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                        </summary>
+                                                        <ul class="px-3 mt-2 flex flex-col gap-1" role=menu>
+                                                            <li role=none>
+                                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/internet-101/ role=menuitem class="block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5 hover:underline">Internet 101</a>
+                                                            </li>
+                                                            <li role=none>
+                                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/censorship-how-china-disrupts-the-network/ role=menuitem class="block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5 hover:underline">Censorship: How China Disrupts the Network</a>
+                                                            </li>
+                                                            <li role=none>
+                                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/blocking-circumvention-technologies/ role=menuitem class="block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5 hover:underline">Blocking Circumvention Technologies</a>
+                                                            </li>
+                                                        </ul>
+                                                    </details>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </li>
+                                    <li role=none>
+                                        <a href=https://locknet2.netlify.app/about/ role=menuitem class="w-full flex items-center font-bold text-lg px-4 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 bg-white text-gray-900 rounded-md">
+                                            <span>About This Project</span>
+                                        </a>
+                                    </li>
+                                    <li role=none>
+                                        <a href=https://locknet2.netlify.app/how-to/ role=menuitem class="w-full flex items-center font-bold text-lg px-4 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 bg-white text-gray-900 rounded-md">
+                                            <span>How to Use This Site</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="border-t border-gray-200 bg-white pt-6">
+                                <p class="text-sm text-gray-600">
+                                    <a href=https://www.chinafile.com target=_blank rel="noopener noreferrer">ChinaFile</a> is a project of the <a href=https://asiasociety.org/ target=_blank rel="noopener noreferrer">Asia Society</a>. This website is licensed under CC BY 4.0.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-96 lg:flex-col bg-white border-r border-gray-200" aria-label="Main navigation (desktop)">
+                <div class="flex flex-col gap-y-4 px-6 py-6">
+                    <div class="flex items-center gap-3 mb-2 h-10">
+                        <a href=https://www.chinafile.com target=_blank rel="noopener noreferrer">
+                            <img src=https://locknet2.netlify.app/media/images/chinafile-logo.png alt="ChinaFile logo" class="h-10 w-auto">
+                        </a>
+                    </div>
+                    <div class="w-full my-2 relative">
+                        <button id=search-desktop type=button onclick=openSearchModal() class="w-full flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2" aria-label="Search site (opens dialog)">
+                            <svg viewBox="0 0 512 512" class="h-4 w-4 text-gray-500">
+                                <path fill="currentColor" aria-hidden="true" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z" />
+                            </svg>
+                            <span class="text-sm text-gray-600">Search</span>
+                        </button>
+                    </div>
+                </div>
+                <ul class="flex flex-col gap-2" role=menu>
+                    <li role=none>
+                        <details class="relative group">
+                            <summary role=button class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none hover:bg-gray-100 hover:text-blue-5 rounded-md cursor-pointer" aria-expanded=false tabindex=0 aria-controls=section-desktop-0-submenu>
+                                <span>The Locknet</span>
+                                <span class="ml-auto flex items-center">
+                                    <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <ul id=section-desktop-0-submenu class="px-8 mt-3 flex flex-col gap-1.5" role=menu>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/intro/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-orange-800 hover:text-orange-900">The Locknet: How China Controls Its Internet and Why It Matters</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-1/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">I. Meatspace: The Locknet IRL</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-2/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">II. Service-Level Censorship: The Corporate Locknet</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-3/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">III. Network-Level Censorship: Locknet in the Wires</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-4/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">IV. Evading the Locknet</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-5/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">V. The Locknet Leaks Out</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-6/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">VI. The Future of the Locknet</a>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li role=none>
+                        <details class="relative group" open>
+                            <summary role=button class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none bg-blue-1 text-blue-5 rounded-md cursor-pointer" aria-expanded=true tabindex=0 aria-controls=section-desktop-1-submenu>
+                                <span>Additional Materials</span>
+                                <span class="ml-auto flex items-center">
+                                    <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <ul id=section-desktop-1-submenu class="px-8 mt-3 flex flex-col gap-1.5" role=menu>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/additional-materials/executive-summary/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">Executive Summary</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/additional-materials/glossary/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors font-bold no-underline hover:underline text-blue-5" aria-current=page>Glossary</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/additional-materials/notes-on-china/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">Notes on China from a Computer Scientist</a>
+                                </li>
+                                <li role=none>
+                                    <details class="relative subsection-group">
+                                        <summary role=button class="w-full flex items-center font-medium px-0 py-1 transition-colors focus:outline-none text-gray-700 hover:text-blue-5 cursor-pointer" aria-expanded=false tabindex=0>
+                                            <span>The Mechanics of Online Censorship</span>
+                                            <span class="ml-auto flex items-center">
+                                                <svg class="subsection-chevron h-4 w-4 transition-transform duration-200 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                                </svg>
+                                            </span>
+                                        </summary>
+                                        <ul class="px-4 mt-2 flex flex-col gap-1" role=menu>
+                                            <li role=none>
+                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/internet-101/ role=menuitem class="cursor-pointer block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5">Internet 101</a>
+                                            </li>
+                                            <li role=none>
+                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/censorship-how-china-disrupts-the-network/ role=menuitem class="cursor-pointer block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5">Censorship: How China Disrupts the Network</a>
+                                            </li>
+                                            <li role=none>
+                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/blocking-circumvention-technologies/ role=menuitem class="cursor-pointer block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5">Blocking Circumvention Technologies</a>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li role=none>
+                        <a href=https://locknet2.netlify.app/about/ role=menuitem class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 bg-white text-gray-900 hover:bg-gray-100 hover:text-blue-5 rounded-md">
+                            <span>About This Project</span>
+                        </a>
+                    </li>
+                    <li role=none>
+                        <a href=https://locknet2.netlify.app/how-to/ role=menuitem class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 bg-white text-gray-900 hover:bg-gray-100 hover:text-blue-5 rounded-md">
+                            <span>How to Use This Site</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="sticky bottom-0 mt-auto border-t border-gray-200 bg-white p-6">
+                    <p class="text-sm text-gray-600">
+                        <a href=https://www.chinafile.com target=_blank rel="noopener noreferrer">ChinaFile</a> is a project of the <a href=https://asiasociety.org/ target=_blank rel="noopener noreferrer">Asia Society</a>. This website is licensed under CC BY 4.0.
+                    </p>
+                </div>
+            </nav>
+        </header>
+        <div id=search-modal-overlay class="hidden fixed inset-0 z-9999 flex items-start lg:items-center justify-center p-4 bg-black/40">
+            <div class="relative w-full max-w-2xl bg-white rounded-lg shadow-2xl border border-gray-200">
+                <button id=search-modal-close class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2" aria-label="Close search">
+                    <svg viewBox="0 0 384 512" class="h-6 w-6">
+                        <path fill="currentColor" aria-hidden="true" d="M342.6 150.6c12.5-12.5 12.5-32.8.0-45.3s-32.8-12.5-45.3.0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3.0s-12.5 32.8.0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8.0 45.3s32.8 12.5 45.3.0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3.0s12.5-32.8.0-45.3L237.3 256 342.6 150.6z" />
+                    </svg>
+                </button>
+                <div id=search-modal class="px-6 pt-14 pb-6" aria-label="Site search">
+                    <style>
+                        #search-modal .pagefind-ui__form {
+                            position: sticky;
+                            top: 0;
+                            background: #fff;
+                            padding-bottom: .5rem;
+                            z-index: 10
+                        }
+
+                        #search-modal .pagefind-ui__results {
+                            max-height: 40vh;
+                            overflow-y: auto
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+        <link href=https://locknet2.netlify.app/pagefind/pagefind-ui.css rel=stylesheet>
+        <script src=https://locknet2.netlify.app/pagefind/pagefind-ui.js></script>
+        <script>
+            window.addEventListener("DOMContentLoaded", e => {
+                const t = document.getElementById("search-modal-overlay"),
+                    o = document.getElementById("search-modal-close");
+
+                function i() {
+                    t.classList.remove("hidden"), document.body.classList.add("overflow-hidden")
+                }
+
+                function n() {
+                    t.classList.add("hidden"), document.body.classList.remove("overflow-hidden")
+                }
+                window.openSearchModal = i, window.closeSearchModal = n, document.addEventListener("keydown", e => {
+                    e.key === "Escape" && n(), (e.key === "/" && e.target === document.body || e.key === "k" && (e.metaKey || e.ctrlKey)) && (e.preventDefault(), i())
+                }), o && o.addEventListener("click", n), t.addEventListener("click", e => {
+                    e.target === t && n()
+                }), new PagefindUI({
+                    element: "#search-modal",
+                    showSubResults: !0,
+                    pageSize: 3,
+                    autofocus: !0,
+                    highlightParam: "highlight"
+                });
+                const s = document.getElementById("mobile-top-strip");
+                if (s) {
+                    function a() {
+                        window.scrollY > 0 ? s.classList.add("shadow-md") : s.classList.remove("shadow-md")
+                    }
+                    window.addEventListener("scroll", a, {
+                        passive: !0
+                    }), a()
+                }
+                document.querySelectorAll(".subsection-group").forEach(e => {
+                    const t = e.querySelector(".subsection-chevron");
+                    if (t) {
+                        const n = new MutationObserver(() => {
+                            t.style.transform = e.open ? "rotate(180deg)" : "rotate(0deg)"
+                        });
+                        n.observe(e, {
+                            attributes: !0,
+                            attributeFilter: ["open"]
+                        }), e.open && (t.style.transform = "rotate(180deg)")
+                    }
+                })
+            })
+        </script>
+        <div class=lg:pl-96>
+            <main id=content data-pagefind-body role=main tabindex=-1>
+                <div class="relative flex min-h-full flex-col justify-center lg:py-12 py-24 sm:px-6 lg:px-8 xl:flex-row xl:items-start xl:justify-center">
+                    <section class="prose mx-auto w-full max-w-3xl flex-col px-8 prose-hr:w-full lg:flex lg:px-8" aria-labelledby=main-content-heading>
+                        <nav class="mb-2 flex flex-wrap items-center justify-start text-sm font-semibold gap-2 w-full min-w-0" aria-label=Breadcrumb>
+                            <a href=https://locknet2.netlify.app/additional-materials/ class="font-medium uppercase no-underline hover:underline text-blue-5 whitespace-nowrap">Additional Materials</a>
+                        </nav>
+                        <article class="flex w-full flex-col items-start justify-between border-b border-gray-300">
+                            <h1 class="mb-6 mt-2 text-4xl text-gray-900 leading-[1.15]">
+                                Glossary
+                            </h1>
+                        </article>
+                        <div class="w-full flex flex-row mt-4">
+                            <article class="prose prose-a:text-blue-5 prose-a:visited:text-purple-800 prose-a:hover:text-blue-900 w-full">
+                                <p><strong>Application layer</strong> - The part of the network stack that conducts high-level data management and translation, such as character encoding, data compression, encryption/decryption, and remote file access. <strong>HTTP</strong> and <strong>HTTPS protocols</strong> function at this layer.</p>
+                                <p><strong>Border Gateway Protocol (BGP)</strong> - The set of rules governing how one router at the edge of a network communicates with a router in a neighboring network. This allows the routers to provide and receive information about the status of each others’ networks, such as what paths are available in the neighboring network. This helps them decide what paths they might use to transmit packets.</p>
+                                <p><strong>Collateral freedom</strong> - The inverse of “collateral damage,” collateral freedom posits that, if circumvention technologies make use of platforms that a censorship regime is unwilling to block, communications that would otherwise be censored will be able to slip through. This is the theory that underlies <strong>domain fronting</strong>, which relies on large, economically important websites like Amazon and Google to serve as <strong>fronts</strong>.</p>
+                                <p><strong>Data packet</strong> - What the transport layer creates when preparing data to be sent from one computer to another. When the transport layer receives data from the application layer, it divides that data into segments called packets, which can then be individually processed and routed throughout the internet.</p>
+                                <p><strong>Deep packet inspection (DPI)</strong> - The process of unpacking an internet packet and reading the content contained at the deepest (application) layer.</p>
+                                <p><strong>DNS lookup</strong> - The process by which a user’s computer converts human-friendly domain names into computer-friendly IP addresses. It consists of the computer sending the domain name to a DNS resolver, which searches for and returns the corresponding IP address to the user.</p>
+                                <p><strong>DNS resolver</strong> - A server that is the first stop in the DNS lookup process. It receives a domain name from a user and then queries a nameserver to find the corresponding IP address, which it then sends back to the user. DNS resolvers are often run by <strong>internet service providers (ISPs).</strong></p>
+                                <p><strong>Domain fronting</strong> - A censorship circumvention technique that sends internet packets to a false destination (a <strong>front</strong>) while hiding the real destination deeper within the packet structure. A censor would only see the front, usually a large website such as Amazon or Google, and allow the traffic to pass. This method, however, relies on the front websites unpacking the packets, seeing the true destination, and forwarding on the packets to the true destination—which many front websites have stopped doing.</p>
+                                <p><strong>Domain Name System (DNS)</strong> - The system that converts a human-friendly domain name (e.g., “catvideos.com”) into a computer-friendly IP address (e.g., “157.240.22.35”). By converting domain names into IP addresses, DNS allows routers throughout the internet to efficiently send information to the correct destination. DNS relies on <strong>DNS resolvers</strong> and <strong>nameservers</strong> to assist with this conversion.</p>
+                                <p><strong>Encrypted Server Name Identification (ESNI)</strong> - An encrypted version of the SNI field, allowing servers to return the proper website content to users while still keeping censors from knowing the website’s identity. As Chinese censors do not have an easy way to break the ESNI field’s encryption, they have instead blocked all ESNI traffic.</p>
+                                <p><strong>Fingerprinting</strong> - A method for detecting certain types of encrypted internet traffic. In China, fingerprinting is often used to detect internet traffic that is attempting to evade network-level censorship. Because encryption prevents a censor from viewing the content of a packet, fingerprinting techniques allow the censor to instead analyze the visible parts of the packet; if the visible parts of the packet conform to certain specific patterns (“fingerprints”) associated with particular circumvention tools, the censor can block the packet.</p>
+                                <p><strong>Hop</strong> - A single step or jump a data packet makes as it travels from one device to the next, such as from one router to another. A data packet may make many hops to travel from its origin to its final destination.</p>
+                                <p><strong>Hypertext Transfer Protocol (HTTP)</strong> - A set of instructions for requesting information from a website (or other online resource), as well as sending and receiving that information. As such, it serves as the foundation for internet communication. HTTP functions at the <strong>application layer</strong> of the network stack.</p>
+                                <p><strong>Hypertext Transfer Protocol Secure (HTTPS)</strong> - A secure version of HTTP, used by most modern websites in most countries, that determines how data is sent between a user and a website. At the application layer, the information is still formatted as HTTP. HTTPS simply wraps this HTTP data in a layer of encryption before sending it out over the internet.</p>
+                                <p><strong>In-path middlebox</strong> - A middlebox that sits directly on a cable transferring information between two endpoints. All internet traffic therefore also transits the middlebox before reaching its intended destination. An in-path middlebox can opt to block certain pieces of unwanted internet traffic so that they never reach their intended destination (also known as <strong>dropping</strong> traffic).</p>
+                                <p><strong>International gateway (IXP)</strong> - The physical point at which data enters or leaves a country. Depending on the volume of a country’s internet traffic and the number of international gateways it has, such gateways can be bottlenecks or chokepoints, since all cross-border data must flow through them.</p>
+                                <p><strong>Internet backbone</strong> - A high-speed cable, or set of cables, designed to carry internet traffic across longer distances. A home internet user does not connect directly into an internet backbone; rather, backbones generally run between large hubs of internet traffic, such as between two major ISPs’ networks.</p>
+                                <p><strong>Internet layer</strong> - The part of the network stack that manages flows of information across the internet. The internet layer organizes traffic and routing among multiple different nodes within and between networks, ensuring that packets reach the correct destination.</p>
+                                <p><strong>Internet Protocol (IP)</strong> - The set of rules, developed over time and with the input of many different international organizations and individuals, that guides how packets of data travel across networks and that allows the many different networks that make up the internet to be interoperable. Internet Protocol Version 4 (IPv4) and Internet Protocol Version 6 (IPv6) are both currently in use on the internet.</p>
+                                <p><strong>Internet service provider (ISP)</strong> - An organization that provides users access to the internet, in addition to other related services, such as maintaining <strong>DNS resolvers</strong>. An ISP may be privately or publicly owned. In many countries, including China and the U.S., ISPs are required to share certain information with law enforcement agencies.</p>
+                                <p><strong>IP address</strong> - A series of characters that identifies a computer or server using the IP system to communicate over the internet. Internet Protocol Version 4 (IPv4) addresses are composed of a set of four numbers, each with one to three digits, separated by periods (for example, <em>104.18.204.43</em>). Internet Protocol Version 6 (IPv6) addresses are longer and can also include letters (such as <em>1050:0:0:0:5:600:300c:326b</em>).</p>
+                                <p><strong>IP blocking</strong> - When a network-level censorship system disrupts a connection based on either the destination or origin IP address written to data packet headers.</p>
+                                <p><strong>Link layer</strong> - The part of the network stack that transmits data between two nodes connected by a physical layer. For example, the link layer transmits data between two routers, or between a home computer and a home modem.</p>
+                                <p><strong>Middlebox</strong> - A machine that is positioned between two endpoints of online communications, often in order to read the contents of those communications as they pass back and forth.</p>
+                                <p><strong>Nameserver</strong> - A server that stores and organizes DNS records, including domain names and IP addresses. As part of the <strong>DNS lookup</strong> process, a <strong>DNS resolver</strong> will query a nameserver, asking if it contains the record for a particular domain name. If the nameserver does contain that record, it will return the associated IP address to the DNS resolver. A nameserver that contains the record is referred to as the <strong>authoritative nameserver.</strong></p>
+                                <p><strong>Network-level censorship</strong> - Censorship conducted by equipment placed within an internet network, aimed at all traffic that transits that network. This may include machines positioned throughout an ISP’s network, or machines positioned at international gateways that are designed to handle all internet traffic passing through those gateways.</p>
+                                <p><strong>Network stack</strong> - An abstraction that characterizes the relationship between various elements of the online communication process, with one element stacked on top of another in <strong>layers</strong>. Though there are several different ways of envisioning the stack, all versions describe each layer as having a specific set of dedicated tasks it performs, while having no insight into what happens at the other layers of the stack.</p>
+                                <p><strong>Packet switching</strong> - The process whereby data is broken down into small chunks called <strong>data packets,</strong> which are then independently routed via the most efficient pathway to their destination, where the packets are then reassembled.</p>
+                                <p><strong>Path-adjacent middlebox</strong> - A <strong>middlebox</strong> that monitors, but does not sit directly on, a cable transferring information between two endpoints. (More commonly referred to as an on-path middlebox by computer scientists.) It monitors internet traffic by reading copies of that traffic. A path-adjacent middlebox cannot directly block internet traffic; instead, it must issue orders to one or both endpoints of the connection in an attempt to have them break the connection.</p>
+                                <p><strong>Physical layer</strong> - The part of the network stack that converts digital data into electrical, radio, or optical signals, which it then transmits and receives over a physical medium such as a cable.</p>
+                                <p><strong>Proxy server</strong> - Machines that are set up to accept and forward on traffic that is ultimately meant for another server. Also known simply as “<strong>proxies</strong>,” proxy servers obscure a user’s true destination, with a censor only able to see the proxy server’s IP address and not the IP address of the true destination. In common parlance, the terms “proxy” and “VPN” are used interchangeably to describe a technology that helps evade censorship.</p>
+                                <p><strong>Quick UDP Internet Connections (QUIC)</strong> - A standard for delivering data online that applies the security features of <strong>TLS</strong> to the <strong>UDP</strong> packet format. QUIC aims to speed up initial connection times while providing encryption by default.</p>
+                                <p><strong>Residual censorship</strong> - The period during which, after censors have forcibly disrupted an internet connection between two endpoints, all further connections between those two endpoints are blocked. Chinese authorities enforce residual censorship to punish users who attempt to view banned content, or simply to make users think that the website in question is unstable and not worth visiting. Residual censorship can last anywhere from a few seconds to multiple hours.</p>
+                                <p><strong>Router -</strong> A router is a computer and networking device that guides and directs data, in small chunks called <strong>data</strong> <strong>packets</strong>, between computer networks. In addition to other functions, routers ensure packets are sent to their correct destination, or IP address, via the best available route.</p>
+                                <p><strong>Server</strong> - A computer that “serves up” requested content. Most online information is stored (or hosted) on a server. When a user visits a website, it is a server that actually sends back the website content to the user. Servers exist for many different purposes. Hillary Clinton <a href=https://www.bbc.com/news/world-us-canada-31806907 target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">famously</a> had one just for her email. Major social media companies have many of them in order to provide content to users quickly.</p>
+                                <p><strong>Server Name Identification (SNI)</strong> - A field in the HTTPS protocol containing the domain name of the website the user hopes to visit. Because so many modern websites do not have their own dedicated IP address, the SNI field specifies which of the domain names hosted at a given IP address the user is actually seeking. The SNI field is unencrypted, meaning it can easily be read by censors.</p>
+                                <p><strong>Service-level censorship</strong> - Censorship conducted by a company or entity monitoring the censorship on its own platform or service. This can be accomplished through both manual and automated means, but it only targets the content available on the platform or service in question.</p>
+                                <p><strong>Stateful / stateless</strong> - A description of a <strong>middlebox</strong> that indicates whether or not the middlebox can track the status of any given internet connection over time. A stateful middlebox, upon analyzing an internet packet, will recognize it as belonging to a particular ongoing internet connection and maintain a short-term memory cache logging all activity on that connection. A stateless middlebox, on the other hand, can only analyze each individual internet packet as it comes, without any short-term memory cache or context.</p>
+                                <p><strong>TCP reset</strong> - A type of packet, and also the name of a mechanism frequently deployed by the Chinese censorship system to forcibly disrupt specific internet connections. After detecting undesirable content, a path-adjacent <strong>middlebox</strong> issues one or more TCP reset packets to each end of the connection. These packets instruct each endpoint of the connection to reset itself, effectively terminating the connection. This mechanism does not technically <em>block</em> content that has already been sent; instead, it tricks the endpoints into breaking the connection so no more content is sent or received. Also known as TCP RST.</p>
+                                <p><strong>TCP three-way handshake</strong> - The mechanism <strong>TCP</strong> uses to establish a connection between two endpoints. The handshake ensures that each side of the connection is available and ready to transmit and receive data. The handshake works by both sides exchanging three different types of packets: first, a synchronization, or SYN, packet; second, a synchronize-acknowledge, or SYN-ACK, packet; and third, an acknowledgement, or ACK, packet.</p>
+                                <p><strong>Transmission Control Protocol (TCP)</strong> - A standard for delivering data online, specifying how to break data up into packets in preparation to be transmitted over the internet. Because TCP ensures that each side of a connection is ready before transmitting data, and because it allows for data reassembly at the destination, TCP is most often used by applications prioritizing reliability and completeness, such as web browsing, email, and file transfers.</p>
+                                <p><strong>Transport layer</strong> - The part of the network stack that segments data into packets. Depending on the protocol in use, the transport layer may also establish a connection with another machine prior to sending packets, or reassemble received packets into the correct order.</p>
+                                <p><strong>Transport Layer Security (TLS)</strong> - A protocol used by HTTPS to conduct a second three-way handshake between two endpoints. During this handshake, the two sides of the connection exchange information that allows them to agree on an encryption key, which they then use to encrypt all subsequent traffic between them.</p>
+                                <p><strong>Universal Datagram Protocol (UDP)</strong> - A standard for delivering data online, specifying how to break data up into packets in preparation to be transmitted over the internet. Because UDP does not establish a firm connection before sending data, and does not require reassembly of data once it reaches its destination, UDP is most often used by applications that prioritize speed, such as video streaming and <strong>DNS lookups</strong>.</p>
+                                <p><strong>Virtual private network (VPN)</strong> - A computer application that makes use of both encryption and a <strong>proxy server</strong> to keep censors from seeing the true destination of a user’s internet traffic. In common parlance, the terms “VPN” and “proxy” are used interchangeably to describe a technology that helps evade censorship.</p>
+                            </article>
+                        </div>
+                        <nav class="flex items-center pt-6 gap-6 w-full
+justify-between" aria-label=Pagination role=navigation>
+                            <a href=https://locknet2.netlify.app/additional-materials/executive-summary/ class="relative flex h-12 items-center rounded-md bg-white px-6 py-2 text-sm font-semibold text-gray-900 no-underline ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0 lg:w-32 lg:justify-center" aria-label="Go to previous section">
+                                <span class="flex items-center">
+                                    <svg viewBox="0 0 320 512" class="me-2 h-4 w-4">
+                                        <path fill="currentColor" aria-hidden="true" d="M41.4 233.4c-12.5 12.5-12.5 32.8.0 45.3l160 160c12.5 12.5 32.8 12.5 45.3.0s12.5-32.8.0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8.0-45.3s-32.8-12.5-45.3.0l-160 160z" />
+                                    </svg>
+                                    Previous</span>
+                            </a>
+                            <a href=https://locknet2.netlify.app/additional-materials/notes-on-china/ class="relative flex h-12 items-center justify-end rounded-md bg-white px-6 py-2 text-sm font-semibold text-gray-900 no-underline ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0 lg:w-32 lg:justify-center" aria-label="Go to next section">
+                                <span class="flex items-center">
+                                    Next
+                                    <svg viewBox="0 0 320 512" class="ms-2 h-4 w-4">
+                                        <path fill="currentColor" aria-hidden="true" d="M278.6 233.4c12.5 12.5 12.5 32.8.0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3.0s-12.5-32.8.0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8.0-45.3s32.8-12.5 45.3.0l160 160z" />
+                                    </svg>
+                                </span>
+                            </a>
+                        </nav>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src=https://locknet2.netlify.app/bundle.min.0328f61e95563133eb2b0abd63e8980251fc93963f865c6e76478b956bf7f4a2.js integrity="sha256-Ayj2HpVWMTPrKwq9Y+iYAlH8k5Y/hlxudkeLlWv39KI="></script>
+    <script type=module defer src=https://locknet2.netlify.app/instant.min.js></script>
+    <script type=module>
+        await import('/pagefind/pagefind-highlight.js');
+        new PagefindHighlight({
+            highlightParam: "highlight"
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var e = document.getElementById("global-progress");
+
+            function t() {
+                if (e) {
+                    var t = document.documentElement.scrollHeight - window.innerHeight,
+                        n = Math.min(window.scrollY / t, 1);
+                    e.style.width = n * 100 + "%"
+                }
+            }
+            window.addEventListener("scroll", t, {
+                passive: !0
+            }), t()
+        })
+    </script>
+</body>
+
+</html>

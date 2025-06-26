@@ -1,0 +1,676 @@
+<!doctype html>
+<html data-theme=light class="h-full scroll-pt-20" lang=en itemscope itemtype=http://schema.org/WebPage>
+
+<head>
+    <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta charset=UTF-8>
+    <meta name=author content="Laura Edelson">
+    <meta name=description content="The goal of this project is to explain both how China has built such an effective system for …">
+    <meta name=keywords content>
+    <meta name=robots content="noodp">
+    <meta name=theme-color content="#EFFAFE">
+    <link rel=canonical href=https://locknet2.netlify.app/additional-materials/notes-on-china />
+    <script>
+        window.gtmDefensiveLoad = function() {
+            typeof videojs == "undefined" && (window.videojs = function(e) {
+                return console.warn("videojs called but no video elements found:", e), {
+                    ready: function(e) {
+                        typeof e == "function" && e()
+                    },
+                    on: function() {},
+                    play: function() {},
+                    pause: function() {},
+                    dispose: function() {}
+                }
+            }), typeof jQuery == "undefined" && typeof $ == "undefined" && (window.jQuery = window.$ = function(e) {
+                return console.warn("jQuery called by GTM:", e), {
+                    ready: function(e) {
+                        typeof e == "function" && e()
+                    },
+                    on: function() {
+                        return this
+                    },
+                    off: function() {
+                        return this
+                    },
+                    find: function() {
+                        return this
+                    },
+                    each: function() {
+                        return this
+                    },
+                    height: function() {
+                        return e === window || e === "window" ? window.innerHeight : e === document || e === "document" ? Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight) : 0
+                    },
+                    length: 0
+                }
+            }, window.jQuery.extend = window.$.extend = function(e) {
+                console.warn("jQuery.extend called by GTM (likely scroll depth tracking)");
+                for (var t, s, o = Array.prototype.slice.call(arguments, 1), n = 0; n < o.length; n++)
+                    if (t = o[n], t)
+                        for (s in t) t.hasOwnProperty(s) && (e[s] = t[s]);
+                return e
+            })
+        }, gtmDefensiveLoad()
+    </script>
+    <script>
+        (function(e, t, n, s, o) {
+            e[s] = e[s] || [], e[s].push({
+                "gtm.start": (new Date).getTime(),
+                event: "gtm.js"
+            });
+            var a = t.getElementsByTagName(n)[0],
+                i = t.createElement(n),
+                r = s != "dataLayer" ? "&l=" + s : "";
+            i.async = !0, i.src = "https://www.googletagmanager.com/gtm.js?id=" + o + r, a.parentNode.insertBefore(i, a)
+        })(window, document, "script", "dataLayer", "GTM-5V5S2P")
+    </script>
+    <title>
+        Notes on China from a Computer Scientist :: ChinaFile
+    </title>
+    <link rel=stylesheet href=https://locknet2.netlify.app/style.c42a2954075dd7930b1b7997be70402f567ec83366563a2a1a8a074329bff334.css>
+    <link rel=apple-touch-icon href=https://locknet2.netlify.app/favicons/apple-touch-icon.png>
+    <link rel=mask-icon href=https://locknet2.netlify.app/favicons/safari-pinned-tab.svg color=#EFFAFE>
+    <link rel=icon href=https://locknet2.netlify.app/favicons/favicon.svg>
+    <meta itemprop=name content="Notes on China from a Computer Scientist">
+    <meta itemprop=description content="The goal of this project is to explain both how China has built such an effective system for controlling the flow of information on the internet and why its leaders are willing to go to such lengths to do so. I’m a computer scientist, so the technical side of this enterprise seemed relatively straightforward, but I initially found myself quite puzzled at the rationale behind China’s censorship as a whole. Like a lot of folks with degrees in the sciences, during college I was required to take exactly one history class (I chose Modern European History) and I knew little about China before beginning this project. However, as I learned more about the country’s political system and how the Chinese Communist Party (CCP) has held onto power, its approach to online censorship felt less perplexing.">
+    <meta itemprop=wordCount content="4190">
+    <meta itemprop=image content="https://locknet2.netlify.app/media/images/thumbnail.png">
+    <meta property="og:url" content="https://locknet2.netlify.app/additional-materials/notes-on-china/">
+    <meta property="og:site_name" content="ChinaFile">
+    <meta property="og:title" content="Notes on China from a Computer Scientist">
+    <meta property="og:description" content="The goal of this project is to explain both how China has built such an effective system for controlling the flow of information on the internet and why its leaders are willing to go to such lengths to do so. I’m a computer scientist, so the technical side of this enterprise seemed relatively straightforward, but I initially found myself quite puzzled at the rationale behind China’s censorship as a whole. Like a lot of folks with degrees in the sciences, during college I was required to take exactly one history class (I chose Modern European History) and I knew little about China before beginning this project. However, as I learned more about the country’s political system and how the Chinese Communist Party (CCP) has held onto power, its approach to online censorship felt less perplexing.">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="additional-materials">
+    <meta property="og:image" content="https://locknet2.netlify.app/media/images/thumbnail.png">
+    <meta name=twitter:card content="summary_large_image">
+    <meta name=twitter:image content="https://locknet2.netlify.app/media/images/thumbnail.png">
+    <meta name=twitter:title content="Notes on China from a Computer Scientist">
+    <meta name=twitter:description content="The goal of this project is to explain both how China has built such an effective system for controlling the flow of information on the internet and why its leaders are willing to go to such lengths to do so. I’m a computer scientist, so the technical side of this enterprise seemed relatively straightforward, but I initially found myself quite puzzled at the rationale behind China’s censorship as a whole. Like a lot of folks with degrees in the sciences, during college I was required to take exactly one history class (I chose Modern European History) and I knew little about China before beginning this project. However, as I learned more about the country’s political system and how the Chinese Communist Party (CCP) has held onto power, its approach to online censorship felt less perplexing.">
+</head>
+
+<body class="h-full bg-white">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5V5S2P" height=0 width=0 style=display:none;visibility:hidden></iframe></noscript>
+    <a class="sr-only focus:not-sr-only" href=#content role=link>Skip to content</a>
+    <div id=global-progress-bar class="fixed top-0 left-0 z-[9999] w-full h-1.5 bg-gray-200">
+        <div id=global-progress class="h-1.5 bg-blue-5 w-0 transition-all duration-200"></div>
+    </div>
+    <div x-data="{ open: false, dropdownOpen: false }">
+        <header>
+            <div id=mobile-top-strip class="lg:hidden fixed top-0 left-0 w-full h-16 bg-white z-40 flex items-center px-4 gap-2 transition-shadow duration-200">
+                <button type=button class="lg:hidden z-50 p-2 rounded-md bg-white focus:outline-none focus-visible:ring focus-visible:ring-blue-500 focus-visible:ring-2" aria-label="Open sidebar" @click="open = true">
+                    <svg viewBox="0 0 448 512" class="h-6 w-6 text-gray-900">
+                        <path fill="currentColor" aria-hidden="true" d="M0 96C0 78.3 14.3 64 32 64h384c17.7.0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7.0 96zM0 256c0-17.7 14.3-32 32-32h384c17.7.0 32 14.3 32 32s-14.3 32-32 32H32c-17.7.0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7.0-32-14.3-32-32s14.3-32 32-32h384c17.7.0 32 14.3 32 32z" />
+                    </svg>
+                </button>
+                <div class="flex-1 truncate">
+                    <p class="text-sm font-medium text-gray-900 truncate font-sans">The Locknet</p>
+                </div>
+            </div>
+            <div class="relative z-50 lg:hidden" role=dialog aria-modal=true x-show=open x-cloak>
+                <div class="fixed inset-0 bg-gray-900/80" aria-hidden=true @click="open = false" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start=opacity-0 x-transition:enter-end=opacity-100 x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start=opacity-100 x-transition:leave-end=opacity-0>
+                </div>
+                <div class="fixed inset-0 flex">
+                    <div class="relative mr-16 flex w-full max-w-xs flex-1 transform transition-transform duration-300 ease-in-out" x-show=open x-transition:enter="transform transition-transform ease-in-out duration-300" x-transition:enter-start=-translate-x-full x-transition:enter-end=translate-x-0 x-transition:leave="transform transition-transform ease-in-out duration-300" x-transition:leave-start=translate-x-0 x-transition:leave-end=-translate-x-full>
+                        <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
+                            <button type=button class="-m-2.5 p-2.5" @click="open = false" aria-label="Close sidebar">
+                                <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" focusable="false">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flex grow flex-col gap-y-6 bg-white px-4 pt-6 pb-4">
+                            <div class="flex items-center gap-3 mb-2 h-10">
+                                <a href=https://www.chinafile.com target=_blank rel="noopener noreferrer">
+                                    <img src=https://locknet2.netlify.app/media/images/chinafile-logo.png alt="ChinaFile logo" class="h-8 w-auto">
+                                </a>
+                            </div>
+                            <div class="w-full my-2 relative">
+                                <button id=search-mobile type=button onclick=openSearchModal() class="w-full flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2" aria-label="Search site (opens dialog)">
+                                    <svg viewBox="0 0 512 512" class="h-4 w-4 text-gray-500">
+                                        <path fill="currentColor" aria-hidden="true" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z" />
+                                    </svg>
+                                    <span class="text-sm text-gray-600">Search</span>
+                                </button>
+                            </div>
+                            <nav aria-label="Main navigation (mobile)" class=flex-1>
+                                <ul class="flex flex-col gap-2" role=menu>
+                                    <li role=none>
+                                        <details class="relative group">
+                                            <summary class="w-full flex items-center font-semibold text-lg px-4 py-3 transition-colors focus:outline-none rounded-md cursor-pointer" role=button aria-expanded=false tabindex=0 aria-controls=section-0-submenu>
+                                                <span>The Locknet</span>
+                                                <span class="ml-auto flex items-center">
+                                                    <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </span>
+                                            </summary>
+                                            <ul id=section-0-submenu class="px-4 mt-3 flex flex-col gap-1.5" role=menu>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/intro/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-orange-800 hover:text-orange-900 hover:underline">The Locknet: How China Controls Its Internet and Why It Matters</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-1/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">I. Meatspace: The Locknet IRL</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-2/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">II. Service-Level Censorship: The Corporate Locknet</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-3/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">III. Network-Level Censorship: Locknet in the Wires</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-4/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">IV. Evading the Locknet</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-5/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">V. The Locknet Leaks Out</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/the-locknet/part-6/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">VI. The Future of the Locknet</a>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </li>
+                                    <li role=none>
+                                        <details class="relative group" open>
+                                            <summary class="w-full flex items-center font-semibold text-lg px-4 py-3 transition-colors focus:outline-none bg-blue-1 text-blue-5 rounded-md cursor-pointer" role=button aria-expanded=true tabindex=0 aria-controls=section-1-submenu>
+                                                <span>Additional Materials</span>
+                                                <span class="ml-auto flex items-center">
+                                                    <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </span>
+                                            </summary>
+                                            <ul id=section-1-submenu class="px-4 mt-3 flex flex-col gap-1.5" role=menu>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/additional-materials/executive-summary/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">Executive Summary</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/additional-materials/glossary/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5 hover:underline">Glossary</a>
+                                                </li>
+                                                <li role=none>
+                                                    <a href=https://locknet2.netlify.app/additional-materials/notes-on-china/ role=menuitem class="block text-base px-0 py-1 rounded-none transition-colors font-semibold no-underline hover:underline text-blue-5" aria-current=page>Notes on China from a Computer Scientist</a>
+                                                </li>
+                                                <li role=none>
+                                                    <details class="relative subsection-group">
+                                                        <summary class="w-full flex items-center font-medium px-0 py-1 transition-colors focus:outline-none text-gray-700 hover:text-blue-5 cursor-pointer" role=button aria-expanded=false tabindex=0>
+                                                            <span>The Mechanics of Online Censorship</span>
+                                                            <span class="ml-auto flex items-center">
+                                                                <svg class="subsection-chevron h-4 w-4 transition-transform duration-200 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                                                </svg>
+                                                            </span>
+                                                        </summary>
+                                                        <ul class="px-3 mt-2 flex flex-col gap-1" role=menu>
+                                                            <li role=none>
+                                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/internet-101/ role=menuitem class="block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5 hover:underline">Internet 101</a>
+                                                            </li>
+                                                            <li role=none>
+                                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/censorship-how-china-disrupts-the-network/ role=menuitem class="block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5 hover:underline">Censorship: How China Disrupts the Network</a>
+                                                            </li>
+                                                            <li role=none>
+                                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/blocking-circumvention-technologies/ role=menuitem class="block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5 hover:underline">Blocking Circumvention Technologies</a>
+                                                            </li>
+                                                        </ul>
+                                                    </details>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </li>
+                                    <li role=none>
+                                        <a href=https://locknet2.netlify.app/about/ role=menuitem class="w-full flex items-center font-bold text-lg px-4 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 bg-white text-gray-900 rounded-md">
+                                            <span>About This Project</span>
+                                        </a>
+                                    </li>
+                                    <li role=none>
+                                        <a href=https://locknet2.netlify.app/how-to/ role=menuitem class="w-full flex items-center font-bold text-lg px-4 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 bg-white text-gray-900 rounded-md">
+                                            <span>How to Use This Site</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="border-t border-gray-200 bg-white pt-6">
+                                <p class="text-sm text-gray-600">
+                                    <a href=https://www.chinafile.com target=_blank rel="noopener noreferrer">ChinaFile</a> is a project of the <a href=https://asiasociety.org/ target=_blank rel="noopener noreferrer">Asia Society</a>. This website is licensed under CC BY 4.0.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-96 lg:flex-col bg-white border-r border-gray-200" aria-label="Main navigation (desktop)">
+                <div class="flex flex-col gap-y-4 px-6 py-6">
+                    <div class="flex items-center gap-3 mb-2 h-10">
+                        <a href=https://www.chinafile.com target=_blank rel="noopener noreferrer">
+                            <img src=https://locknet2.netlify.app/media/images/chinafile-logo.png alt="ChinaFile logo" class="h-10 w-auto">
+                        </a>
+                    </div>
+                    <div class="w-full my-2 relative">
+                        <button id=search-desktop type=button onclick=openSearchModal() class="w-full flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2" aria-label="Search site (opens dialog)">
+                            <svg viewBox="0 0 512 512" class="h-4 w-4 text-gray-500">
+                                <path fill="currentColor" aria-hidden="true" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8.0 45.3s-32.8 12.5-45.3.0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9.0 208S93.1.0 208 0 416 93.1 416 208zM208 352a144 144 0 100-288 144 144 0 100 288z" />
+                            </svg>
+                            <span class="text-sm text-gray-600">Search</span>
+                        </button>
+                    </div>
+                </div>
+                <ul class="flex flex-col gap-2" role=menu>
+                    <li role=none>
+                        <details class="relative group">
+                            <summary role=button class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none hover:bg-gray-100 hover:text-blue-5 rounded-md cursor-pointer" aria-expanded=false tabindex=0 aria-controls=section-desktop-0-submenu>
+                                <span>The Locknet</span>
+                                <span class="ml-auto flex items-center">
+                                    <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <ul id=section-desktop-0-submenu class="px-8 mt-3 flex flex-col gap-1.5" role=menu>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/intro/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-orange-800 hover:text-orange-900">The Locknet: How China Controls Its Internet and Why It Matters</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-1/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">I. Meatspace: The Locknet IRL</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-2/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">II. Service-Level Censorship: The Corporate Locknet</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-3/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">III. Network-Level Censorship: Locknet in the Wires</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-4/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">IV. Evading the Locknet</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-5/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">V. The Locknet Leaks Out</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/the-locknet/part-6/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">VI. The Future of the Locknet</a>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li role=none>
+                        <details class="relative group" open>
+                            <summary role=button class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none bg-blue-1 text-blue-5 rounded-md cursor-pointer" aria-expanded=true tabindex=0 aria-controls=section-desktop-1-submenu>
+                                <span>Additional Materials</span>
+                                <span class="ml-auto flex items-center">
+                                    <svg class="chevron h-5 w-5 transition-transform duration-200 text-gray-400 group-open:rotate-180 group-open:text-blue-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                            </summary>
+                            <ul id=section-desktop-1-submenu class="px-8 mt-3 flex flex-col gap-1.5" role=menu>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/additional-materials/executive-summary/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">Executive Summary</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/additional-materials/glossary/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors text-gray-900 hover:text-blue-5">Glossary</a>
+                                </li>
+                                <li role=none>
+                                    <a href=https://locknet2.netlify.app/additional-materials/notes-on-china/ role=menuitem class="cursor-pointer block text-base px-0 py-1 rounded-none transition-colors font-bold no-underline hover:underline text-blue-5" aria-current=page>Notes on China from a Computer Scientist</a>
+                                </li>
+                                <li role=none>
+                                    <details class="relative subsection-group">
+                                        <summary role=button class="w-full flex items-center font-medium px-0 py-1 transition-colors focus:outline-none text-gray-700 hover:text-blue-5 cursor-pointer" aria-expanded=false tabindex=0>
+                                            <span>The Mechanics of Online Censorship</span>
+                                            <span class="ml-auto flex items-center">
+                                                <svg class="subsection-chevron h-4 w-4 transition-transform duration-200 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75.0 011.06.02L10 10.585l3.71-3.355a.75.75.0 111.02 1.1l-4.25 3.85a.75.75.0 01-1.02.0L5.21 8.33a.75.75.0 01.02-1.06z" clip-rule="evenodd" />
+                                                </svg>
+                                            </span>
+                                        </summary>
+                                        <ul class="px-4 mt-2 flex flex-col gap-1" role=menu>
+                                            <li role=none>
+                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/internet-101/ role=menuitem class="cursor-pointer block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5">Internet 101</a>
+                                            </li>
+                                            <li role=none>
+                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/censorship-how-china-disrupts-the-network/ role=menuitem class="cursor-pointer block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5">Censorship: How China Disrupts the Network</a>
+                                            </li>
+                                            <li role=none>
+                                                <a href=https://locknet2.netlify.app/additional-materials/the-mechanics-of-online-censorship/blocking-circumvention-technologies/ role=menuitem class="cursor-pointer block px-0 py-1 rounded-none transition-colors text-gray-600 hover:text-blue-5">Blocking Circumvention Technologies</a>
+                                            </li>
+                                        </ul>
+                                    </details>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li role=none>
+                        <a href=https://locknet2.netlify.app/about/ role=menuitem class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 bg-white text-gray-900 hover:bg-gray-100 hover:text-blue-5 rounded-md">
+                            <span>About This Project</span>
+                        </a>
+                    </li>
+                    <li role=none>
+                        <a href=https://locknet2.netlify.app/how-to/ role=menuitem class="w-full flex items-center font-semibold text-lg px-6 py-3 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-blue-300 focus-visible:ring-4 bg-white text-gray-900 hover:bg-gray-100 hover:text-blue-5 rounded-md">
+                            <span>How to Use This Site</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="sticky bottom-0 mt-auto border-t border-gray-200 bg-white p-6">
+                    <p class="text-sm text-gray-600">
+                        <a href=https://www.chinafile.com target=_blank rel="noopener noreferrer">ChinaFile</a> is a project of the <a href=https://asiasociety.org/ target=_blank rel="noopener noreferrer">Asia Society</a>. This website is licensed under CC BY 4.0.
+                    </p>
+                </div>
+            </nav>
+        </header>
+        <div id=search-modal-overlay class="hidden fixed inset-0 z-9999 flex items-start lg:items-center justify-center p-4 bg-black/40">
+            <div class="relative w-full max-w-2xl bg-white rounded-lg shadow-2xl border border-gray-200">
+                <button id=search-modal-close class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2" aria-label="Close search">
+                    <svg viewBox="0 0 384 512" class="h-6 w-6">
+                        <path fill="currentColor" aria-hidden="true" d="M342.6 150.6c12.5-12.5 12.5-32.8.0-45.3s-32.8-12.5-45.3.0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3.0s-12.5 32.8.0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8.0 45.3s32.8 12.5 45.3.0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3.0s12.5-32.8.0-45.3L237.3 256 342.6 150.6z" />
+                    </svg>
+                </button>
+                <div id=search-modal class="px-6 pt-14 pb-6" aria-label="Site search">
+                    <style>
+                        #search-modal .pagefind-ui__form {
+                            position: sticky;
+                            top: 0;
+                            background: #fff;
+                            padding-bottom: .5rem;
+                            z-index: 10
+                        }
+
+                        #search-modal .pagefind-ui__results {
+                            max-height: 40vh;
+                            overflow-y: auto
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+        <link href=https://locknet2.netlify.app/pagefind/pagefind-ui.css rel=stylesheet>
+        <script src=https://locknet2.netlify.app/pagefind/pagefind-ui.js></script>
+        <script>
+            window.addEventListener("DOMContentLoaded", e => {
+                const t = document.getElementById("search-modal-overlay"),
+                    o = document.getElementById("search-modal-close");
+
+                function i() {
+                    t.classList.remove("hidden"), document.body.classList.add("overflow-hidden")
+                }
+
+                function n() {
+                    t.classList.add("hidden"), document.body.classList.remove("overflow-hidden")
+                }
+                window.openSearchModal = i, window.closeSearchModal = n, document.addEventListener("keydown", e => {
+                    e.key === "Escape" && n(), (e.key === "/" && e.target === document.body || e.key === "k" && (e.metaKey || e.ctrlKey)) && (e.preventDefault(), i())
+                }), o && o.addEventListener("click", n), t.addEventListener("click", e => {
+                    e.target === t && n()
+                }), new PagefindUI({
+                    element: "#search-modal",
+                    showSubResults: !0,
+                    pageSize: 3,
+                    autofocus: !0,
+                    highlightParam: "highlight"
+                });
+                const s = document.getElementById("mobile-top-strip");
+                if (s) {
+                    function a() {
+                        window.scrollY > 0 ? s.classList.add("shadow-md") : s.classList.remove("shadow-md")
+                    }
+                    window.addEventListener("scroll", a, {
+                        passive: !0
+                    }), a()
+                }
+                document.querySelectorAll(".subsection-group").forEach(e => {
+                    const t = e.querySelector(".subsection-chevron");
+                    if (t) {
+                        const n = new MutationObserver(() => {
+                            t.style.transform = e.open ? "rotate(180deg)" : "rotate(0deg)"
+                        });
+                        n.observe(e, {
+                            attributes: !0,
+                            attributeFilter: ["open"]
+                        }), e.open && (t.style.transform = "rotate(180deg)")
+                    }
+                })
+            })
+        </script>
+        <div class=lg:pl-96>
+            <main id=content data-pagefind-body role=main tabindex=-1>
+                <div class="relative flex min-h-full flex-col justify-center lg:py-12 py-24 sm:px-6 lg:px-8 xl:flex-row xl:items-start xl:justify-center">
+                    <section class="prose mx-auto w-full max-w-6xl flex-col px-8 prose-hr:w-full lg:flex lg:px-8" aria-labelledby=main-content-heading>
+                        <nav class="mb-2 flex flex-wrap items-center justify-start text-sm font-semibold gap-2 w-full min-w-0" aria-label=Breadcrumb>
+                            <a href=https://locknet2.netlify.app/additional-materials/ class="font-medium uppercase no-underline hover:underline text-blue-5 whitespace-nowrap">Additional Materials</a>
+                        </nav>
+                        <article class="flex max-w-2xl flex-col items-start justify-between border-b border-gray-300">
+                            <h1 class="mb-6 mt-2 text-4xl text-gray-900 leading-[1.15]">
+                                Notes on China from a Computer Scientist
+                            </h1>
+                            <div class="my-6 w-full border-l-2 border-blue-5 pl-4">
+                                <div class="font-semibold text-lg text-gray-900 mb-2">Laura Edelson</div>
+                                <div class="text-gray-500 text-base leading-[1.15]">Assistant Professor of Computer Science at Northeastern University</div>
+                            </div>
+                        </article>
+                        <div class="w-full flex flex-row gap-10 mt-12">
+                            <article class="prose prose-a:text-blue-5 prose-a:visited:text-purple-800 prose-a:hover:text-blue-900 w-full max-w-2xl">
+                                <p>The goal of this project is to explain both <em>how</em> China has built such an effective system for controlling the flow of information on the internet and <em>why</em> its leaders are willing to go to such lengths to do so. I’m a computer scientist, so the technical side of this enterprise seemed relatively straightforward, but I initially found myself quite puzzled at the rationale behind China’s censorship as a whole. Like a lot of folks with degrees in the sciences, during college I was required to take exactly one history class (I chose Modern European History) and I knew little about China before beginning this project. However, as I learned more about the country’s political system and how the Chinese Communist Party (CCP) has held onto power, its approach to online censorship felt less perplexing.</p>
+                                <p>Still, many of the CCP’s online and offline actions simply didn’t make sense to me at first. Why did the government expend so much effort stamping out pornography? Why did it censor archeological scholarship? Why would it ban a group like Falun Gong, whose members seemed only to be doing something that looked like yoga?</p>
+                                <p>Working on this project led me to seek answers to these kinds of questions—both through my own reading on Chinese history and politics, and in conversation with my co-author, Jessica Batke. Eventually, China’s vast censorship system began to feel more coherent and easier to comprehend.</p>
+                                <p>If I had such questions along the way, I assume many of my colleagues in the computer science field may find they have similar ones. Thus, what follows are some short notes on features of China’s politics and society that I found particularly useful as background knowledge to help understand why the system we call Locknet looks the way it does. <em>—Laura Edelson</em></p>
+                                <h2 id=chaos>Chaos</h2>
+                                <p>Chinese officials and ordinary people who support or justify Party-state efforts to clamp down on activism or speech often <a href=https://www.fmprc.gov.cn/eng/xw/zyxw/202405/t20240530_11328575.html target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">refer to</a> the fear the country’s leaders and many citizens harbor of chaos (<em>luan</em>). The concern is that if people can express themselves freely, extreme positions might find favor with the public and lead to widespread questioning of the status quo. Protests and conflict could ensue, causing social, political, and economic collapse—chaos.</p>
+                                <p>The Chinese people did experience repeated political upheaval in the century before the Chinese Communist Party, under Mao Zedong, finally cemented its rule in 1949. In its waning years, the Qing, China’s last imperial dynasty, faced an almost uninterrupted succession of threats, which included the Taiping Rebellion (1850-1864), the Second Opium War (1856-1860), the First Sino-Japanese War (1894-1895), the Boxer Rebellion (1900-1901), and the 1911 Revolution. This last one brought down the Qing dynasty, ending more than 2,000 years of imperial rule in China. The following decades would see geographic fragmentation, the rise of warlords, invasion and colonization by Japan, and then civil war.</p>
+                                <p>When the Communists finally took power, waves of political campaigns continued to roil the country. In the decade before Mao’s death, his Cultural Revolution unleashed a period of violence and terror still fresh in the minds of many people of Xi Jinping’s generation.<br>
+                                    So when Party leaders ruthlessly suppressed student and worker protests in Tiananmen Square in 1989, there was an obvious narrative for the Party to adopt: The bloody crackdown was necessary because had the protests been allowed to go on unchecked, the country would once again slide into chaos.</p>
+                                <p>Since then, the fear of chaos has been a powerful justification for the Party-state’s iron-fisted control of the internet, news media, religious organizations, and civil society actors (even if censorship has ensured that many young people don’t even know about the Tiananmen massacre). The narrative has proven wildly successful: Many ordinary Chinese people who might want unfettered access to the global internet, open news media, and the freedom to choose their own religion and way of life cite the fear of chaos as a legitimate reason for the government to maintain its monopoly on information.</p>
+                                <h2 id=why-are-chinas-leaders-afraid-of-large-public-gatherings>Why Are China’s Leaders Afraid of Large Public Gatherings?</h2>
+                                <p>Chinese Communist Party leaders have little tolerance for large-scale public gatherings that the government does not control. Part of this undoubtedly owes to their Marxist-Leninist orientation. Part may derive from earlier homegrown Chinese political thought emphasizing the benefits of social hierarchies, orthodoxy, and respect for rulers. And part might come from a view of China’s history in which, over millennia—as elsewhere in the world—monarchs and emperors were often toppled by popular rebellions led by dissatisfied subjects who came to view their rulers’ dominion over them as illegitimate. China’s leaders are highly attuned to anything that threatens their legitimacy, or their power and the spoils that come with it.</p>
+                                <p>China’s leaders may also simply believe protests endanger society. Like Xi Jinping himself, they may have come of age during the tumultuous and traumatic decade of the Cultural Revolution when mass demonstrations instigated by Mao took on a violent life of their own, ransacking institutions and norms, tearing at the social fabric with tragic and often deadly consequences.</p>
+                                <p>Instigating or organizing “illegal gatherings, protests, or demonstrations” is punishable by 10-15 days of detention. However, thousands of people across China <a href=https://freedomhouse.org/article/eight-things-freedom-house-has-learned-about-protests-china target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">stage</a> protests every year, over issues both large and small. Authorities take actions to repress nearly a third of these demonstrations, according to research done by Freedom House in 2024. When members of the spiritual group <a href=https://jamestown.org/program/the-610-office-policing-the-chinese-spirit/ target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">Falun Gong</a> appeared en masse, peacefully protesting outside the Zhongnanhai leadership compound in Beijing in 1999, the crackdown came swift and hard. Still, the threat of official repercussions does not deter people, who continue to speak out against economic injustices, government wrongdoing, and many other issues. In 2022, amid COVID lockdowns, the largest protests in decades swept across major Chinese cities. People filled the streets holding blank sheets of paper to symbolize all of the critiques of the country’s leaders that they could not openly write or speak, in what would come to be called the “<a href=https://www.prcleader.org/post/the-a4-movement-mapping-its-background-and-impact target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">White Paper Protests</a>.” The powerful show of force brought about predictable <a href=https://www.rfa.org/english/news/china/whitepaper-protesters-detained-01182023165523.html target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">detentions and punishments</a>, but also soon after, a major <a href=https://www.theguardian.com/global-development/2024/may/01/chinas-authorities-erase-memory-white-paper-protests-in-tightening-of-censorship-press-freedom target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">turnaround</a> in the country’s response to COVID.</p>
+                                <h2 id=the-chinese-communist-party>The Chinese Communist Party</h2>
+                                <p>No political party in any one country has ever maintained ruling authority for longer than the Chinese Communist Party. The CCP is the world’s largest political party, with over <a href=https://www.scmp.com/news/china/politics/article/3268723/chinas-communist-party-track-100-million-members-years-end target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">99 million members</a>. It is woven into and directs the functions of the state in a much deeper way than political parties do in many democracies.</p>
+                                <p>Xi Jinping is the General Secretary of the CCP, in addition to serving as President of China and Chairman of the Central Military Commission. China’s military, the People’s Liberation Army, is an arm of the CCP, not of the government of China, and reports up through Party channels. Political scientists thus frequently refer to China’s form of government as a “Party-state,” where the organs, processes, and personnel of the Party dominate the functions of the state, even as each has its own set of bureaucratic structures. While the Party has always directed government organs, Xi Jinping has amplified its control of areas of government in which technocrats had more autonomy under previous leaders.</p>
+                                <p>Most Chinese government jobs, especially at higher levels, <a href=https://www.scmp.com/news/china/politics/article/3134071/why-do-so-many-people-join-communist-party-china target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">require</a> CCP membership. Moreover, Party membership also <a href=https://www.jstor.org/stable/2096416 target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">confers status</a> and privilege in many professional spheres. Generally, members do not play an active role in Party governance, but the CCP may occasionally require them to participate in education programs. All Party members are subject to Party discipline, which means they can be punished/demoted/purged for publicly diverging from Party policy.</p>
+                                <h2 id=socialism-with-chinese-characteristics>Socialism with Chinese Characteristics</h2>
+                                <p>The Chinese Communist Party may be China’s ruling party, but thinking of China as a purely Communist country does not result in a full or accurate picture of the Party’s ideology or how it is practiced. In particular, China’s blend of communist propaganda with some aspects of market economics might seem awkward or contradictory to outsiders. In fact, the Party’s own moniker for its ideology, “socialism with Chinese characteristics,” blends together a variety of different philosophies and traditions, including Marxist-Lenism, Mao Zedong thought, and Confucianism. These can be emphasized and deployed to fit the Party’s needs at any given moment.</p>
+                                <p>After the death of Mao Zedong in 1976, China’s leadership began to abandon some of the country’s more traditionally Marxist policies—such as collectivization of land and the banning of private enterprise—that Mao had imposed during the three and a half decades following the founding of the People’s Republic of China in 1949.</p>
+                                <p>In the 1980s, China’s next “paramount leader,” Deng Xiaoping, <a href=https://manchesterhistorian.com/2020/deng-xiaoping-and-socialism-with-chinese-characteristics-a-capitalist-revolution-by-louis-ohalloran/ target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">known for</a> emphasizing pragmatism rather than ideological purity, used the term “<a href=https://www.strategictranslation.org/glossary/socialism-with-chinese-characteristics target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">socialism with Chinese characteristics</a>” to describe an ideological framework that allowed the Party to run a market economy, combining state-owned enterprises with private businesses while maintaining absolute political control.</p>
+                                <p>The Marxist theoretical <a href=https://www.ndrc.gov.cn/xwdt/ztzl/NEW_srxxgcjjpjjsx/yjcg/yw/202401/t20240123_1363634.html target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">justification</a> for this is that China is in the “primary stage of socialism,” a transitional period where capitalist methods can be used to develop the productive forces necessary for eventual full socialism.</p>
+                                <p>This model has allowed China to maintain political continuity while achieving rapid economic growth since the 1980s. In 2025, Xi Jinping continues to invoke the phrase, using it in his own signature contribution to CCP ideology, “<a href=https://www.12371.cn/special/xxzd/hxnr/ target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era</a>.”</p>
+                                <h2 id=core-socialist-values>Core Socialist Values</h2>
+                                <p>Drawing on traditions from both imperial China and Marxist-Leninism, China’s current leaders seek to define morality for the country’s citizens.</p>
+                                <p>At the Chinese Communist Party’s National Congress in 2012, the year it was announced that Xi Jinping would replace Hu Jintao as General Secretary, the Party also launched a campaign to promote what it called “<a href=https://www.cfr.org/blog/how-much-should-we-read-chinas-new-core-socialist-values target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">core socialist values,</a>” a set of 12 officially approved virtues for citizens to live by, broken out by category: national, social, and individual.</p>
+                                <p>National values were listed first in an <a href=https://perma.cc/9SP9-ZUY8 target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">official announcement</a> of the campaign in 2013—with “prosperity” taking pride of place—while individual values brought up the rear. “Freedom” was categorized as a social value, appearing to emphasize its status as something to be forged collectively rather than aspired to individually.</p>
+                                <p>National Values</p>
+                                <ul>
+                                    <li>Prosperity</li>
+                                    <li>Democracy (which, when <a href=https://decodingchina.eu/democracy/ target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">used</a> by China’s leadership means something very different from how it is defined in liberal democracies)</li>
+                                    <li>Civility</li>
+                                    <li>Harmony</li>
+                                </ul>
+                                <p>Social Values</p>
+                                <ul>
+                                    <li>Freedom</li>
+                                    <li>Equality</li>
+                                    <li>Justice</li>
+                                    <li>Rule of law</li>
+                                </ul>
+                                <p>Individual Values</p>
+                                <ul>
+                                    <li>Patriotism</li>
+                                    <li>Dedication</li>
+                                    <li>Integrity</li>
+                                    <li>Friendliness</li>
+                                </ul>
+                                <p>Ever since 2012, the core socialist values have been heavily <a href=https://www.nytimes.com/2016/09/02/world/asia/china-dance-socialist-values.html target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">promoted</a> on billboards, and integrated into school curricula and government policy frameworks. The visual language of the propaganda campaigns has used motifs and design themes based on traditional Chinese culture, and gone alongside government efforts to instill pride in Chinese culture, revive aspects of Confucianism, and stamp out “historical nihilism,” which is Party speak for negative views of the Party’s history.</p>
+                                <h2 id=why-does-the-party-state-need-moral-authority>Why Does the Party-State Need Moral Authority?</h2>
+                                <p>The Chinese Communist Party aspires to define what is morally good and bad for China’s citizens.</p>
+                                <p>When the Chinese Communist Party came to power after winning a civil war against the Nationalists in 1949, it began a project to remake Chinese culture and society in accordance with its ideology, to build what its leaders called “the new China.” As is often the case in revolutionary contexts, this meant destroying and outlawing institutions, customs, and belief systems that had shaped society in the past, in “the old China.” This process swept up traditional belief systems, including Confucianism, Buddhism, and Taoism, various forms of folk religion, Christianity, which had proliferated in the centuries following its introduction by Jesuits in the 17th century, among many other sources of values and morality. During the Cultural Revolution, a campaign against the “four olds” (old ideas, old customs, old culture, old habits) led to a frenzied campaign of destruction of temples, works of art, books, music, and many human lives.</p>
+                                <p>In their place, the institutions and pieties of Maoism formed a kind of state religion, complemented by a cult of personality around Mao himself.</p>
+                                <p>After Mao’s death and in the period of Reform and Opening, new beliefs (and some old ones) began to emerge. Libraries at newly reopened universities stocked volumes of Western philosophy, economic theory, and literature. But with this liberalization came worries about what might fill what was often referred to as the “moral vacuum” that had been left after Maoist orthodoxy had been somewhat abandoned. The Party still endeavors to lead and shape norms and behavior from above, a paternalistic stance that has roots in both Marxist-Leninism and traditional Chinese thought.</p>
+                                <p>The effort to retain ultimate moral authority can also explain why the Party-state permits just five approved religions within China, and then only under government supervision, and why it has <a href=https://www.chinafile.com/ngo target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">increased restrictions</a> on foreign NGOs and their counterparts in Chinese civil society.</p>
+                                <h2 id=how-does-the-party-justify-its-rule>How Does the Party Justify its Rule?</h2>
+                                <p>The Chinese Communist Party has always claimed to represent “the People.” Its military arm is called the People’s Liberation Army, and after the Communists formally took power in 1949, China’s official name was changed to the People’s Republic of China. But there are few ways for ordinary people to participate in China’s governance and political process, unless they join the Communist Party. There are no popular elections for the most powerful offices (like the Presidency), the primacy of the Communist Party is written into the constitution, and there are few ways for citizens to hold the government accountable.</p>
+                                <p>Many people alive today have endured disasters caused by policies and campaigns of the Party-state. The 1958-1962 Great Leap Forward caused one of the world’s deadliest famines with estimated death tolls of between 15 million and 55 million. During the <a href=https://www.theguardian.com/world/2016/may/11/the-cultural-revolution-50-years-on-all-you-need-to-know-about-chinas-political-convulsion target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">Cultural Revolution</a>, the economy ground to a halt, universities were shuttered, <a href=https://www.nytimes.com/2016/05/15/world/asia/china-cultural-revolution-explainer.html target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">tens of millions</a> of innocent people were persecuted, and between 500,00 to 2 million people were killed. In 1989, the People’s Liberation Army gunned down thousands of unarmed civilians who had been protesting for democratization in Tiananmen Square.</p>
+                                <p>Yet the Party has managed to stay in power. One reason is that dissent is assiduously suppressed. Another important factor is “performance legitimacy,” that is the idea that leaders deserve to rule as long as they are effectively providing public goods and meeting the needs of the people they govern. Over the past four decades, China has experienced a spectacular increase in the average standard of living. The economy has grown at an astounding pace and the country’s influence in global affairs has soared. China’s population has watched farmland sprout skyscrapers, Chinese athletes pile up mountains of Olympic medals, high-speed trains criss-cross the country. The Party-state trumpets these kinds of achievements, while railing against anything it claims could disrupt the country’s march toward growing strength and wealth. It also works hard to suppress news of instances where official performance has been less than stellar.</p>
+                                <h2 id=what-is-document-9>What is Document 9?</h2>
+                                <p>Though the Party is famously opaque, sometimes outsiders are able to pierce the veil and catch glimpses of the ideological framework that shapes its governance. Shortly after Xi Jinping came to power in 2013, the Chinese Communist Party circulated <a href=https://www.chinafile.com/document-9-chinafile-translation target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">Document 9</a>, or as it later came to be known, the “Seven Don’t Speaks.” This internal communique provided a window into <a href=https://www.chinafile.com/reporting-opinion/notes-chinafile/document-9-10-years-later target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">the Party’s preoccupations</a>, urging cadres to guard against seven “false ideological trends”:</p>
+                                <ol>
+                                    <li>“Promoting Western constitutional democracy”</li>
+                                    <li>“Promoting ‘universal values,’” such as “freedom, democracy, and human rights”</li>
+                                    <li>“Promoting civil society”</li>
+                                    <li>“Promoting neoliberalism,” such as “complete privatization”</li>
+                                    <li>“Promoting the West’s idea of journalism, challenging China’s principle that the media and publishing system should be subject to Party discipline,” rather than “freedom of the press”</li>
+                                    <li>“Promoting historical nihilism,” such as “claiming that the revolution led by the Chinese Communist Party resulted only in destruction; denying the historical inevitability in China’s choice of the Socialist road, calling it the wrong path”</li>
+                                    <li>“Questioning R<a href=https://www.brookings.edu/wp-content/uploads/2019/04/9780815737254_ch1.pdf target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">eform and Opening</a> and the socialist nature of socialism with Chinese characteristics.”</li>
+                                </ol>
+                                <p>The document warned that such “mistaken views and ideas” often made their way into China via cyberspace: “They penetrate China through the Internet and underground channels and they are disseminated on domestic Internet forums, blogs, and microblogs,” the communique explained. “If we allow any of these ideas to spread, they will disturb people’s existing consensus on important issues like which flag to raise, which road to take, which goals to pursue, etc., and this will disrupt our nation’s stable progress on reform and development.”</p>
+                                <p>Document 9 has proven to be an ideological roadmap for Xi Jinping’s decade-plus rule. Xi has overseen a clampdown on the press, civil society, academia, and entrepreneurs, eliminating spaces for heterodoxy.</p>
+                                <h2 id=how-does-chinas-government-control-private-companies>How Does China’s Government Control Private Companies?</h2>
+                                <p>China’s government has many ways beyond law or coercion to encourage or compel compliance with its demands. Many major companies in China are state-owned enterprises. However, the Chinese government has strategic investments even in many non-state-owned companies. Such investments, colloquially known as “<a href=https://www.wsj.com/articles/xi-jinpings-subtle-strategy-to-control-chinas-biggest-companies-ad001a63 target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">golden shares</a>,” come with more corporate governance rights (in the form of board seats and other lines of communication) than those available to other investors. Golden shares give the Party-state a formal line of authority in the affairs of corporations.</p>
+                                <p>Yet, the CCP has a means of exerting influence even in firms without golden shares: Party cells. Large companies are required to <a href=https://www.csis.org/analysis/new-challenge-communist-corporate-governance target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">house</a> official CCP cells, populated by employees who are Party members and are tasked with acting as liaisons between the company and the Party. Even many foreign companies <a href=https://www.csri.global/research/chinese-communist-cells-in-western-firms target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">must also</a> establish Party cells when they set up shop in China.</p>
+                                <h2 id=law-constrains-the-people-not-the-government>Law Constrains the People, Not the Government</h2>
+                                <p>Many people living in liberal democracies assume that, no matter the party or individuals in control of the government, law can serve as a backstop against unjust treatment at the hands of authorities. This assumption doesn’t hold in China.</p>
+                                <p>China <a href=https://www.cecc.gov/judicial-independence-in-the-prc target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">does not</a> have an independent judiciary. Mechanisms that provide checks and balances are highly limited. Legal avenues for citizens seeking redress for government abuse tend to be narrow, and it is virtually impossible for ordinary people to use the law to challenge senior Chinese leaders.</p>
+                                <p>Party leaders clearly know that their unchecked rule has created its own set of governance problems and have made selective efforts to strengthen the rule of law, some far more robust than others.</p>
+                                <p>But, as Chinese political scientists Zheng Yongnian and Shan Wei have <a href=https://web.archive.org/web/20201126154644/https://theasiadialogue.com/2015/05/28/xi-jinpings-rule-of-law-with-chinese-characteristics/ target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">written</a>,</p>
+                                <blockquote>
+                                    <p>. . . the Chinese concept of the “rule of law” is unlike that of the West. . . [which] was developed in the context of Western liberalism as a means to restrain the arbitrary actions of power-holders. The key point is that there should be no individuals or political organisations above the law.</p>
+                                </blockquote>
+                                <blockquote>
+                                    <p>In Chinese official discourse, the ‘rule of law’ is often used interchangeably with the “rule by law” or “ruling the country according to law” (<em>yifa zhiguo</em>). In this sense, law is, “Conceived and operates as an instrument with which to uphold the Socialist political order and perpetuate Party domination” and is, “Used to carry out and consolidate institutional, primarily economic, changes according to predetermined policy.”</p>
+                                </blockquote>
+                                <h2 id=why-is-china-open-about-its-censorship>Why Is China Open About its Censorship?</h2>
+                                <p>China’s leaders do not hide that they conduct online surveillance and censorship. They have established an entire bureaucracy and promulgated many regulations devoted to internet censorship, all of which are well-known in China. This remains true even though they often conceal the individual instances of censorship through the use of covert censorship tactics.</p>
+                                <p>The government’s commitment to censorship is so overt that in 2006 one city even created cartoon mascots for their censorship efforts: The internet police in the southern city of Shenzhen debuted <a href=https://chinadigitaltimes.net/2006/01/image-of-internet-police-jingjing-and-chacha-online-hong-yan-o%C2%BAae%C2%A5%E2%84%A2aaio%C2%BAa/ target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">Jingjing and Chacha</a>, named for the characters that make up the word <em>jingcha</em> (警察), police. These two served as the friendly faces of the city’s internet police, which were responsible for maintaining a “<a href=https://www.france24.com/en/20080805-great-wall-censorship-china-internet target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">healthy</a>” online environment. They exemplified China’s effort to get its citizens to self-censor, sometimes in very blatant ways, by reminding them that the government was always watching their online activities.</p>
+                                <p>Though they have ditched the cutesy mascots, authorities have found other ways to communicate to citizens that their online activities are under surveillance, including periodic announcements of punishments levied against both <a href=https://journals.sagepub.com/doi/full/10.1177/0920203X20963010 target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">individuals</a> and <a href=https://www.cnbc.com/2017/09/25/china-fines-tech-giants-over-censorship-blocks-whatsapp.html target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">corporations</a>.</p>
+                                <h2 id=being-invited-to-tea>Being Invited to Tea</h2>
+                                <p>In the late 1990s, as state media organizations were losing government subsidies and forced to make products that were appealing to viewers and readers, some Chinese news media organizations began to push against strict censorship and publish investigative stories. During the next decade, the internet was adding millions and then tens of millions of new users every year. In 2003, blogging took off, and some journalists began publishing even more daring work on their own blogs. They were joined by ordinary people, some of whom began to identify as “citizen journalists.”</p>
+                                <p>The authorities soon realized that they had a problem, as Party malfeasance, bad governance, corruption, and other social problems began to be exposed by journalists, legal activists, NGO workers, and bloggers. The police and secret police (officers from the Ministry of State Security) started using one of their frequent strategies for trouble-makers: inviting them to tea for a chat, at a local police station or sometimes at restaurants or other public venues.</p>
+                                <p>Journalists, writers, and a broad range of people whose work the government might take issue with can be invited to these “tea drinking sessions.” What happens during them varies widely, depending on the identity of the offender, the nature of the offense, and the political exigencies of the moment (i.e., sometimes the authorities decide they need to make a political point and deal out harsh consequences for relatively minor offenses). There may not be any tea. But the person “invited to tea” is left with no doubt that they are under scrutiny, and that things could get very much worse if they do not heed the message.</p>
+                                <p>In 2024, the Ministry of State Security even published a <a href=https://news.qq.com/rain/a/20240130A00QZK00 target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">guide to “10 cups of tea,”</a> a list of of 10 vaguely worded misdeeds that could result in offenders’ being invited to tea:</p>
+                                <ul>
+                                    <li>Endangering national security</li>
+                                    <li>Committing or assisting espionage</li>
+                                    <li>Failing to take precautions against espionage</li>
+                                    <li>Violating the terms of construction project permits involving national security matters</li>
+                                    <li>Refusing to cooperate in an espionage investigation</li>
+                                    <li>Illegally acquiring or holding state secrets</li>
+                                    <li>Illegally producing, selling, holding, or using espionage devices</li>
+                                    <li>Leaking state secrets related to counter-espionage and intelligence works</li>
+                                    <li>Violating deportation orders</li>
+                                    <li>Committing acts endangering national security other than espionage.</li>
+                                </ul>
+                                <h2 id=the-medias-surname-is-the-party>The Media’s “Surname Is the Party”</h2>
+                                <p>China’s Party-state has always maintained control over the news media. The commercialization of news outlets and rise of the internet, however, threatened the Party’s hold on one centralized narrative.<br>
+                                    After Xi Jinping took power, he reasserted the Party’s dominance over the news media, including online news media. When Xi visited the official Xinhua News Agency, <em>People’s Daily</em>, and the state-owned nationwide broadcaster CCTV in 2016, the TV station put up a <a href=https://www.smh.com.au/world/chinese-president-xi-jinping-goes-on-propaganda-offensive-during-media-tour-20160220-gmz1lb.html target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">sign</a> that read “CCTV’s surname is ‘The Party.’” At a symposium later that day, Xi gave a speech in which he <a href=https://en.people.cn/n3/2016/0220/c90785-9018931.html target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">said</a> that “The fundamental issue of the Party’s media work is to strictly adhere to the Party’s leadership,” and that, “All news media run by the Party must work to speak for the Party’s will and its propositions and protect the Party’s authority and unity. They should enhance their awareness to align their ideology, political thinking and deeds to those of the CPC Central Committee and help fashion the Party’s theories and policies into conscious action by the general public while providing spiritual enrichment to the people.”</p>
+                                <p>Xi’s insistence on tight control of the major national media and news organization has been matched by a crackdown on independent and critical media, and on social media, which despite strict censorship was quite lively from the late 1990s until Xi came to power in 2012.</p>
+                                <h2 id=when-and-why-are-chinas-leaders-willing-to-accept-economic-pain-to-enforce-chinas-information-regime>When (And Why) Are China’s Leaders Willing to Accept Economic Pain to Enforce China’s Information Regime?</h2>
+                                <p>Given that the growing prosperity of China’s citizens remains a key source of the CCP’s popular legitimacy, Party leaders would seem to have an incentive to limit the information control system’s negative effects on the country’s economy. Blocking flows of information or money that occur online between Chinese business people, scholars, and online sales companies and their counterparts or customers in other countries could jeopardize the country’s economic growth.<br>
+                                    And yet, China’s leaders have demonstrated a willingness to shut down online exchanges, even if they are economically beneficial, in response to perceived threats. This suggests a willingness to sometimes put political considerations before economic considerations.</p>
+                                <p>The Chinese government could theoretically sever its internet entirely from the larger global network, making it nearly impossible for undesirable foreign information to make it into the country. Yet doing so would also cut off Chinese businesses from foreign markets and likely provoke a widespread outcry. There has only been one time that leaders have proven willing to impose this kind of internet shutdown on a large scale: In 2009, after days of bloody confrontation between ethnic Uyghur and Han citizens on the streets of Urumqi, the government <a href=https://www.nytimes.com/2010/05/15/world/asia/15china.html target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">cut off</a> the entire Xinjiang Uyghur Autonomous Region from any online services other than those provided by regional authorities—and maintained the blockade for 10 months. Most other censorship measures the government employs are less heavy-handed and more flexible, and better able to balance the trade-offs between economic and political dangers.</p>
+                            </article>
+                            <div class="block xl:hidden fixed bottom-6 right-6 z-50">
+                                <button id=toc-toggle aria-controls=mobile-toc aria-expanded=false class="rounded-full bg-white p-3 shadow-lg ring-1 ring-gray-300 focus:outline-solid focus:outline-2 focus:outline-blue-500" aria-label="Show table of contents">
+                                    <svg viewBox="0 0 512 512" class="h-6 w-6 text-gray-900">
+                                        <path fill="currentColor" aria-hidden="true" d="M64 144a48 48 0 100-96 48 48 0 100 96zM192 64c-17.7.0-32 14.3-32 32s14.3 32 32 32h288c17.7.0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7.0-32 14.3-32 32s14.3 32 32 32h288c17.7.0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7.0-32 14.3-32 32s14.3 32 32 32h288c17.7.0 32-14.3 32-32s-14.3-32-32-32H192zM64 464a48 48 0 100-96 48 48 0 100 96zm48-208a48 48 0 10-96 0 48 48 0 1096 0z" />
+                                    </svg>
+                                </button>
+                                <aside id=mobile-toc class="fixed bottom-20 right-4 z-9999 w-11/12 max-w-xs rounded-lg border border-gray-200 bg-white p-4 shadow-lg" aria-label="On this page" role=complementary style=display:none tabindex=-1>
+                                    <nav aria-label="Table of contents">
+                                        <p class="mb-2 mt-0 px-4 text-base font-medium text-gray-600">On This Page</p>
+                                        <div class="text-sm leading-6 text-gray-700">
+                                            <nav id=TableOfContents>
+                                                <ul>
+                                                    <li><a href=#chaos>Chaos</a></li>
+                                                    <li><a href=#why-are-chinas-leaders-afraid-of-large-public-gatherings>Why Are China’s Leaders Afraid of Large Public Gatherings?</a></li>
+                                                    <li><a href=#the-chinese-communist-party>The Chinese Communist Party</a></li>
+                                                    <li><a href=#socialism-with-chinese-characteristics>Socialism with Chinese Characteristics</a></li>
+                                                    <li><a href=#core-socialist-values>Core Socialist Values</a></li>
+                                                    <li><a href=#why-does-the-party-state-need-moral-authority>Why Does the Party-State Need Moral Authority?</a></li>
+                                                    <li><a href=#how-does-the-party-justify-its-rule>How Does the Party Justify its Rule?</a></li>
+                                                    <li><a href=#what-is-document-9>What is Document 9?</a></li>
+                                                    <li><a href=#how-does-chinas-government-control-private-companies>How Does China’s Government Control Private Companies?</a></li>
+                                                    <li><a href=#law-constrains-the-people-not-the-government>Law Constrains the People, Not the Government</a></li>
+                                                    <li><a href=#why-is-china-open-about-its-censorship>Why Is China Open About its Censorship?</a></li>
+                                                    <li><a href=#being-invited-to-tea>Being Invited to Tea</a></li>
+                                                    <li><a href=#the-medias-surname-is-the-party>The Media’s “Surname Is the Party”</a></li>
+                                                    <li><a href=#when-and-why-are-chinas-leaders-willing-to-accept-economic-pain-to-enforce-chinas-information-regime>When (And Why) Are China’s Leaders Willing to Accept Economic Pain to Enforce China’s Information Regime?</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </nav>
+                                </aside>
+                            </div>
+                            <aside class="aside-toc hidden xl:flex xl:flex-col xl:sticky xl:top-10 xl:max-h-[calc(100vh-4rem)]" aria-label="On this page" role=complementary>
+                                <nav aria-label="Table of contents">
+                                    <p class="mb-4 mt-6 text-sm font-medium text-gray-600">ON THIS PAGE</p>
+                                    <div id=TableOfContents class="toc-list leading-6 text-gray-700">
+                                        <nav id=TableOfContents>
+                                            <ul>
+                                                <li><a href=#chaos>Chaos</a></li>
+                                                <li><a href=#why-are-chinas-leaders-afraid-of-large-public-gatherings>Why Are China’s Leaders Afraid of Large Public Gatherings?</a></li>
+                                                <li><a href=#the-chinese-communist-party>The Chinese Communist Party</a></li>
+                                                <li><a href=#socialism-with-chinese-characteristics>Socialism with Chinese Characteristics</a></li>
+                                                <li><a href=#core-socialist-values>Core Socialist Values</a></li>
+                                                <li><a href=#why-does-the-party-state-need-moral-authority>Why Does the Party-State Need Moral Authority?</a></li>
+                                                <li><a href=#how-does-the-party-justify-its-rule>How Does the Party Justify its Rule?</a></li>
+                                                <li><a href=#what-is-document-9>What is Document 9?</a></li>
+                                                <li><a href=#how-does-chinas-government-control-private-companies>How Does China’s Government Control Private Companies?</a></li>
+                                                <li><a href=#law-constrains-the-people-not-the-government>Law Constrains the People, Not the Government</a></li>
+                                                <li><a href=#why-is-china-open-about-its-censorship>Why Is China Open About its Censorship?</a></li>
+                                                <li><a href=#being-invited-to-tea>Being Invited to Tea</a></li>
+                                                <li><a href=#the-medias-surname-is-the-party>The Media’s “Surname Is the Party”</a></li>
+                                                <li><a href=#when-and-why-are-chinas-leaders-willing-to-accept-economic-pain-to-enforce-chinas-information-regime>When (And Why) Are China’s Leaders Willing to Accept Economic Pain to Enforce China’s Information Regime?</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </aside>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    const e = document.getElementById("toc-toggle"),
+                                        t = document.getElementById("mobile-toc");
+                                    e && t && (e.addEventListener("click", function() {
+                                        const n = t.style.display === "none";
+                                        t.style.display = n ? "block" : "none", e.setAttribute("aria-expanded", n ? "true" : "false")
+                                    }), document.addEventListener("click", function(n) {
+                                        !t.contains(n.target) && !e.contains(n.target) && (t.style.display = "none", e.setAttribute("aria-expanded", "false"))
+                                    }))
+                                })
+                            </script>
+                        </div>
+                        <nav class="flex items-center pt-6 gap-6 max-w-2xl
+justify-start" aria-label=Pagination role=navigation>
+                            <a href=https://locknet2.netlify.app/additional-materials/glossary/ class="relative flex h-12 items-center rounded-md bg-white px-6 py-2 text-sm font-semibold text-gray-900 no-underline ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0 lg:w-32 lg:justify-center" aria-label="Go to previous section">
+                                <span class="flex items-center">
+                                    <svg viewBox="0 0 320 512" class="me-2 h-4 w-4">
+                                        <path fill="currentColor" aria-hidden="true" d="M41.4 233.4c-12.5 12.5-12.5 32.8.0 45.3l160 160c12.5 12.5 32.8 12.5 45.3.0s12.5-32.8.0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8.0-45.3s-32.8-12.5-45.3.0l-160 160z" />
+                                    </svg>
+                                    Previous</span>
+                            </a>
+                        </nav>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src=https://locknet2.netlify.app/bundle.min.0328f61e95563133eb2b0abd63e8980251fc93963f865c6e76478b956bf7f4a2.js integrity="sha256-Ayj2HpVWMTPrKwq9Y+iYAlH8k5Y/hlxudkeLlWv39KI="></script>
+    <script type=module defer src=https://locknet2.netlify.app/instant.min.js></script>
+    <script type=module>
+        await import('/pagefind/pagefind-highlight.js');
+        new PagefindHighlight({
+            highlightParam: "highlight"
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var e = document.getElementById("global-progress");
+
+            function t() {
+                if (e) {
+                    var t = document.documentElement.scrollHeight - window.innerHeight,
+                        n = Math.min(window.scrollY / t, 1);
+                    e.style.width = n * 100 + "%"
+                }
+            }
+            window.addEventListener("scroll", t, {
+                passive: !0
+            }), t()
+        })
+    </script>
+</body>
+
+</html>
