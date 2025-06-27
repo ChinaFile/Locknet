@@ -74,7 +74,7 @@
     <link rel=icon href=https://locknet.chinafile.com/favicons/favicon.svg>
     <meta itemprop=name content="III. Network-Level Censorship: Locknet in the Wires">
     <meta itemprop=description content="Beijing does not need to censor content posted online by its citizens first-hand; it has a retinue of corporate employees and individual nationalists to police domestically-generated internet content. Thus, the censorship technology authorities control more directly targets information seeping in from outside China. These tools perform “network-level censorship,” inspecting data headed across the border, regardless of which app or service generated it.">
-    <meta itemprop=wordCount content="8304">
+    <meta itemprop=wordCount content="8282">
     <meta itemprop=image content="https://locknet.chinafile.com/media/images/thumbnail.png">
     <meta property="og:url" content="https://locknet.chinafile.com/the-locknet/part-3/">
     <meta property="og:site_name" content="ChinaFile">
@@ -2116,42 +2116,7 @@
                                                 </div>
                                             </div>
                                         </template>
-                                    </span>—that is, packets whose destinations don’t appear on either the DNS or IP blocklists—additional sets of middleboxes await. These middleboxes also try to determine where packets are headed, but they employ a slightly different method to do so: “<span x-data="{
-    open: false,
-    openDrawer() {
-        document.querySelectorAll('[x-data][data-drawer-trigger]').forEach(el => {
-            if (el !== $el && el.__x && el.__x.$data.open !== undefined) {
-                el.__x.$data.open = false;
-            }
-        });
-        this.open = true;
-        document.body.classList.add('overflow-hidden');
-    },
-    closeDrawer() {
-        this.open = false;
-        document.body.classList.remove('overflow-hidden');
-    }
-}" class="inline-flex items-center" data-drawer-trigger>
-                                        <span @click=openDrawer @keydown.enter.space=openDrawer tabindex=0 role=button aria-controls=drawer-deep-packet-inspection :aria-expanded=open.toString() class="inline-flex rounded-sm bg-blue-1 text-blue-5 hover:bg-blue-2 cursor-pointer focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2">deep packet inspection</span>
-                                        <template x-if=open>
-                                            <div>
-                                                <div class="fixed inset-0 z-50 flex justify-end">
-                                                    <div x-show=open x-transition.opacity.200ms @click=closeDrawer class="bg-black/40 transition-all duration-300 ease-in-out lg:w-full w-1/3 h-full" tabindex=-1 aria-hidden=true></div>
-                                                    <aside x-show=open x-transition:enter="transition-all duration-400 ease-out" x-transition:enter-start="translate-x-full opacity-0 scale-95" x-transition:enter-end="translate-x-0 opacity-100 scale-100" x-transition:leave="transition-all duration-300 ease-in" x-transition:leave-start="translate-x-0 opacity-100 scale-100" x-transition:leave-end="translate-x-full opacity-0 scale-95" id=drawer-deep-packet-inspection class="relative w-full max-w-md h-full bg-white shadow-2xl border border-gray-200 rounded-l-2xl flex flex-col" tabindex=0 role=dialog aria-modal=true :aria-label="'Details: ' + 'deep packet inspection'">
-                                                        <button @click=closeDrawer class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 focus:outline-none focus-visible:ring focus-visible:ring-blue-400 focus-visible:ring-2 cursor-pointer" aria-label="Close drawer">
-                                                            <svg viewBox="0 0 384 512" class="h-6 w-6">
-                                                                <path fill="currentColor" aria-hidden="true" d="M342.6 150.6c12.5-12.5 12.5-32.8.0-45.3s-32.8-12.5-45.3.0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3.0s-12.5 32.8.0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8.0 45.3s32.8 12.5 45.3.0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3.0s12.5-32.8.0-45.3L237.3 256 342.6 150.6z" />
-                                                            </svg>
-                                                        </button>
-                                                        <div class="flex-1 p-6 w-full">
-                                                            <h2 class="text-lg font-semibold mb-4">deep packet inspection</h2>
-                                                            <div class="w-full shrink-0 prose">The process of unpacking an internet packet and reading the content contained at the deepest (application) layer.</div>
-                                                        </div>
-                                                    </aside>
-                                                </div>
-                                            </div>
-                                        </template>
-                                    </span>.”</p>
+                                    </span>—that is, packets whose destinations don’t appear on either the DNS or IP blocklists—additional sets of middleboxes await. These middleboxes also try to determine where packets are headed, but they employ a slightly different method to do so: “<a href=https://locknet.chinafile.com/additional-materials/the-mechanics-of-online-censorship/censorship-how-china-disrupts-the-network/#deep-packet-inspection target=_blank rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 hover:underline">deep packet inspection</a>.”</p>
                                 <p>In the IKEA analogy, a computer creating packets is like IKEA shipping a table by breaking it up into constituent parts (legs, tabletop, screws), packaging each part separately, and sending them individually to the receiver. This is correct as far as it goes, but it leaves out a crucial part of packet creation: encapsulation. Imagine that instead of one box, each table part is put into a series of four nested boxes, with the innermost box showing the recipient’s name and containing one of the table parts. The outer boxes all have their own information written on them (one might have the zip code, for example), but none gives any indication of what might be inside. While this parcel is in transit, whoever handles it may see only the outermost box, or they may open it to view what’s written on the second- or third-largest box to help decide where to send the box next. But only the final recipient is supposed to get all the way to the inner box, seeing their own name on the outside and opening it to find what it contains.</p>
                                 <p>This is also how packets work over the internet, with the actual substantive content (say, a few lines of an email) <a href=https://locknet.chinafile.com/additional-materials/the-mechanics-of-online-censorship/censorship-how-china-disrupts-the-network/#deep-packet-inspection target=_blank rel="noopener noreferrer" class="text-blue-5 hover:text-blue-6 hover:underline decoration-dotted decoration-2 underline-offset-2">nested in</a> the innermost part of a packet, invisible to the network until it reaches the intended recipient. The outer layers of a packet contain information to aid in routing and other tasks, but generally give no clue as to the actual content of the packet. A <span x-data="{
     open: false,
