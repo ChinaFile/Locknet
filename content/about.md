@@ -60,4 +60,4 @@ The many, many individuals who were willing to speak with us very early on in th
 
 Those who helped us in ways big and small, but who wish to remain anonymous.
 
-All errors or inaccuracies are solely our own. *--Laura Edelson and Jessica Batke*
+All errors or inaccuracies are solely our own. *--[Laura Edelson](https://www.chinafile.com/contributors/laura-edelson) and [Jessica Batke](https://www.chinafile.com/contributors/jessica-batke)*
