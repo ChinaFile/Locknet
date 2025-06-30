@@ -61,3 +61,8 @@ The many, many individuals who were willing to speak with us very early on in th
 Those who helped us in ways big and small, but who wish to remain anonymous.
 
 All errors or inaccuracies are solely our own. *--[Laura Edelson](https://www.chinafile.com/contributors/laura-edelson) and [Jessica Batke](https://www.chinafile.com/contributors/jessica-batke)*
+
+
+## Disclaimer
+
+Chinafile and Asia Society take no institutional position on matters of public policy and other issues addressed in the articles they publish. All statements of fact and expressions of opinion in this article are the sole responsibility of its authors and may not reflect the views of the organization and its board, staff, and supporters.
