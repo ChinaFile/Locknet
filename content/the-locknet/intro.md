@@ -182,4 +182,4 @@ Without a real understanding of what Chinese censorship is, those of us outside 
 
 </br>
 
-*Additional reporting by Wenhao Ma.*
+*Additional reporting by [Wenhao Ma](https://www.chinafile.com/contributors/wenhao-ma).*
