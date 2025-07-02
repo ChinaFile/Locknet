@@ -138,4 +138,4 @@ In China, the internet is not for everyone. The internet is for the Party.
 
 </br>
 
-*Additional reporting by Wenhao Ma.*
+*Additional reporting by [Wenhao Ma](https://www.chinafile.com/contributors/wenhao-ma).*
