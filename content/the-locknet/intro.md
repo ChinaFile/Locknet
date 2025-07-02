@@ -179,3 +179,7 @@ China’s leaders treat speech, expression, and free access to information very 
 Americans’ behavior during the RedNote episode revealed how unprepared many of us are to deal with the Locknet. Though many TikTokers [claimed](https://web.archive.org/web/20250117150534/https://www.supremecourt.gov/opinions/24pdf/24-656_ca7d.pdf) the proposed ban would violate their First Amendment rights, a large number of the self-described “refugees” flooding RedNote hastened to sanitize their content to suit the Chinese government’s restrictions on speech. The irony of this self-censorship seemed lost on many of them, as did the true nature of censorship enforcement in China. One exiled activist [wrote](https://archive.ph/FV04h) at the time, “The same complaint that brings you to RedNote have \[sic\] brought countless Chinese to jail. And the very app \#RedNote you are using now is part of the state machine that white-washes the Uyghur, Tibet and Hong Kong issue, as well as silencing the entire voices of political prisoners, scholars, civil journalists, filmmakers, LGBTQ and feminists . . .” 
 
 Without a real understanding of what Chinese censorship is, those of us outside China could well end up enforcing it ourselves.
+
+</br>
+
+*Additional reporting by Wenhao Ma.*
